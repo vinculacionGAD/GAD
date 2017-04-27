@@ -1,0 +1,30 @@
+.figure{
+	text-align: center;
+	display: flex;
+  /* alineacion vertical */
+  align-items: center;
+   /* alineacion horizontal */
+  justify-content: center;
+}
+
+.login_wrapper{
+	margin-top: 0px !important;
+}
+
+.logo-escudo{
+	width: 100px;
+	margin-top: 30px;
+}
+
+body.login{
+	background: url('../img/fondo.png');
+}
+
+
+.margintop10{
+	margin-top: 10px;
+}
+
+.moverBtn_G_personas{
+	margin-top: 10px;
+}
