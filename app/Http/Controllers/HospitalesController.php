@@ -9,21 +9,27 @@ use App\tipos_instalaciones;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class HospitalesController extends Controller
 {
     public function listing(){
-        $hospitales = hospitales::all();
 
-        return response()->json(
-            $hospitales->toArray()    
-        );
-    }
+        $hospitales = DB::table('hospitales')
+                        ->join('recursos', 'recursos.id', '=', 'hospitales.recurso_id')
+                        ->select('recursos.*', 'hospitales.id as hospital_id',
+                            'hospitales.n_medicos', 'hospitales.n_enfermeros',
+                            'hospitales.observacion', 'hospitales.n_quirofano',
+                            'hospitales.n_camas')->get();
+
+        return $hospitales; 
+    }       
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $tipos_instalaciones = tipos_instalaciones::pluck('tipo_instalacion', 'id');
@@ -49,7 +55,25 @@ class HospitalesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        recursos::create($request->all());
+            
+        $idRec = "";
+        $idRecurso = DB::select("SELECT MAX(id) as idRecu FROM recursos");
+        foreach ($idRecurso as $idRe ) {
+            $idRec=$idRe->idRecu;
+        }
+
+        hospitales::create([
+            'recurso_id'=>$idRec,
+            'n_medicos'=>$request['n_medicos'],
+            'n_enfermeros'=>$request['n_enfermeros'],
+            'observacion'=>$request['observacion'],
+            'n_quirofano'=>$request['n_quirofano'],
+            'n_camas'=>$request['n_camas']
+            ]);
+        return response()->json([
+            "mensaje" => "creado"
+            ]);
     }
 
     /**
@@ -70,8 +94,19 @@ class HospitalesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {        
+        $hospital = DB::table('hospitales')
+                        ->join('recursos', 'recursos.id', '=', 'hospitales.recurso_id')
+                        ->select('recursos.*', 'hospitales.id as hospital_id',
+                            'hospitales.n_medicos', 'hospitales.n_enfermeros',
+                            'hospitales.observacion', 'hospitales.n_quirofano',
+                            'hospitales.n_camas')
+                        ->where('hospitales.recurso_id', '=', $id)
+                        ->get();
+
+        return response()->json(
+            $hospital->toArray()
+        );
     }
 
     /**

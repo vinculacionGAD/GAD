@@ -8,8 +8,10 @@
 			<div class="modal-body">			
 				<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
 				<input type="hidden" id="id">
-				@include('recursos.forms.recursos')
-				@include('hospitales.forms.hospitales')
+				{!!Form::open(['class'=>'form-horizontal', 'id'=>'frmEditaHospital', 'method'=>'POST'])!!}
+					@include('recursos.forms.recursos')
+					@include('hospitales.forms.hospitales')
+				{!!Form::close()!!}	
 			</div>
 			<div class="modal-footer">
 				{!!link_to('#', $title='Actualizar' ,$attributes = ['id'=>'actualizarHospital', 'class'=>'btn btn-primary'], $secure = null)!!}

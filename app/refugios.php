@@ -17,6 +17,10 @@ class refugios extends Model
     	return $this->hasmany(encabezado::class);
     }
 
+    public function familias(){
+        return $this->hasmany(familias::class);
+    }
+
     public function recursos(){
     	return $this->belongsto(recursos::class);
     }

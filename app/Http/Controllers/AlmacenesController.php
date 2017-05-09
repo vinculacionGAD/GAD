@@ -14,11 +14,12 @@ use DB;
 class AlmacenesController extends Controller
 {
     public function listing(){
-        $almacenes = almacenes::all();
+        $almacenes = DB::table('almacenes')
+                        ->join('recursos', 'recursos.id', '=', 'almacenes.recurso_id')
+                        ->select('recursos.*', 'almacenes.id as almacen_id', 
+                        'almacenes.observacion')->get();
 
-        return response()->json(
-            $almacenes->toArray()    
-        );
+        return $almacenes;
     }
     /**
      * Display a listing of the resource.
@@ -51,10 +52,8 @@ class AlmacenesController extends Controller
     public function store(Request $request)
     {
         
-            recursos::create($request->all());
+        recursos::create($request->all());
             
-        
-
         $idRec = "";
         $idRecurso = DB::select("SELECT MAX(id) as idRecu FROM recursos");
         foreach ($idRecurso as $idRe ) {
@@ -65,6 +64,7 @@ class AlmacenesController extends Controller
             'recurso_id'=>$idRec,
             'observacion'=>$request['observacion'],
             ]);
+        
         return response()->json([
             "mensaje" => "creado"
             ]);
@@ -89,7 +89,16 @@ class AlmacenesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $almacen = DB::table('almacenes')
+                        ->join('recursos', 'recursos.id', '=', 'almacenes.recurso_id')
+                        ->select('recursos.*', 'almacenes.id as almacen_id', 
+                        'almacenes.observacion')
+                        ->where('almacenes.recurso_id', '=', $id)
+                        ->get();
+
+        return response()->json(
+            $almacen->toArray()
+        );
     }
 
     /**

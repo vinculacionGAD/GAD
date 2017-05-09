@@ -19,9 +19,11 @@ class CreateFamiliasTable extends Migration
             $table->integer('persona_id')->unsigned();                
             $table->integer('vivienda_id')->unsigned();                
             $table->integer('sector_id')->unsigned();                
-            $table->foreign('persona_id')->references('id')->on('personas'); 
+            $table->string('jefe_hogar',1);  
+            $table->foreign('persona_hogar_id')->references('id')->on('personas_hogares'); 
             $table->foreign('vivienda_id')->references('id')->on('viviendas'); 
             $table->foreign('sector_id')->references('id')->on('sectores'); 
+            $table->foreign('refugio_id')->references('id')->on('refugios'); 
         });
     }
 

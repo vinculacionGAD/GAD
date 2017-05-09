@@ -2,7 +2,7 @@
 
 @section('content')	
 	@include('alerts.success')
-	
+	@include('personales.modal')	
 	<table class="table">
 		<thead>
 			<th>Nombre</th>

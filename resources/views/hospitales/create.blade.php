@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-	{!!Form::open(['class'=>'form-horizontal'])!!}
+	{!!Form::open(['class'=>'form-horizontal', 'id'=>'frmHospitales', 'method'=>'POST'])!!}
 
 		@include('alerts.success')
 

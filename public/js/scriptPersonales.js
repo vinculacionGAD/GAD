@@ -15,7 +15,7 @@ function Carga(){
 }
 
 function Mostrar(btn){
-	var route = "http://127.0.0.1:8000/personales/"+btn.value+"/edit"
+	var route = "/personales/"+btn.value+"/edit"
 
 	$.get(route, function(res){
 		$("#fecha_inicio").val(res.fecha_inicio);

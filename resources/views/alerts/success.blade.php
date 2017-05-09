@@ -49,6 +49,40 @@
 </div>
 <!--Fin Mensajes CRUD Departamento-->
 
+<!--Mensajes CRUD Familia-->
+<div id="msj-insert-familia" class="alert alert-success alert-dismissible" role="alert" style="display: none">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>Familia Agregada Correctamente</strong>
+</div>
+
+<div id="msj-update-familia" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>Familia actualizada correctamente!</strong>
+</div>
+
+<div id="msj-delete-familia" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>Familia eliminada correctamente!</strong>
+</div>
+<!--Fin Mensajes CRUD Familia-->
+
+<!--Mensajes CRUD FamiliaHogares-->
+<div id="msj-insert-miembrofamilia" class="alert alert-success alert-dismissible" role="alert" style="display: none">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>Miembro de Familia Agregado Correctamente</strong>
+</div>
+
+<div id="msj-update-miembrofamilia" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>Miembro de Familia actualizado correctamente!</strong>
+</div>
+
+<div id="msj-delete-miembrofamilia" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>Miembro de Familia eliminado correctamente!</strong>
+</div>
+<!--Fin Mensajes CRUD FamiliaHogares-->
+
 
 <!--Mensajes CRUD Hospitales-->
 <div id="msj-insert-hospital" class="alert alert-success alert-dismissible" role="alert" style="display: none">

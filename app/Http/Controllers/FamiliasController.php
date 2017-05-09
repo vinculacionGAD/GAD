@@ -11,9 +11,11 @@ use App\familias;
 use App\sectores;
 use App\viviendas;
 use App\refugios;
+use App\personas_hogares;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class FamiliasController extends Controller
 {
@@ -59,7 +61,49 @@ class FamiliasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        salud::create($request->all());
+
+        viviendas::create($request->all());
+
+        $idSal = "";
+        $idSalud = DB::select("SELECT MAX(id) as idSalu FROM saluds");
+        foreach ($idSalud as $idSa ) {
+            $idSal=$idSa->idSalu;
+        }
+
+        personas_hogares::create([
+            'salud_id'=>$idSal,
+            'parentesco'=>$request['parentesco'],
+            'persona_id'=>$request['persona_id'],
+            'trabaja_si_no'=>$request['trabaja_si_no'],
+            'actividad_laboral_id'=>$request['actividad_laboral_id'],
+            ]);
+
+        $idViv = "";
+        $idVivienda = DB::select("SELECT MAX(id) as idVivi FROM viviendas");
+        foreach ($idVivienda as $idVi ) {
+            $idViv=$idVi->idVivi;
+        }
+
+        $idPer = "";
+        $idPersonasHogares = DB::select("SELECT MAX(id) as idPers FROM personas_hogares");
+        foreach ($idPersonasHogares as $idPe ) {
+            $idPer=$idPe->idPers;
+        }
+
+        $idJefe = "S";
+
+        familias::create([
+            'persona_hogar_id'=>$idPer,
+            'vivienda_id'=>$idViv,
+            'sector_id'=>$request['sector_id'],
+            'refugio_id'=>$request['refugio_id'],
+            'jefe_hogar'=>$idJefe,
+            ]);
+
+        return response()->json([
+            "mensaje" => "creado"
+            ]);
     }
 
     /**

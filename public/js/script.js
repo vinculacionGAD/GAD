@@ -81,6 +81,87 @@ $("#registroDepartamento").click(function(){
 	});
 });
 
+$("#registroFamilia").click(function(){
+	var datos = new FormData($("#frmRegistraFamilia")[0]);
+	var route = "/familias"
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'POST',
+		dataType: 'json',
+		contentType: false,
+		processData: false,	
+		data: datos,
+
+		success:function(){
+			$("#msj-insert-familia").fadeIn();
+		}/*,
+		error:function(msj){
+			//console.log(msj.responseJSON.comunidad);
+			$("#msj-comunidad").html(msj.responseJSON.comunidad);
+			$("#msj-observacion").html(msj.responseJSON.observacion);
+			$("#msj-error-comunidad").fadeIn();
+			$("#msj-error-observacion").fadeIn();
+		}*/
+	});
+});
+
+$("#registroPersonaHogar").click(function(){
+	var datos = new FormData($("#frmRegistraFamiliaHogares")[0]);
+	var route = "/personasHogares"
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'POST',
+		dataType: 'json',
+		contentType: false,
+		processData: false,		
+		data:datos,
+
+		success:function(){
+			$("#msj-insert-miembrofamilia").fadeIn();
+		}/*,
+		error:function(msj){
+			//console.log(msj.responseJSON.comunidad);
+			$("#msj-comunidad").html(msj.responseJSON.comunidad);
+			$("#msj-observacion").html(msj.responseJSON.observacion);
+			$("#msj-error-comunidad").fadeIn();
+			$("#msj-error-observacion").fadeIn();
+		}*/
+	});
+});
+
+$("#registroHospital").click(function(){
+	var datos = new FormData($("#frmHospitales")[0]);
+	var route = "/hospitales"
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'POST',
+		dataType: 'json',
+		contentType: false,
+		processData: false,	
+		data: datos,
+
+		success:function(){
+			$("#msj-insert-hospital").fadeIn();
+		}/*,
+		error:function(msj){
+			//console.log(msj.responseJSON.comunidad);
+			$("#msj-comunidad").html(msj.responseJSON.comunidad);
+			$("#msj-observacion").html(msj.responseJSON.observacion);
+			$("#msj-error-comunidad").fadeIn();
+			$("#msj-error-observacion").fadeIn();
+		}*/
+	});
+});
+
 $("#registroOrganizacion").click(function(){
 	var nombre = $("#nombre").val();
 	var acronimo = $("#acronimo").val();
@@ -325,6 +406,33 @@ $("#registroProyecto").click(function(){
 
 		success:function(){
 			$("#msj-insert-proyecto").fadeIn();
+		}/*,
+		error:function(msj){
+			//console.log(msj.responseJSON.comunidad);
+			$("#msj-comunidad").html(msj.responseJSON.comunidad);
+			$("#msj-observacion").html(msj.responseJSON.observacion);
+			$("#msj-error-comunidad").fadeIn();
+			$("#msj-error-observacion").fadeIn();
+		}*/
+	});
+});
+
+$("#registroRefugio").click(function(){
+	var datos = new FormData($("#frmRefugios")[0]);
+	var route = "/refugios"
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'POST',
+		dataType: 'json',
+		contentType: false,
+		processData: false,	
+		data: datos,
+
+		success:function(){
+			$("#msj-insert-refugio").fadeIn();
 		}/*,
 		error:function(msj){
 			//console.log(msj.responseJSON.comunidad);

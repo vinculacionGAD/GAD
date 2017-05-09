@@ -9,16 +9,21 @@ use App\tipos_instalaciones;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class RefugiosController extends Controller
 {
 
     public function listing(){
-        $refugios = refugios::all();
 
-        return response()->json(
-            $refugios->toArray()    
-        );
+        $refugios = DB::table('refugios')
+                        ->join('recursos', 'recursos.id', '=', 'refugios.recurso_id')
+                        ->select('recursos.*', 'refugios.id as refugio_id',
+                            'refugios.nombre_contacto', 'refugios.telefono_contacto',
+                            'refugios.capacidad_maxima', 'refugios.poblacion',
+                            'refugios.estado', 'refugios.observacion')->get();
+
+        return $refugios;
     }
     /**
      * Display a listing of the resource.
@@ -50,7 +55,26 @@ class RefugiosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        recursos::create($request->all());
+            
+        $idRec = "";
+        $idRecurso = DB::select("SELECT MAX(id) as idRecu FROM recursos");
+        foreach ($idRecurso as $idRe ) {
+            $idRec=$idRe->idRecu;
+        }
+
+        refugios::create([
+            'recurso_id'=>$idRec,
+            'nombre_contacto'=>$request['nombre_contacto'],
+            'telefono_contacto'=>$request['telefono_contacto'],
+            'capacidad_maxima'=>$request['capacidad_maxima'],
+            'poblacion'=>$request['poblacion'],
+            'estado'=>$request['estado'],
+            'observacion'=>$request['observacion'],
+            ]);
+        return response()->json([
+            "mensaje" => "creado"
+            ]);
     }
 
     /**
@@ -72,7 +96,18 @@ class RefugiosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $refugio = DB::table('refugios')
+                        ->join('recursos', 'recursos.id', '=', 'refugios.recurso_id')
+                        ->select('recursos.*', 'refugios.id as refugio_id',
+                            'refugios.nombre_contacto', 'refugios.telefono_contacto',
+                            'refugios.capacidad_maxima', 'refugios.poblacion',
+                            'refugios.estado', 'refugios.observacion')
+                        ->where('refugios.recurso_id', '=', $id)
+                        ->get();
+
+        return response()->json(
+            $refugio->toArray()
+        );
     }
 
     /**

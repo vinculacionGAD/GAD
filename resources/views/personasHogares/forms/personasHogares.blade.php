@@ -12,8 +12,8 @@
 	</div>
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('familia_id','Familia:')!!}
-			{!!Form::select('familia_id', $familias, null, ['id'=>'familia_id', 'class'=>'form-control'])!!}
+			{!!Form::label('persona_hogar_id','Familia:')!!}
+			{!!Form::select('persona_hogar_id', $familias, null, ['id'=>'persona_hogar_id', 'class'=>'form-control'])!!}
 		</div>
 	</div>
 	<div class="form-group">

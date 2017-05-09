@@ -11,10 +11,11 @@ use App\familias;
 use App\sectores;
 use App\viviendas;
 use App\refugios;
+use App\personas_hogares;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
-
+use DB;
 class PersonasHogaresController extends Controller
 {
     
@@ -47,7 +48,8 @@ class PersonasHogaresController extends Controller
         $discapacidades = discapacidades::pluck('tipo_discapacidad', 'id');
         $refugios = refugios::pluck('nombre_contacto', 'id');
         $sectores = sectores::pluck('sector', 'id');
-        $familias = familias::pluck('id', 'id');
+        //$familias = familias::pluck('id', 'id');
+        $familias = DB::table('familias')->where('jefe_hogar', 'S')->pluck('id');
 
         return view('personasHogares.create',compact('personas','actividades_laborales','discapacidades','refugios','sectores','familias'));
     }
@@ -60,7 +62,43 @@ class PersonasHogaresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      salud::create($request->all());
+
+      $idSal = "";
+        $idSalud = DB::select("SELECT MAX(id) as idSalu FROM saluds");
+        foreach ($idSalud as $idSa ) {
+            $idSal=$idSa->idSalu;
+        }
+
+      personas_hogares::create([
+        'salud_id'=>$idSal,
+            'parentesco'=>$request['parentesco'],
+            'persona_id'=>$request['persona_id'],
+            'trabaja_si_no'=>$request['trabaja_si_no'],
+            'actividad_laboral_id'=>$request['actividad_laboral_id'],
+        ]); 
+
+ 
+        $idJefe = "N";
+
+        $idViv = "";
+        $idVivienda = DB::select("SELECT vivienda_id as idVivi FROM familias")->where('familias.id', $request['persona_hogar_id'])->first();
+
+        foreach ($idVivienda as $idVi ) {
+            $idViv=$idVi->idVivi;
+        }
+
+         familias::create([
+            'persona_hogar_id'=>$request['persona_hogar_id'],
+            'vivienda_id'=>$idVivienda,
+            'sector_id'=>$request['sector_id'],
+            'refugio_id'=>$request['refugio_id'],
+            'jefe_hogar'=>$idJefe,
+            ]);
+
+        return response()->json([
+            "mensaje" => "creado"
+            ]);
     }
 
     /**

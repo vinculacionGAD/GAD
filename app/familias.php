@@ -10,7 +10,7 @@ class familias extends Model
     protected $table = "familias";
 
     protected $fillable = [
-		'persona_id', 'vivienda_id', 'sector_id'
+		'persona_hogar_id', 'vivienda_id', 'sector_id', 'refugio_id', 'jefe_hogar'
 	];
 
 	public function personasHogares(){
@@ -23,5 +23,9 @@ class familias extends Model
 
     public function viviendas(){
     	return $this->belongsto(viviendas::class);
+    }
+
+    public function refugios(){
+        return $this->belongsto(refugios::class);
     }
 }

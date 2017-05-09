@@ -1,7 +1,7 @@
 
 @extends('layouts.app')
 @section('content')
-	{!!Form::open(['class'=>'form-horizontal'])!!}
+	{!!Form::open(['class'=>'form-horizontal', 'id'=>'frmRegistraFamilia','method'=>'POST'])!!}
 
 		@include('alerts.success')
 

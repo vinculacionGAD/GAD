@@ -17,7 +17,7 @@ class PersonalesController extends Controller
 
     public function listing(){
         //$personales = personales::all();
-         $personales = DB::select("SELECT concat(personas.nombres, ' ',personas.apellido_paterno, ' ', personas.apellido_paterno) AS persona, personales.fecha_inicio, personales.fecha_fin, departamentos.departamento FROM personas, personales, departamentos WHERE personales.persona_id = personas.id AND personales.departamento_id = departamentos.id");
+        $personales = DB::select("SELECT concat(personas.nombres, ' ',personas.apellido_paterno, ' ', personas.apellido_paterno) AS persona, personales.id, personales.fecha_inicio, personales.fecha_fin, departamentos.departamento FROM personas, personales, departamentos WHERE personales.persona_id = personas.id AND personales.departamento_id = departamentos.id");
 
         return $personales;    
        
@@ -29,8 +29,7 @@ class PersonalesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-       
+    {       
 
        $departamentos = departamentos::pluck('departamento', 'id');
        $personas = personas::pluck('nombres', 'id');
