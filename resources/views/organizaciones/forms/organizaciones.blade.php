@@ -14,8 +14,8 @@
 
 	<div class="form-group">
 		<div class="col-lg-12 col-md-12 col-sm-12">
-			{!!Form::label('TipoOrganizacion','Tipo de Organización:')!!}
-			{!!Form::text('TipoOrganizacion',null,['id'=>'tipo_organizacion','class'=>'form-control', 'placeholder'=>'Ingresa el tipo de organización'])!!}
+			{!!Form::label('tipo_organizacion','Tipo de Organización:')!!}
+			{!!Form::text('tipo_organizacion',null,['id'=>'tipo_organizacion','class'=>'form-control', 'placeholder'=>'Ingresa el tipo de organización'])!!}
 		</div>		
 	</div>
 

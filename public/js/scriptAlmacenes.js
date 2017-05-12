@@ -8,19 +8,26 @@ function Carga(){
 
 	$("#datos").empty();
 	$.get(route, function(res){
-		$(res).each(function(key, value){						
-			tablaDatos.append("<tr><td>"+value.nombre_recurso+"</td><td>"+value.direccion+"</td><td>"+value.observacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
+		$(res).each(function(key, value){	
+			var codigo = '"'+value.id+'"';					
+			tablaDatos.append("<tr><td>"+value.nombre_recurso+"</td><td>"+value.direccion+"</td><td>"+value.observacion+"</td><td><button value="+value.id+" OnClick='Mostrar("+codigo+");' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
 		});
 	});
 }
 
 function Mostrar(btn){
-	var route = "/almacenes/"+btn.value+"/edit"
+	var route = "/almacenes/"+btn+"/edit"	
 	$.get(route, function(res){
-		$("#nombre_recurso").val(res.nombre_recurso);
-		$("#direccion").val(res.direccion);		
-		$("#observacion").val(res.observacion);		
-		$("#id").val(res.id);
+		$(res).each(function(key, value){
+			$("#nombre_recurso").val(value.nombre_recurso);
+			$("#direccion").val(value.direccion);		
+			$("#telefono").val(value.telefono);
+			$("#correo").val(value.correo);
+			$("#observacion").val(value.observacion);		
+			$("#latitud").val(value.latitud);
+			$("#longitud").val(value.longitud);
+			$("#id").val(value.id);
+		});			
 	});
 }
 
@@ -41,14 +48,15 @@ function Eliminar(btn){
 }
 
 $("#actualizarAlmacen").click(function(){
-	var datos = new FormData($("#frmEditaAlmacen")[0]);
+	var value = $("#id").val();
+	var datos = new FormData($("#frmEditaAlmacenes")[0]);
 	var route = "/almacenes/"+value+"";
 	var token = $("#token").val();
 
 	$.ajax({
 		url: route,
 		headers: {'X-CSRF-TOKEN': token},
-		type: 'PUT',
+		type: 'POST',
 		dataType: 'json',
 		contentType: false,
 		processData: false,	

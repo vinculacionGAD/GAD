@@ -8,6 +8,9 @@ use App\paises;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use Storage;
+use DB;
+use Hash;
 
 
 class OrganizacionesController extends Controller
@@ -50,10 +53,33 @@ class OrganizacionesController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->ajax()){
-            organizaciones::create($request->all());
+        $archivo = $request->file('logotipo');
+        $nombre_original = $archivo->getClientOriginalName();
+        $extension = $archivo->getClientOriginalExtension();
+        $nuevo_nombre = "logotipo".$nombre_original;
+        $r1 = Storage::disk('local')->put($nuevo_nombre, \File::get($archivo));
+        $ruta_imagen = "logotipo/".$nuevo_nombre; 
+        if($r1){
+            organizaciones::create([
+                    'nombre' => $request->input("nombre"),
+                    'acronimo' => $request->input("acronimo"),
+                    'tipo_organizacion' => $request->input("tipo_organizacion"),
+                    'region' => $request->input("region"),
+                    'telefono' => $request->input("telefono"),
+                    'sitio_web' => $request->input("sitio_web"),
+                    'anio' => $request->input("anio"),
+                    'twitter' => $request->input("twitter"),
+                    'observacion' => $request->input("observacion"),
+                    'pais_id' => $request->input("pais_id"),
+                    'logotipo' => $ruta_imagen,
+                    ]
+                );
             return response()->json([
                 "mensaje" => "creado"
+                ]);
+        }else{
+            return response()->json([
+                "mensaje" => "error imagen"
                 ]);
         }
     }

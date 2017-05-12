@@ -163,17 +163,7 @@ $("#registroHospital").click(function(){
 });
 
 $("#registroOrganizacion").click(function(){
-	var nombre = $("#nombre").val();
-	var acronimo = $("#acronimo").val();
-	var tipo_organizacion = $("#tipo_organizacion").val();
-	var region = $("#region").val();
-	var telefono = $("#telefono").val();
-	var sitio_web = $("#sitio_web").val();
-	var anio = $("#anio").val();
-	var twitter = $("#twitter").val();
-	var logotipo = $("#logotipo").val();	
-	var observacion = $("#observacion").val();	
-	var pais_id = $("#pais_id").val();
+	var datos = new FormData($("#frmOrganizaciones")[0]);	
 	var route = "http://127.0.0.1:8000/organizaciones"
 	var token = $("#token").val();
 
@@ -181,20 +171,10 @@ $("#registroOrganizacion").click(function(){
 		url: route,
 		headers: {'X-CSRF-TOKEN': token},
 		type: 'POST',
-		dataType: 'json',	
-		data:{
-			nombre: nombre, 
-			acronimo: acronimo, 
-			tipo_organizacion: tipo_organizacion, 
-			region: region, 
-			telefono: telefono, 
-			sitio_web: sitio_web, 
-			anio: anio, 
-			twitter: twitter, 
-			logotipo: logotipo, 
-			observacion: observacion,
-			pais_id: pais_id
-		},
+		dataType: 'json',
+		contentType: false,
+		processData: false,	
+		data: datos,
 
 		success:function(){
 			$("#msj-insert-organizacion").fadeIn();

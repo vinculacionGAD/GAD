@@ -110,7 +110,31 @@ class AlmacenesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+               
+    }
+
+    public function modificar(Request $request, $id)
+    {
+        $recursos = DB::update("update recursos SET nombre_recurso = ?,
+            direccion = ?, telefono = ?, latitud = ?, longitud = ?, 
+            correo = ?, tipo_instalacion_id = ?
+         WHERE id = ?", [$request->input('nombre_recurso'), $request->input('direccion'),
+         $request->input('telefono'), $request->input('latirud'), $request->input('longitud'),
+         $request->input('correo'), $request->input('tipo_instalacion_id'), $id]);
+
+        $almacenes = DB::update("update almacenes SET observacion = ? WHERE recurso_id = ?", [$request->input('observacion'), $id]);
+
+        if($recursos == 1 && $almacenes == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }
+
+        
     }
 
     /**

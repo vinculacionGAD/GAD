@@ -14,6 +14,7 @@
 //Inicio de gestion de almacenes
 Route::resource('almacenes','AlmacenesController');
 Route::get('almacen','AlmacenesController@listing');
+Route::post('almacenes/{id}','AlmacenesController@modificar');
 //fin de gestion de almacenes
 
 //Inicio de gestion de comunidades
