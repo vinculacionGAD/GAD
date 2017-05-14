@@ -10,6 +10,7 @@ use App\organizaciones;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class ProyectosController extends Controller
 {
@@ -99,13 +100,22 @@ class ProyectosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $proyecto = proyectos::find($id);
-        $proyecto->fill($request->all());
-        $proyecto->save();
+        //
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id) 
+    {
+        $proyectos = DB::update("update proyectos SET proyecto = ?, status = ?, fecha_inicio = ?, fecha_fin = ?, presupuesto = ?, moneda = ?, observacion = ?, organizacion_id = ?, programa_id = ? WHERE id = ?", [$request->input('proyecto'), $request->input('status'), $request->input('fecha_inicio'), $request->input('fecha_fin'), $request->input('presupuesto'), $request->input('moneda'), $request->input('observacion'), $request->input('organizacion_id'), $request->input('programa_id'), $id]);
+
+        if($proyectos == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

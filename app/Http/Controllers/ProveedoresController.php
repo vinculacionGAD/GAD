@@ -8,15 +8,16 @@ use App\personas;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class ProveedoresController extends Controller
 {
     public function listing(){
-        $proveedores = proveedores::all();
+        $proveedores = DB::table('proveedores')
+                        ->join('personas', 'personas.id', '=', 'proveedores.persona_id')
+                        ->select('proveedores.*', 'personas.nombres', 'personas.apellido_paterno', 'personas.apellido_materno')->get();
 
-        return response()->json(
-            $proveedores->toArray()    
-        );
+        return $proveedores;
     }
     /**
      * Display a listing of the resource.
@@ -91,13 +92,22 @@ class ProveedoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $proveedor = proveedores::find($id);
-        $proveedor->fill($request->all());
-        $proveedor->save();
+       //
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id) 
+    {
+        $proveedores = DB::update("update proveedores SET persona_id = ? WHERE id = ?", [$request->input('persona_id'), $id]);
+
+        if($proveedores == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

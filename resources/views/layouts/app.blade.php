@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SICGOM - UTM</title>
+    <title>SGDN - GAD SUCRE</title>
 
     <!-- Bootstrap -->
     {!!Html::style('plugins/bootstrap/dist/css/bootstrap.min.css')!!}
@@ -28,7 +28,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><span>SICGOM - UTM</span></a>
+              <a href="index.html" class="site_title"><span>SGDN - GAD SUCRE</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -40,7 +40,7 @@
               </div>
               <div class="profile_info">
                 <span>Bienvenido,</span>
-                <h2>Departamento de Planeacion</h2>
+                <h2>Gestión de Desastres Naturales</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -87,10 +87,10 @@
                     <li>
                       <a href="javascript:;">
                         <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
+                        <span>Configuración</span>
                       </a>
                     </li>
-                    <li><a href="javascript:;">Help</a></li>
+                    <li><a href="javascript:;">Ayuda</a></li>
                     <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
                   </ul>
                 </li>
@@ -174,7 +174,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Departamento de Planeacion <a href="http://utm.edu.ec" target="_black">UTM</a> - <a href="http://fci.utm.edu.ec" target="_black">FCI</a>
+            Gestión de Desastres Naturales <a href="http://utm.edu.ec" target="_black">GAD SUCRE</a> <a href="http://fci.utm.edu.ec" target="_black"></a>
           </div>
           <div class="clearfix"></div>
         </footer>

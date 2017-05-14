@@ -121,6 +121,26 @@ class HospitalesController extends Controller
         //
     }
 
+    public function modificar(Request $request, $id)
+    {
+        $recursos = DB::update("update recursos SET nombre_recurso = ?,
+            direccion = ?, telefono = ?, correo = ?, tipo_instalacion_id = ?
+         WHERE id = ?", [$request->input('nombre_recurso'), $request->input('direccion'),
+         $request->input('telefono'), $request->input('correo'), $request->input('tipo_instalacion_id'), $id]);
+
+        $hospitales = DB::update("update hospitales SET n_medicos = ?, n_enfermeros = ?, observacion = ?, n_quirofano = ?, n_camas = ? WHERE recurso_id = ?", [$request->input('n_medicos'), $request->input('n_enfermeros'), $request->input('observacion'), $request->input('n_quirofano'), $request->input('n_camas'), $id]);
+
+        if($recursos == 1 && $hospitales == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
+    }
+
     /**
      * Remove the specified resource from storage.
      *

@@ -10,6 +10,7 @@ use App\sectores;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class SectoresController extends Controller
 {
@@ -96,13 +97,22 @@ class SectoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $sector = sectores::find($id);
-        $sector->fill($request->all());
-        $sector->save();
+        //
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id) 
+    {
+        $sectores = DB::update("update sectores SET sector = ?, abreviatura = ?, ubicacion = ?, observacion = ?, comunidad_id = ? WHERE id = ?", [$request->input('sector'), $request->input('abreviatura'), $request->input('ubicacion'), $request->input('observacion'), $request->input('comunidad_id'), $id]);
+
+        if($sectores == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

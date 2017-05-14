@@ -16,8 +16,12 @@ class PersonalesController extends Controller
 {
 
     public function listing(){
-        //$personales = personales::all();
-        $personales = DB::select("SELECT concat(personas.nombres, ' ',personas.apellido_paterno, ' ', personas.apellido_paterno) AS persona, personales.id, personales.fecha_inicio, personales.fecha_fin, departamentos.departamento FROM personas, personales, departamentos WHERE personales.persona_id = personas.id AND personales.departamento_id = departamentos.id");
+
+        $personales = DB::table('personales')
+                        ->join('personas', 'personas.id', '=', 'personales.persona_id')
+                        ->join('departamentos', 'departamentos.id', '=', 'personales.departamento_id')
+                        ->select('personales.*', 'departamentos.departamento', 
+                        'personas.nombres', 'personas.apellido_paterno', 'personas.apellido_materno')->get();
 
         return $personales;    
        
@@ -46,6 +50,8 @@ class PersonalesController extends Controller
      */
     public function create()
     {
+        /*$nombre_persona = DB::query("SELECT CONCAT(nombres, ' ', apellido_paterno, ' ', apellido_materno) AS persona FROM personas");*/
+
         $departamentos = departamentos::pluck('departamento', 'id');
         $personas = personas::pluck('nombres', 'id');
 
@@ -103,13 +109,22 @@ class PersonalesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $personal = personales::find($id);
-        $personal->fill($request->all());
-        $personal->save();
+        //   
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);    
+    public function modificar(Request $request, $id) 
+    {
+        $personales = DB::update("update personales SET fecha_inicio = ?, fecha_fin = ?, persona_id = ?, departamento_id = ? WHERE id = ?", [$request->input('fecha_inicio'), $request->input('fecha_fin'), $request->input('persona_id'), $request->input('departamento_id'), $id]);
+
+        if($personales == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

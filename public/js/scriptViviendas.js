@@ -4,21 +4,21 @@ $(document).ready(function(){
 
 function Carga(){
 	var tablaDatos = $("#datos");
-	var route = "http://127.0.0.1:8000/vivienda"
+	var route = "/vivienda"
 
 	$("#datos").empty();
 	$.get(route, function(res){
 		$(res).each(function(key, value){
-			tablaDatos.append("<tr><td>"+value.tipo_construccion+"</td><td>"+value.anios_vida+"</td><td>"+value.ubicacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
+			tablaDatos.append("<tr><td>"+value.tipo_construccion+"</td><td>"+value.anios_vida+"</td><td>"+value.ubicacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr>");
+			//tablaDatos.append("<tr><td>"+value.tipo_construccion+"</td><td>"+value.anios_vida+"</td><td>"+value.ubicacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
 		});
 	});
 }
 
 function Mostrar(btn){
-	var route = "http://127.0.0.1:8000/viviendas/"+btn.value+"/edit"
+	var route = "/viviendas/"+btn.value+"/edit"
 
 	$.get(route, function(res){
-		//console.log(res.tipo_construccion);
 		$("#tipo_construccion").val(res.tipo_construccion);
 		$("#anios_vida").val(res.anios_vida);
 		$("#ubicacion").val(res.ubicacion);
@@ -27,7 +27,7 @@ function Mostrar(btn){
 }
 
 function Eliminar(btn){
-	var route = "http://127.0.0.1:8000/viviendas/"+btn.value+"";
+	var route = "/viviendas/"+btn.value+"";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -44,18 +44,19 @@ function Eliminar(btn){
 
 $("#actualizarVivienda").click(function(){
 	var value = $("#id").val();
-	var tipo_construccion = $("#tipo_construccion").val();
-	var anios_vida = $("#anios_vida").val();
-	var ubicacion = $("#ubicacion").val();
-	var route = "http://127.0.0.1:8000/viviendas/"+value+"";
+	var datos = new FormData($("#frmEditarViviendas")[0]);
+	var route = "/viviendas/"+value+"";
 	var token = $("#token").val();
 
 	$.ajax({
 		url: route,
 		headers: {'X-CSRF-TOKEN': token},
-		type: 'PUT',
+		type: 'POST',
 		dataType: 'json',
-		data:{tipo_construccion: tipo_construccion, anios_vida: anios_vida, ubicacion:ubicacion},
+		contentType: false,
+		processData: false,	
+		data: datos,
+
 		success:  function(){
 			Carga();
 			$("#myModal").modal('toggle');

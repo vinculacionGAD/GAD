@@ -3,9 +3,9 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Proyectos <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-bar-chart-o"></i> Proyectos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/app/proyectos" id='home'>Ingresar Proyectos</a></li>
+                      <li><a href="/proyectos/create" id='home'>Ingresar Proyectos</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Usuarios <span class="fa fa-chevron-down"></span></a>

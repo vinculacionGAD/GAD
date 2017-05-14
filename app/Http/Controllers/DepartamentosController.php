@@ -7,6 +7,7 @@ use App\departamentos;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class DepartamentosController extends Controller
 {
@@ -90,13 +91,22 @@ class DepartamentosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $departamento = departamentos::find($id);
-        $departamento->fill($request->all());
-        $departamento->save();
+        
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id)
+    {
+        $departamentos = DB::update("update departamentos SET departamento = ?, observacion = ? WHERE id = ?", [$request->input('departamento'), $request->input('observacion'), $id]);
+
+        if($departamentos == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

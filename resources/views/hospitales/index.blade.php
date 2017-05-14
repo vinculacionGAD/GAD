@@ -1,8 +1,19 @@
 @extends('layouts.app')
 
 @section('content')	
-	@include('alerts.success')
+
+	<div id="msj-update-hospital" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>Hospital actualizado correctamente!</strong>
+	</div>
+
+	<div id="msj-delete-hospital" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>Hospital eliminado correctamente!</strong>
+	</div>
+
 	@include('hospitales.modal')
+
 	<table class="table">
 		<thead>
 			<th>Nombre del Hospital</th>
@@ -11,6 +22,7 @@
 			<th>Número de Médicos</th>
 			<th>Número de Enfermeros</th>
 			<th>Número de Quirófanos</th>
+			<th></th>
 		</thead>
 		<tbody id="datos"></tbody>
 

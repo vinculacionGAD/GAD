@@ -4,18 +4,19 @@ $(document).ready(function(){
 
 function Carga(){
 	var tablaDatos = $("#datos");
-	var route = "http://127.0.0.1:8000/programa"
+	var route = "/programa"
 
 	$("#datos").empty();
 	$.get(route, function(res){
 		$(res).each(function(key, value){
-			tablaDatos.append("<tr><td>"+value.programa+"</td><td>"+value.observacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
+			tablaDatos.append("<tr><td>"+value.programa+"</td><td>"+value.observacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr>");
+			//tablaDatos.append("<tr><td>"+value.programa+"</td><td>"+value.observacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
 		});
 	});
 }
 
 function Mostrar(btn){
-	var route = "http://127.0.0.1:8000/programas/"+btn.value+"/edit"
+	var route = "/programas/"+btn.value+"/edit"
 
 	$.get(route, function(res){
 		$("#programa").val(res.programa);
@@ -25,7 +26,7 @@ function Mostrar(btn){
 }
 
 function Eliminar(btn){
-	var route = "http://127.0.0.1:8000/programas/"+btn.value+"";
+	var route = "/programas/"+btn.value+"";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -42,20 +43,19 @@ function Eliminar(btn){
 
 $("#actualizarPrograma").click(function(){
 	var value = $("#id").val();
-	var programa = $("#programa").val();
-	var observacion = $("#observacion").val();
-	var route = "http://127.0.0.1:8000/programas/"+value+"";
+	var datos = new FormData($("#frmEditarProgramas")[0]);
+	var route = "/programas/"+value+"";
 	var token = $("#token").val();
 
 	$.ajax({
 		url: route,
 		headers: {'X-CSRF-TOKEN': token},
-		type: 'PUT',
+		type: 'POST',
 		dataType: 'json',
-		data:{
-			programa: programa, 
-			observacion: observacion
-		},
+		contentType: false,
+		processData: false,	
+		data: datos,
+		
 		success:  function(){
 			Carga();
 			$("#myModal").modal('toggle');

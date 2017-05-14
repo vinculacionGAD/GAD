@@ -8,6 +8,7 @@ use App\personas;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class PersonasController extends Controller
 {
@@ -91,13 +92,22 @@ class PersonasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $persona = personas::find($id);
-        $persona->fill($request->all());
-        $persona->save();
+        //
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id) 
+    {
+        $personas = DB::update("update personas SET doc_identificacion = ?, nombres = ?, apellido_paterno = ?, apellido_materno = ?, fecha_nacimiento = ?, sexo = ?, correo_electronico = ?, telefono_movil = ?, estado_civil = ? WHERE id = ?", [$request->input('doc_identificacion'), $request->input('nombres'), $request->input('apellido_paterno'), $request->input('apellido_materno'), $request->input('fecha_nacimiento'), $request->input('sexo'), $request->input('correo_electronico'), $request->input('telefono_movil'), $request->input('estado_civil'), $id]);
+
+        if($personas == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

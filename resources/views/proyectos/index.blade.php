@@ -1,7 +1,17 @@
 @extends('layouts.app')
 
 @section('content')	
-	@include('alerts.success')
+
+	<div id="msj-update-proyecto" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>Proyecto actualizado correctamente!</strong>
+	</div>
+
+	<div id="msj-delete-proyecto" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>Proyecto eliminado correctamente!</strong>
+	</div>
+	
 	@include('proyectos.modal')	
 	<table class="table">
 		<thead>
@@ -10,7 +20,7 @@
 			<th>Fecha Fin</th>
 			<th>Presupuesto</th>
 			<th>Moneda</th>
-			<th>Operaciones</th>
+			<th></th>
 		</thead>
 		<tbody id="datos"></tbody>	
 	</table>	

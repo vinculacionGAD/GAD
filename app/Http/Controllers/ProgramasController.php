@@ -7,6 +7,7 @@ use App\programas;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class ProgramasController extends Controller
 {
@@ -90,13 +91,22 @@ class ProgramasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $programa = programas::find($id);
-        $programa->fill($request->all());
-        $programa->save();
+        //
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id) 
+    {
+        $programas = DB::update("update programas SET programa = ?, observacion = ? WHERE id = ?", [$request->input('programa'), $request->input('observacion'), $id]);
+
+        if($programas == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

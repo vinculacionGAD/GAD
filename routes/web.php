@@ -20,71 +20,85 @@ Route::post('almacenes/{id}','AlmacenesController@modificar');
 //Inicio de gestion de comunidades
 Route::resource('comunidades','ComunidadesController');
 Route::get('comunidad','ComunidadesController@listing');
+Route::post('comunidades/{id}','ComunidadesController@modificar');
 //fin de gestion de comunidades
 
 //Inicio de gestion de departamentos
 Route::resource('departamentos','DepartamentosController');
 Route::get('departamento','DepartamentosController@listing');
+Route::post('departamentos/{id}','DepartamentosController@modificar');
 //fin de gestion de departamentos
 
 //Inicio de gestion de familias
 Route::resource('familias','FamiliasController');
 Route::get('familia','FamiliasController@listing');
+Route::post('familias/{id}','FamiliasController@modificar');
 //fin de gestion de familias
 
 //Inicio de gestion de hospitales
 Route::resource('hospitales','HospitalesController');
 Route::get('hospital','HospitalesController@listing');
+Route::post('hospitales/{id}','HospitalesController@modificar');
 //fin de gestion de hospitales
 
 //Inicio de gestion de organizaciones
 Route::resource('organizaciones','OrganizacionesController');
 Route::get('organizacion','OrganizacionesController@listing');
+Route::post('organizaciones/{id}','OrganizacionesController@modificar');
 //fin de gestion de organizaciones
 
 //inicio Gestion Personales
 Route::resource('personales','PersonalesController');
 Route::get('personal','PersonalesController@listing');
+Route::post('personales/{id}','PersonalesController@modificar');
 //fin Gestion Personales
 
 //inicio Gestion Personas
 Route::resource('personas','PersonasController');
 Route::get('persona','PersonasController@listing');
+Route::post('personas/{id}','PersonasController@modificar');
 //fin Gestion Personas
 
 //inicio Gestion PersonasHogares
 Route::resource('personasHogares','PersonasHogaresController');
 Route::get('personaHogar','PersonasHogaresController@listing');
+Route::post('personasHogares/{id}','PersonasHogaresController@modificar');
 //fin Gestion PersonasHogares
 
 //Inicio Gestion Productos
 Route::resource('productos','ProductosController');
 Route::get('producto','ProductosController@listing');
+Route::post('productos/{id}','ProductosController@modificar');
 //fin gestion productos
 
 //Inicio Gestion Proveedores
 Route::resource('proveedores','ProveedoresController');
 Route::get('proveedor','ProveedoresController@listing');
+Route::post('proveedores/{id}','ProveedoresController@modificar');
 //fin gestion proveedores
 
 //Inicio de gestion de programas
 Route::resource('programas','ProgramasController');
 Route::get('programa','ProgramasController@listing');
+Route::post('programas/{id}','ProgramasController@modificar');
 //fin de gestion de programas
 
 //Inicio de gestion de proyectos
 Route::resource('proyectos','ProyectosController');
 Route::get('proyecto','ProyectosController@listing');
+Route::post('proyectos/{id}','ProyectosController@modificar');
 //fin de gestion de proyectos
 
 //Inicio de gestion de refugios
 Route::resource('refugios','RefugiosController');
 Route::get('refugio','RefugiosController@listing');
+Route::post('refugios/{id}','RefugiosController@modificar');
 //fin de gestion de refugios
 
 //Inicio de gestion de recursos
 Route::resource('sectores','SectoresController');
 Route::get('sector','SectoresController@listing');
+Route::post('sectores/{id}','SectoresController@modificar');
 //fin de gestion de recursos
 
 //Inicio de gestion de recursos
@@ -94,11 +108,13 @@ Route::resource('recursos','RecursosController');
 //Inicio Gestion Voluntarios
 Route::resource('voluntarios','VoluntariosController');
 Route::get('voluntario','VoluntariosController@listing');
+Route::post('voluntarios/{id}','VoluntariosController@modificar');
 //fin gestion voluntarios
 
 //Inicio Gestion Viviendas
 Route::resource('viviendas','ViviendasController');
 Route::get('vivienda','ViviendasController@listing');
+Route::post('viviendas/{id}','ViviendasController@modificar');
 //fin gestion viviendas
 
 Route::get('/', function () {

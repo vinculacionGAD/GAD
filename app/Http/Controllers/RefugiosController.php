@@ -122,6 +122,26 @@ class RefugiosController extends Controller
         //
     }
 
+    public function modificar(Request $request, $id)
+    {
+        $recursos = DB::update("update recursos SET nombre_recurso = ?,
+            direccion = ?, telefono = ?, correo = ?, tipo_instalacion_id = ?
+         WHERE id = ?", [$request->input('nombre_recurso'), $request->input('direccion'),
+         $request->input('telefono'), $request->input('correo'), $request->input('tipo_instalacion_id'), $id]);
+
+        $refugios = DB::update("update refugios SET nombre_contacto = ?, telefono_contacto = ?, capacidad_maxima = ?, poblacion = ?, estado = ?, observacion = ? WHERE recurso_id = ?", [$request->input('nombre_contacto'), $request->input('telefono_contacto'), $request->input('capacidad_maxima'), $request->input('poblacion'), $request->input('estado'), $request->input('observacion'), $id]);
+
+        if($recursos == 1 && $refugios == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
+    }
+
     /**
      * Remove the specified resource from storage.
      *

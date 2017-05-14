@@ -4,18 +4,19 @@ $(document).ready(function(){
 
 function Carga(){
 	var tablaDatos = $("#datos");
-	var route = "http://127.0.0.1:8000/proyecto"
+	var route = "/proyecto"
 
 	$("#datos").empty();
 	$.get(route, function(res){
 		$(res).each(function(key, value){
-			tablaDatos.append("<tr><td>"+value.proyecto+"</td><td>"+value.fecha_inicio+"</td><td>"+value.fecha_fin+"</td><td>"+value.presupuesto+"</td><td>"+value.moneda+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
+			tablaDatos.append("<tr><td>"+value.proyecto+"</td><td>"+value.fecha_inicio+"</td><td>"+value.fecha_fin+"</td><td>"+value.presupuesto+"</td><td>"+value.moneda+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr>");
+			//tablaDatos.append("<tr><td>"+value.proyecto+"</td><td>"+value.fecha_inicio+"</td><td>"+value.fecha_fin+"</td><td>"+value.presupuesto+"</td><td>"+value.moneda+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
 		});
 	});
 }
 
 function Mostrar(btn){
-	var route = "http://127.0.0.1:8000/proyectos/"+btn.value+"/edit"
+	var route = "/proyectos/"+btn.value+"/edit"
 
 	$.get(route, function(res){
 		$("#proyecto").val(res.proyecto);
@@ -32,7 +33,7 @@ function Mostrar(btn){
 }
 
 function Eliminar(btn){
-	var route = "http://127.0.0.1:8000/proyectos/"+btn.value+"";
+	var route = "/proyectos/"+btn.value+"";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -49,34 +50,19 @@ function Eliminar(btn){
 
 $("#actualizarProyecto").click(function(){
 	var value = $("#id").val();
-	var proyecto = $("#proyecto").val();	
-	var status = $("#status").val();
-	var fecha_inicio = $("#fecha_inicio").val();
-	var fecha_fin = $("#fecha_fin").val();
-	var presupuesto = $("#presupuesto").val();
-	var moneda = $("#moneda").val();
-	var observacion = $("#observacion").val();
-	var programa_id = $("#programa_id").val();
-	var organizacion_id = $("#organizacion_id").val();
-	var route = "http://127.0.0.1:8000/proyectos/"+value+"";
+	var datos = new FormData($("#frmEditarProyectos")[0]);
+	var route = "/proyectos/"+value+"";
 	var token = $("#token").val();
 
 	$.ajax({
 		url: route,
 		headers: {'X-CSRF-TOKEN': token},
-		type: 'PUT',
+		type: 'POST',
 		dataType: 'json',
-		data:{
-			proyecto: proyecto,
-			status: status, 			
-			fecha_inicio: fecha_inicio,
-			fecha_fin: fecha_fin,
-			presupuesto: presupuesto,
-			moneda: moneda,
-			observacion: observacion,
-			programa_id: programa_id,
-			organizacion_id: organizacion_id
-		},
+		contentType: false,
+		processData: false,	
+		data: datos,
+
 		success:  function(){
 			Carga();
 			$("#myModal").modal('toggle');

@@ -4,18 +4,19 @@ $(document).ready(function(){
 
 function Carga(){
 	var tablaDatos = $("#datos");
-	var route = "http://127.0.0.1:8000/persona"
+	var route = "/persona"
 
 	$("#datos").empty();
 	$.get(route, function(res){
 		$(res).each(function(key, value){
-			tablaDatos.append("<tr><td>"+value.doc_identificacion+"</td><td>"+value.nombres+" "+value.apellido_paterno+" "+value.apellido_materno+"</td><td>"+value.fecha_nacimiento+"</td><td>"+value.telefono_movil+"</td><td>"+value.estado_civil+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
+			tablaDatos.append("<tr><td>"+value.doc_identificacion+"</td><td>"+value.nombres+" "+value.apellido_paterno+" "+value.apellido_materno+"</td><td>"+value.fecha_nacimiento+"</td><td>"+value.telefono_movil+"</td><td>"+value.estado_civil+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr>");
+			//tablaDatos.append("<tr><td>"+value.doc_identificacion+"</td><td>"+value.nombres+" "+value.apellido_paterno+" "+value.apellido_materno+"</td><td>"+value.fecha_nacimiento+"</td><td>"+value.telefono_movil+"</td><td>"+value.estado_civil+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
 		});
 	});
 }
 
 function Mostrar(btn){
-	var route = "http://127.0.0.1:8000/personas/"+btn.value+"/edit"
+	var route = "/personas/"+btn.value+"/edit"
 
 	$.get(route, function(res){
 		$("#doc_identificacion").val(res.doc_identificacion);
@@ -32,7 +33,7 @@ function Mostrar(btn){
 }
 
 function Eliminar(btn){
-	var route = "http://127.0.0.1:8000/personas/"+btn.value+"";
+	var route = "/personas/"+btn.value+"";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -49,34 +50,19 @@ function Eliminar(btn){
 
 $("#actualizarPersona").click(function(){
 	var value = $("#id").val();
-	var doc_identificacion = $("#doc_identificacion").val();	
-	var nombres = $("#nombres").val();
-	var apellido_paterno = $("#apellido_paterno").val();
-	var apellido_materno = $("#apellido_materno").val();
-	var fecha_nacimiento = $("#fecha_nacimiento").val();
-	var sexo = $("#sexo").val();
-	var correo_electronico = $("#correo_electronico").val();
-	var telefono_movil = $("#telefono_movil").val();
-	var estado_civil = $("#estado_civil").val();
-	var route = "http://127.0.0.1:8000/personas/"+value+"";
+	var datos = new FormData($("#frmEditarPersonas")[0]);
+	var route = "/personas/"+value+"";
 	var token = $("#token").val();
 
 	$.ajax({
 		url: route,
 		headers: {'X-CSRF-TOKEN': token},
-		type: 'PUT',
+		type: 'POST',
 		dataType: 'json',
-		data:{
-			doc_identificacion: doc_identificacion,
-			nombres: nombres, 			
-			apellido_paterno: apellido_paterno,
-			apellido_materno: apellido_materno,
-			fecha_nacimiento: fecha_nacimiento,
-			sexo: sexo,
-			correo_electronico: correo_electronico,
-			telefono_movil: telefono_movil,
-			estado_civil: estado_civil
-		},
+		contentType: false,
+		processData: false,	
+		data: datos,
+		
 		success:  function(){
 			Carga();
 			$("#myModal").modal('toggle');

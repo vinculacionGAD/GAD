@@ -8,16 +8,17 @@ use App\tipos_productos;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class ProductosController extends Controller
 {
     
     public function listing(){
-        $productos = productos::all();
+        $productos = DB::table('productos')
+                        ->join('tipos_productos', 'tipos_productos.id', '=', 'productos.tipo_producto_id')
+                        ->select('productos.*', 'tipos_productos.tipo_producto')->get();
 
-        return response()->json(
-            $productos->toArray()    
-        );
+        return $productos;  
     }
     /**
      * Display a listing of the resource.
@@ -94,13 +95,22 @@ class ProductosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $producto = productos::find($id);
-        $producto->fill($request->all());
-        $producto->save();
+        //
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id) 
+    {
+        $productos = DB::update("update productos SET producto = ?, fecha_elaboracion = ?, fecha_caducidad = ?, tipo_producto_id = ? WHERE id = ?", [$request->input('producto'), $request->input('fecha_elaboracion'), $request->input('fecha_caducidad'), $request->input('tipo_producto_id'), $id]);
+
+        if($productos == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

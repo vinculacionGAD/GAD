@@ -4,18 +4,19 @@ $(document).ready(function(){
 
 function Carga(){
 	var tablaDatos = $("#datos");
-	var route = "http://127.0.0.1:8000/departamento"
+	var route = "/departamento"
 
 	$("#datos").empty();
 	$.get(route, function(res){
 		$(res).each(function(key, value){
-			tablaDatos.append("<tr><td>"+value.departamento+"</td><td>"+value.observacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
+			tablaDatos.append("<tr><td>"+value.departamento+"</td><td>"+value.observacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr>");
+			//tablaDatos.append("<tr><td>"+value.departamento+"</td><td>"+value.observacion+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
 		});
 	});
 }
 
 function Mostrar(btn){
-	var route = "http://127.0.0.1:8000/departamentos/"+btn.value+"/edit"
+	var route = "/departamentos/"+btn.value+"/edit"
 
 	$.get(route, function(res){
 		$("#departamento").val(res.departamento);
@@ -25,7 +26,7 @@ function Mostrar(btn){
 }
 
 function Eliminar(btn){
-	var route = "http://127.0.0.1:8000/departamentos/"+btn.value+"";
+	var route = "/departamentos/"+btn.value+"";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -42,20 +43,18 @@ function Eliminar(btn){
 
 $("#actualizarDepartamento").click(function(){
 	var value = $("#id").val();
-	var departamento = $("#departamento").val();
-	var observacion = $("#observacion").val();
-	var route = "http://127.0.0.1:8000/departamentos/"+value+"";
+	var datos = new FormData($("#frmEditarDepartamento")[0]);
+	var route = "/departamentos/"+value+"";
 	var token = $("#token").val();
 
 	$.ajax({
 		url: route,
 		headers: {'X-CSRF-TOKEN': token},
-		type: 'PUT',
+		type: 'POST',
 		dataType: 'json',
-		data:{
-			departamento: departamento, 
-			observacion: observacion
-		},
+		contentType: false,
+		processData: false,
+		data: datos,
 		success:  function(){
 			Carga();
 			$("#myModal").modal('toggle');

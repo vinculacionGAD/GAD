@@ -8,19 +8,10 @@ use App\comunidades;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
+use DB;
 
 class ComunidadesController extends Controller
 {
-
-    /*public function __construct(){
-        $this->middleware('@find',['only' => ['edit','update','destroy']]);
-    }
-
-    public function find(Route $route){
-        $this->comunidades = comunidades::find($route->getParameter('comunidades'));
-        $this->observacion = comunidades::find($route->getParameter('observacion'));
-    }*/
-
 
     public function listing(){
         $comunidades = comunidades::all();
@@ -101,13 +92,22 @@ class ComunidadesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $comunidad = comunidades::find($id);
-        $comunidad->fill($request->all());
-        $comunidad->save();
+        
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id) 
+    {
+        $comunidades = DB::update("update comunidades SET comunidad = ?, observacion = ? WHERE id = ?", [$request->input('comunidad'), $request->input('observacion'), $id]);
+
+        if($comunidades == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**
@@ -120,7 +120,6 @@ class ComunidadesController extends Controller
     {
         $comunidades = comunidades::find($id);
         $comunidades = $comunidades->delete();
-        //$this->$comunidades->delete();
 
         return response()->json([
             "mensaje" => "borrado"

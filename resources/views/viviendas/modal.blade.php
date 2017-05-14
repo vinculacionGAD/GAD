@@ -8,7 +8,9 @@
 			<div class="modal-body">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
 				<input type="hidden" id="id">
-				@include('viviendas.forms.viviendas')
+				{!!Form::open(['id'=>'frmEditarViviendas', 'method'=>'POST'])!!}
+					@include('viviendas.forms.viviendas')
+				{!!Form::close()!!}
 			</div>
 			<div class="modal-footer">
 				{!!link_to('#', $title='Actualizar' ,$attributes = ['id'=>'actualizarVivienda', 'class'=>'btn btn-primary'], $secure = null)!!}

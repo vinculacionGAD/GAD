@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\viviendas;
 use App\Http\Requests\ViviendaRequest;
+use Illuminate\Routing\Route;
+use Session;
+use Redirect;
+use DB;
 
 class ViviendasController extends Controller
 {
@@ -43,7 +47,7 @@ class ViviendasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ViviendaRequest $request)
+    public function store(Request $request)
     {
         if($request->ajax()){
             viviendas::create($request->all());
@@ -86,13 +90,22 @@ class ViviendasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $vivienda = viviendas::find($id);
-        $vivienda->fill($request->all());
-        $vivienda->save();
+        
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id) 
+    {
+        $viviendas = DB::update("update viviendas SET tipo_construccion = ?, anios_vida = ?, ubicacion = ? WHERE id = ?", [$request->input('tipo_construccion'), $request->input('anios_vida'), $request->input('ubicacion'), $id]);
+
+        if($viviendas == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

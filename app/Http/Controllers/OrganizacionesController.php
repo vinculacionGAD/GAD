@@ -59,6 +59,7 @@ class OrganizacionesController extends Controller
         $nuevo_nombre = "logotipo".$nombre_original;
         $r1 = Storage::disk('local')->put($nuevo_nombre, \File::get($archivo));
         $ruta_imagen = "logotipo/".$nuevo_nombre; 
+
         if($r1){
             organizaciones::create([
                     'nombre' => $request->input("nombre"),
@@ -119,13 +120,22 @@ class OrganizacionesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $organizacion = organizaciones::find($id);
-        $organizacion->fill($request->all());
-        $organizacion->save();
+        //
+    }
 
-        return response()->json([
-            "mensaje" => "listo"
-        ]);
+    public function modificar(Request $request, $id) 
+    {
+        $organizaciones = DB::update("update organizaciones SET nombre = ?, acronimo = ?, tipo_organizacion = ?, region = ?, telefono = ?, sitio_web = ?, anio = ?, twitter = ?, observacion = ?, pais_id = ? WHERE id = ?", [$request->input('nombre'), $request->input('acronimo'), $request->input('tipo_organizacion'), $request->input('region'), $request->input('telefono'), $request->input('sitio_web'), $request->input('anio'), $request->input('twitter'), $request->input('observacion'), $request->input('pais_id'), $id]);
+
+        if($organizaciones == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

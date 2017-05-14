@@ -2,7 +2,7 @@
 
 	<div class="form-group">		
 		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('Cedula','Cédula:')!!}
+			{!!Form::label('doc_identificacion','Cédula:')!!}
 			{!!Form::text('doc_identificacion',null,['id'=>'doc_identificacion','class'=>'form-control', 'placeholder'=>'Ingresa el número de cédula'])!!}
 		</div>
 	</div>

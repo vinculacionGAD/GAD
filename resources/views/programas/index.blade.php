@@ -1,13 +1,23 @@
 @extends('layouts.app')
 
 @section('content')	
-	@include('alerts.success')
+	
+	<div id="msj-update-programa" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>Programa actualizado correctamente!</strong>
+	</div>
+
+	<div id="msj-delete-programa" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<strong>Programa eliminado correctamente!</strong>
+	</div>
+
 	@include('programas.modal')	
 	<table class="table">
 		<thead>
 			<th>Nombre</th>
 			<th>Observacion</th>
-			<th>Operaciones</th>
+			<th></th>
 		</thead>
 		<tbody id="datos"></tbody>	
 	</table>	

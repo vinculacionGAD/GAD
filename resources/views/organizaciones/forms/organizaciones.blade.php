@@ -14,8 +14,8 @@
 
 	<div class="form-group">
 		<div class="col-lg-12 col-md-12 col-sm-12">
-			{!!Form::label('tipo_organizacion','Tipo de Organización:')!!}
-			{!!Form::text('tipo_organizacion',null,['id'=>'tipo_organizacion','class'=>'form-control', 'placeholder'=>'Ingresa el tipo de organización'])!!}
+			{!!Form::label('tipo_organizacion','Tipo Organización:')!!}
+			{!!Form::select('tipo_organizacion', ['Publica' => 'Pública', 'Privada' => 'Privada'], null, ['class'=>'form-control', 'id'=>'tipo_organizacion'])!!}
 		</div>		
 	</div>
 
@@ -51,13 +51,6 @@
 		<div class="col-lg-12 col-md-12 col-sm-12">
 			{!!Form::label('Twitter','Twitter:')!!}
 			{!!Form::text('twitter',null,['id'=>'twitter','class'=>'form-control', 'placeholder'=>'Ingresa la cuenta de Twitter'])!!}
-		</div>		
-	</div>
-
-	<div class="form-group">
-		<div class="col-lg-12 col-md-12 col-sm-12">
-			{!!Form::label('Logotipo','Logotipo:')!!}
-			{!!Form::file('logotipo')!!}
 		</div>		
 	</div>
 
