@@ -15,7 +15,7 @@ class CreateTiposInstalacionesTable extends Migration
     {
         Schema::create('tipos_instalaciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tipo_instalacion');
+            $table->string('tipo_instalacion', 30);
             $table->timestamps();
         });
     }

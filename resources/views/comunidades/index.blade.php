@@ -13,6 +13,8 @@
 	</div>
 
 	@include('comunidades.modal')	
+	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Comunidades</h1>
+	<br/>
 	<table class="table">
 		<thead>
 			<th>Nombre</th>

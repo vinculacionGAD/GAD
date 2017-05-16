@@ -15,12 +15,13 @@ class CreateSaludsTable extends Migration
     {
         Schema::create('saluds', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('embarazo',1);
-            $table->string('enfermedad_cronica',1);
+            $table->string('embarazo', 1);
+            $table->string('enfermedad_cronica', 1);
             $table->string('detalle_enfermedad_cronica');
-            $table->string('afectacion_desastre',1);
+            $table->string('afectacion_desastre', 1);
             $table->string('detalle_afectacion_desastre');
             $table->string('observacion');
+            $table->date('fecha_parto');
             $table->timestamps();
             $table->integer('discapacidad_id')->unsigned();                
             $table->foreign('discapacidad_id')->references('id')->on('discapacidades');

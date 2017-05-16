@@ -1,46 +1,72 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>MENÚ PRINCIPAL</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bar-chart-o"></i> Proyectos <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-bar-chart-o"></i>Programas y Proyectos<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/proyectos/create" id='home'>Ingresar Proyectos</a></li>
+                      <li><a href="/programas/create">Ingresar Programa</a></li>
+                      <li><a href="/programas/">Ver y Editar Programas</a></li>
+                      <li><a href="/proyectos/create">Ingresar Proyecto</a></li>
+                      <li><a href="/proyectos/">Ver y Editar Proyectos</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-user"></i>Personas<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                     <li><a href="/app/usuarios">Ingresar Usuarios</a></li>
+                     <li><a href="/personas/create">Ingresar Persona</a></li>
+                     <li><a href="/personas/">Ver y Editar Personas</a></li>
+                     <li><a href="/personales/create">Ingresar Personal</a></li>
+                     <li><a href="/personales/">Ver y Editar Personal</a></li>
+                     <li><a href="/proveedores/create">Ingresar Proveedor</a></li>
+                     <li><a href="/proveedores/">Ver y Editar Proveedores</a></li>
+                     <li><a href="/voluntarios/create">Ingresar Voluntario</a></li>
+                     <li><a href="/voluntarios/">Ver y Editar Voluntarios</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-desktop"></i> Sectores <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-briefcase"></i>Organizaciones<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/app/sectores">Ingrese Sector</a></li>
+                      <li><a href="/organizaciones/create">Ingresar Organización</a></li>
+                      <li><a href="/organizaciones/">Ver y Editar Organizaciones</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Refugios <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-cubes"></i>Recursos<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/app/refugios">Ingrese Refugio</a></li>
+                      <li><a href="/almacenes/create">Ingresar Almacén</a></li>
+                      <li><a href="/almacenes/">Ver y Editar Almacenes</a></li>
+                      <li><a href="/hospitales/create">Ingresar Hospital</a></li>
+                      <li><a href="/hospitales/">Ver y Editar Hospitales</a></li>
+                      <li><a href="/refugios/create">Ingresar Refugio</a></li>
+                      <li><a href="/refugios/">Ver y Editar Refugios</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i>Recursos<span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-home"></i>Familias<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/app/recursos">Ingrese Recurso</a></li>
+                      <li><a href="/familias/create">Ingresar Familia</a></li>
+                      <li><a href="/familias/">Ver y Editar Familias</a></li>
+                      <li><a href="/personasHogares/create">Ingresar Miembro Familia</a></li>
+                      <li><a href="/personasHogares/">Ver y Editar Miembros de Familia</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>Productos <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-shopping-basket"></i>Productos<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/app/productos">Ingrese Producto</a></li>
+                      <li><a href="/productos/create">Ingresar Producto</a></li>
+                      <li><a href="/productos/">Ver y Editar Productos</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>Voluntarios <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-cube"></i>Inventario<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/app/voluntarios">Ingrese Voluntario</a></li>
+                      <li><a href="/productos/create">Ingresar Almacén</a></li>
+                      <li><a href="/productos/create">Repartición de Alimentos</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>Personas<span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-clone"></i>Definiciones Generales<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/app/personas">Ingrese Persona</a></li>
+                      <li><a href="/comunidades/create">Ingresar Comunidad</a></li>
+                      <li><a href="/comunidades/">Ver y Editar Comunidades</a></li>
+                      <li><a href="/departamentos/create">Ingresar Departamento</a></li>
+                      <li><a href="/departamentos/">Ver y Editar Departamentos</a></li>
+                      <li><a href="/sectores/create">Ingresar Sector</a></li>
+                      <li><a href="/sectores/">Ver y Editar Sectores</a></li>
                     </ul>
                   </li>
                   </ul>

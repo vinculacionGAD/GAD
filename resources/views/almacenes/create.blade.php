@@ -8,7 +8,12 @@
 		</div>		
 
 		<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token"> 
-
+	
+		<div class="form-group">
+			<div class="col-md-6 col-xs-12">
+				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Almacenes</h1>
+			</div>
+		</div>
 		@include('recursos.forms.recursos')			
 		@include('almacenes.forms.almacenes')
 

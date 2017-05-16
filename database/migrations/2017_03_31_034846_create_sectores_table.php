@@ -15,12 +15,12 @@ class CreateSectoresTable extends Migration
     {
         Schema::create('sectores', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('sector',45);
-            $table->string('abreviatura',5);
-            $table->string('ubicacion',45);
+            $table->string('sector', 45);
+            $table->string('abreviatura', 5);
+            $table->string('ubicacion', 45);
             $table->string('observacion');
-            $table->string('latitud',50);
-            $table->string('longitud',50);
+            $table->string('latitud', 50);
+            $table->string('longitud', 50);
             $table->timestamps();
             $table->integer('comunidad_id')->unsigned();                
             $table->foreign('comunidad_id')->references('id')->on('comunidades'); 

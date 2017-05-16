@@ -7,5 +7,5 @@ $("#home").click(function(){
 
 
 function cargarContenido(pagina) {
-	$("#content-sicgom").load(pagina);
+	$("#content-sgdn").load(pagina);
 }

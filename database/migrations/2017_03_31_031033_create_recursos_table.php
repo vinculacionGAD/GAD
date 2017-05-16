@@ -15,12 +15,12 @@ class CreateRecursosTable extends Migration
     {
         Schema::create('recursos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre_recurso');
-            $table->string('direccion');
-            $table->string('telefono');
-            $table->string('latitud');
-            $table->string('longitud');
-            $table->string('correo');
+            $table->string('nombre_recurso', 100);
+            $table->string('direccion', 80);
+            $table->string('telefono', 10);
+            $table->string('latitud', 45);
+            $table->string('longitud', 45);
+            $table->string('correo', 30);
             $table->timestamps();
             $table->integer('tipo_instalacion_id')->unsigned();                
             $table->foreign('tipo_instalacion_id')->references('id')->on('tipos_instalaciones');

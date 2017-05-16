@@ -15,16 +15,16 @@ class CreatePersonasTable extends Migration
     {
         Schema::create('personas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('doc_identificacion');
-            $table->string('nombres');
-            $table->string('apellido_paterno');
-            $table->string('apellido_materno');
+            $table->string('doc_identificacion', 13);
+            $table->string('nombres', 30);
+            $table->string('apellido_paterno', 20);
+            $table->string('apellido_materno', 20);
             $table->date('fecha_nacimiento');
-            $table->string('sexo');
-            $table->string('correo_electronico');
-            $table->string('telefono_movil');
+            $table->string('sexo', 1);
+            $table->string('correo_electronico', 45);
+            $table->string('telefono_movil', 10);
             $table->timestamps();
-            $table->string('estado_civil');
+            $table->string('estado_civil', 10);
         });
     }
 

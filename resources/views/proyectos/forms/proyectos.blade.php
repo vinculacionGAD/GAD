@@ -2,7 +2,7 @@
 	<div class="form-group">		
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Proyecto','Proyecto:')!!}
-			{!!Form::text('proyecto',null,['id'=>'proyecto','class'=>'form-control', 'placeholder'=>'Ingresa el nombre del proyecto'])!!}
+			{!!Form::text('proyecto',null,['id'=>'proyecto','class'=>'form-control', 'placeholder'=>'Ingresa el nombre del proyecto', 'maxlength'=>'80', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
 		</div>
 	</div>
 
@@ -30,21 +30,21 @@
 	<div class="form-group">		
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Presupuesto','Presupuesto:')!!}
-			{!!Form::text('presupuesto',null,['id'=>'presupuesto','class'=>'form-control', 'placeholder'=>'Ingresa el presupuesto'])!!}
+			{!!Form::text('presupuesto',null,['id'=>'presupuesto','class'=>'form-control', 'placeholder'=>'Ingresa el presupuesto', 'maxlength'=>'9', 'onkeypress'=>'return validaNumeros(event)'])!!}
 		</div>
 	</div>
 
 	<div class="form-group">		
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Moneda','Moneda:')!!}
-			{!!Form::text('moneda',null,['id'=>'moneda','class'=>'form-control', 'placeholder'=>'Ingresa el presupuesto'])!!}
+			{!!Form::select('moneda', ['Dólar Estadounidense' => 'Dólar estadounidense', 'Euro' => 'Euro', 'Yen Japonés' => 'Yen Japonés', 'Libra Esterlina' => 'Libra Esterlina', 'Franco Suizo' => 'Franco Suizo', 'Dólar Australiano' => 'Dólar Australiano', 'Dólar Canadiense' => 'Dólar Canadiense', 'Corona Sueca' => 'Corona Sueca', 'Dólar de Hong Kong' => 'Dólar de Hong Kong', 'Corona Noruega' => 'Corona Noruega' ], null, ['class'=>'form-control', 'id'=>'moneda'])!!}
 		</div>
 	</div>
 
 	<div class="form-group">
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Observacion','Observación:')!!}
-			{!!Form::text('observacion',null,['id'=>'observacion','class'=>'form-control', 'placeholder'=>'Ingresa una observación'])!!}
+			{!!Form::text('observacion',null,['id'=>'observacion','class'=>'form-control', 'placeholder'=>'Ingresa una observación', 'maxlength'=>'255', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
 		</div>		
 	</div>
 

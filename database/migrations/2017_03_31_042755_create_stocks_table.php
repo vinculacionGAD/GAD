@@ -15,7 +15,7 @@ class CreateStocksTable extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->integer('producto_id')->unsigned();                
-            $table->decimal('stock',5,2);
+            $table->decimal('stock', 5, 2);
             $table->integer('almacen_id')->unsigned();
             $table->timestamps();                            
             $table->foreign('producto_id')->references('id')->on('productos'); 

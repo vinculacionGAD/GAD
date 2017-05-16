@@ -47,7 +47,7 @@ class ComunidadesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ComunidadRequest $request)
+    public function store(Request $request)
     {
         if($request->ajax()){
             comunidades::create($request->all());

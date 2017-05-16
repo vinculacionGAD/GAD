@@ -13,7 +13,8 @@
 	</div>
 
 	@include('departamentos.modal')	
-
+	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Departamentos</h1>
+	<br/>
 	<table class="table">
 		<thead>
 			<th>Nombre</th>

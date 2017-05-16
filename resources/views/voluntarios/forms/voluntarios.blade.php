@@ -2,7 +2,7 @@
 	<div class="form-group">		
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Trabajo','Trabajo:')!!}
-			{!!Form::text('trabajo',null,['id'=>'trabajo','class'=>'form-control', 'placeholder'=>'Ingresa el trabajo del voluntario'])!!}
+			{!!Form::text('trabajo',null,['id'=>'trabajo','class'=>'form-control', 'placeholder'=>'Ingresa el trabajo del voluntario', 'maxlength'=>'50', 'onkeypress'=>'return validaLetrasYEspacio(event)'])!!}
 		</div>
 	</div>
 

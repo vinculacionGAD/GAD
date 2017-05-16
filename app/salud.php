@@ -10,7 +10,7 @@ class salud extends Model
 	protected $table = "saluds";
 
     protected $fillable = [
-		'embarazo', 'enfermedad_cronica', 'detalle_enfermedad_cronica', 'afectacion_desastre', 'detalle_afectacion_desastre', 'observacion','discapacidad_id'
+		'embarazo', 'enfermedad_cronica', 'detalle_enfermedad_cronica', 'afectacion_desastre', 'detalle_afectacion_desastre', 'observacion','discapacidad_id', 'fecha_parto'
 	];
 
 	public function personasHogares(){

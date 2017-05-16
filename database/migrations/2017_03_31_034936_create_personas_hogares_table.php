@@ -15,8 +15,8 @@ class CreatePersonasHogaresTable extends Migration
     {
         Schema::create('personas_hogares', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('parentesco',45);
-            $table->string('trabaja_si_no',1);
+            $table->string('parentesco', 45);
+            $table->string('trabaja_si_no', 1);
             $table->timestamps();
             $table->integer('persona_id')->unsigned();                
             $table->integer('actividad_laboral_id')->unsigned();                

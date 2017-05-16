@@ -24,7 +24,7 @@ class ComunidadRequest extends FormRequest
     public function rules()
     {
         return [
-            'comunidad' => 'required|min:3|max:45'
+            'comunidad' => 'required|min:5|max:45'
         ];
     }
 }

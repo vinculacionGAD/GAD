@@ -15,7 +15,7 @@ class CreateDetallesTable extends Migration
     {
         Schema::create('detalles', function (Blueprint $table) {
             $table->increments('id');
-            $table->decimal('cantidad',6,2);
+            $table->decimal('cantidad', 6, 2);
             $table->timestamps();
             $table->integer('encabezado_id')->unsigned();
             $table->integer('tipo_transaccion_id')->unsigned();

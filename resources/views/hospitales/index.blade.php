@@ -13,7 +13,8 @@
 	</div>
 
 	@include('hospitales.modal')
-
+	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Hospitales</h1>
+	<br/>
 	<table class="table">
 		<thead>
 			<th>Nombre del Hospital</th>

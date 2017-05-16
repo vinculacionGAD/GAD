@@ -166,7 +166,7 @@
         <!-- /top navigation -->
 
         <!-- page content -->
-        <div  id ="content-sicgom" class="right_col" role="main">
+        <div  id ="content-sgdn" class="right_col" role="main">
           @yield('content')
         </div>
         <!-- /page content -->
@@ -219,6 +219,7 @@
 
     <!-- Other Scripts -->
     {!!Html::script('js/script.js')!!}
+    {!!Html::script('js/funciones.js')!!}
     @yield('js')
     
     @section('scripts')

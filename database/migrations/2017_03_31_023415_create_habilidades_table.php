@@ -15,7 +15,7 @@ class CreateHabilidadesTable extends Migration
     {
         Schema::create('habilidades', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('habilidad');
+            $table->string('habilidad', 45);
             $table->string('observacion');
             $table->timestamps();
         });

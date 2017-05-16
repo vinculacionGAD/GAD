@@ -15,7 +15,7 @@ class CreateRolesVoluntariosTable extends Migration
     {
         Schema::create('roles_voluntarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('rol');
+            $table->string('rol', 45);
             $table->string('observacion');
             $table->timestamps();
         });

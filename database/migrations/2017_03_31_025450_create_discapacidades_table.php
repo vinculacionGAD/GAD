@@ -15,7 +15,7 @@ class CreateDiscapacidadesTable extends Migration
     {
         Schema::create('discapacidades', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tipo_discapacidad');
+            $table->string('tipo_discapacidad', 45);
             $table->string('observacion');
             $table->timestamps();
         });

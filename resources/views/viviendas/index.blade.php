@@ -13,6 +13,8 @@
 	</div>
 
 	@include('viviendas.modal')
+	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Viviendas</h1>
+	<br/>
 	<table class="table">
 		<thead>
 			<th>Tipo de Construcción</th>
