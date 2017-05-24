@@ -18,6 +18,8 @@ class CreateFamiliasTable extends Migration
             $table->timestamps();
             $table->integer('persona_id')->unsigned();                
             $table->integer('vivienda_id')->unsigned();                
+            $table->integer('persona_hogar_id')->unsigned();                
+            $table->integer('refugio_id')->unsigned();                
             $table->integer('sector_id')->unsigned();                
             $table->string('jefe_hogar', 1);  
             $table->foreign('persona_hogar_id')->references('id')->on('personas_hogares'); 

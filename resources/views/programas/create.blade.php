@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+ <div class="col-md-12 registro">
+  <div class="col-md-6">
 	{!!Form::open(['class'=>'form-horizontal', 'id'=>'frmProgramas', 'method'=>'POST'])!!}
 
 		<div id="msj-insert-programa" class="alert alert-success alert-dismissible" role="alert" style="display: none">
@@ -21,6 +23,7 @@
 				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroPrograma','class'=>'btn btn-primary'], $secure = null)!!}
 			</div>
 		</div>
-		
-	{!!Form::close()!!}		
+	  </div>		
+	{!!Form::close()!!}	
+	</div>	
 @endsection

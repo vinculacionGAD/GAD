@@ -19,6 +19,7 @@
 		<thead>
 			<th>Nombre</th>
 			<th>Observacion</th>
+			<th>Accion</th>
 			<th></th>
 		</thead>
 		<tbody id="datos"></tbody>	

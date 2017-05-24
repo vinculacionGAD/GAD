@@ -1,65 +1,75 @@
 <div class="container">
-	<div class="form-group">		
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('Proyecto','Proyecto:')!!}
-			{!!Form::text('proyecto',null,['id'=>'proyecto','class'=>'form-control', 'placeholder'=>'Ingresa el nombre del proyecto', 'maxlength'=>'80', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
+ <div class="col-md-12 registro">
+   <div class="col-md-4 col-xs-12">
+		<div class="form-group">		
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				{!!Form::label('Proyecto','Proyecto:')!!}
+				{!!Form::text('proyecto',null,['id'=>'proyecto','class'=>'form-control', 'placeholder'=>'Ingresa el nombre del proyecto', 'maxlength'=>'80', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
+			</div>
 		</div>
-	</div>
 
-	<div class="form-group">
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('Estado','Estado:')!!}
-			{!!Form::checkbox('status', 'S', true, ['id'=>'status', 'class'=>'checkbox-inline'])!!}
+		<div class="form-group">
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				{!!Form::label('FechaInicio','Fecha Inicio:')!!}
+				{!!Form::date('fecha_inicio', \Carbon\Carbon::now(), ['id' => 'fecha_inicio', 'class' => 'form-control'])!!}
+			</div>
 		</div>
-	</div>
 
-	<div class="form-group">
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('FechaInicio','Fecha Inicio:')!!}
-			{!!Form::date('fecha_inicio', \Carbon\Carbon::now(), ['id' => 'fecha_inicio', 'class' => 'form-control'])!!}
+		<div class="form-group">
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				{!!Form::label('FechaFin','Fecha Fin:')!!}
+				{!!Form::date('fecha_fin', \Carbon\Carbon::now(), ['id' => 'fecha_fin', 'class' => 'form-control'])!!}
+			</div>
 		</div>
-	</div>
 
-	<div class="form-group">
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('FechaFin','Fecha Fin:')!!}
-			{!!Form::date('fecha_fin', \Carbon\Carbon::now(), ['id' => 'fecha_fin', 'class' => 'form-control'])!!}
+		<div class="form-group">		
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				{!!Form::label('Presupuesto','Presupuesto:')!!}
+				{!!Form::text('presupuesto',null,['id'=>'presupuesto','class'=>'form-control', 'placeholder'=>'Ingresa el presupuesto', 'maxlength'=>'9', 'onkeypress'=>'return validaNumeros(event)'])!!}
+			</div>
 		</div>
-	</div>
 
-	<div class="form-group">		
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('Presupuesto','Presupuesto:')!!}
-			{!!Form::text('presupuesto',null,['id'=>'presupuesto','class'=>'form-control', 'placeholder'=>'Ingresa el presupuesto', 'maxlength'=>'9', 'onkeypress'=>'return validaNumeros(event)'])!!}
+		<br><div class="form-group">
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				{!!Form::label('Estado','Estado:')!!}
+				{!!Form::checkbox('status', 'S', true, ['id'=>'status', 'class'=>'checkbox-inline'])!!}
+			</div>
 		</div>
-	</div>
 
-	<div class="form-group">		
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('Moneda','Moneda:')!!}
-			{!!Form::select('moneda', ['Dólar Estadounidense' => 'Dólar estadounidense', 'Euro' => 'Euro', 'Yen Japonés' => 'Yen Japonés', 'Libra Esterlina' => 'Libra Esterlina', 'Franco Suizo' => 'Franco Suizo', 'Dólar Australiano' => 'Dólar Australiano', 'Dólar Canadiense' => 'Dólar Canadiense', 'Corona Sueca' => 'Corona Sueca', 'Dólar de Hong Kong' => 'Dólar de Hong Kong', 'Corona Noruega' => 'Corona Noruega' ], null, ['class'=>'form-control', 'id'=>'moneda'])!!}
+		<div class="form-group"  class="btn-registrar">
+			<div class="col-md-6 col-xs-12">
+				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroProyecto','class'=>'btn btn-primary'], $secure = null)!!}
+			</div>
 		</div>
-	</div>
-
-	<div class="form-group">
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('Observacion','Observación:')!!}
-			{!!Form::text('observacion',null,['id'=>'observacion','class'=>'form-control', 'placeholder'=>'Ingresa una observación', 'maxlength'=>'255', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
-		</div>		
-	</div>
-
-	<div class="form-group">	
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('programa_id','Programa:')!!}
-			{!!Form::select('programa_id', $programas, null, ['id'=>'programa_id', 'class'=>'form-control'])!!}
+   </div>
+   <div class="col-md-4 col-sm-6 col-xs-12">
+		<div class="form-group">		
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				{!!Form::label('Moneda','Moneda:')!!}
+				{!!Form::select('moneda', ['Dólar Estadounidense' => 'Dólar estadounidense', 'Euro' => 'Euro', 'Yen Japonés' => 'Yen Japonés', 'Libra Esterlina' => 'Libra Esterlina', 'Franco Suizo' => 'Franco Suizo', 'Dólar Australiano' => 'Dólar Australiano', 'Dólar Canadiense' => 'Dólar Canadiense', 'Corona Sueca' => 'Corona Sueca', 'Dólar de Hong Kong' => 'Dólar de Hong Kong', 'Corona Noruega' => 'Corona Noruega' ], null, ['class'=>'form-control', 'id'=>'moneda'])!!}
+			</div>
 		</div>
-	</div>
 
-	<div class="form-group">	
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('organizacion_id','Organización:')!!}
-			{!!Form::select('organizacion_id', $organizaciones, null, ['id'=>'organizacion_id', 'class'=>'form-control'])!!}
+		<div class="form-group">
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				{!!Form::label('Observacion','Observación:')!!}
+				{!!Form::text('observacion',null,['id'=>'observacion','class'=>'form-control', 'placeholder'=>'Ingresa una observación', 'maxlength'=>'255', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
+			</div>		
 		</div>
-	</div>
 
+		<div class="form-group">	
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				{!!Form::label('programa_id','Programa:')!!}
+				{!!Form::select('programa_id', $programas, null, ['id'=>'programa_id', 'class'=>'form-control'])!!}
+			</div>
+		</div>
+
+		<div class="form-group">	
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				{!!Form::label('organizacion_id','Organización:')!!}
+				{!!Form::select('organizacion_id', $organizaciones, null, ['id'=>'organizacion_id', 'class'=>'form-control'])!!}
+			</div>
+		</div>
+   </div>
+ </div>
 </div>
