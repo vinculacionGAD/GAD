@@ -34,7 +34,7 @@ class FamiliasController extends Controller
      */
     public function index()
     {
-        //
+        return view('familias.index');
     }
 
     /**
