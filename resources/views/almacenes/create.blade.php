@@ -22,8 +22,8 @@
 			 <div class="col-md-4 col-sm-6 col-xs-12"> 
 				<style type="text/css">
 					#map{
-						width: 600px;
-						height: 378px;
+						width: 400px;
+						height: 300px;
 						margin-left: 10px;
 					}
 				</style>
@@ -129,6 +129,5 @@
 
 		</div>
 	</div>
-		
-	{!!Form::close()!!}		
+{!!Form::close()!!}		
 @endsection

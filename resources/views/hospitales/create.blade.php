@@ -31,8 +31,8 @@
 		{!!Form::label('Ubicacion','Ubicacion:')!!}
 			<style type="text/css">
 				#map{
-					width: 400px;
-					height: 300px;
+					width: 250px;
+					height: 310px;
 					margin-left: 10px;
 				}
 			</style>
@@ -126,6 +126,7 @@
 	<input type="hidden" name="longitud" id="longitud">			
 
 	<br/>			
-</div>
-	{!!Form::close()!!}		
+
+	{!!Form::close()!!}	
+	</div>		
 @endsection
