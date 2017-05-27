@@ -15,15 +15,22 @@
 				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Familias</h1>
 			</div>
 		</div>	
-		@include('familias.forms.familias')			
-		@include('salud.forms.salud')	
-		@include('viviendas.forms.viviendasPersonaHogar')	
 
-		<div class="form-group">
-			<div class="col-md-6 col-xs-12">
-				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroFamilia','class'=>'btn btn-primary'], $secure = null)!!}
-			</div>
-		</div>
-		
+		<div class="col-md-12 col-sm-12 col-xs-12 registro">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				@include('familias.forms.familias')		
+			</div>		
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				@include('salud.forms.salud')	
+			</div>	
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				@include('viviendas.forms.viviendasPersonaHogar')	
+				<div class="form-group">
+					<div class="col-md-12 col-xs-12">
+						{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroFamilia','class'=>'btn btn-primary'], $secure = null)!!}
+					</div>
+				</div>
+			</div>				
+		</div>		
 	{!!Form::close()!!}		
 @endsection

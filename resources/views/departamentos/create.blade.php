@@ -15,9 +15,17 @@
 				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Departamentos</h1>
 			</div>
 		</div>
-		@include('departamentos.forms.departamentos')	
+		<div class="col-md-12 col-sm-12 col-xs-12 registro">
+			<div class="col-md-6 col-sm-12 col-xs-12">
+				@include('departamentos.forms.departamentos')	
+			</div>	
 
-		
+			<div class="form-group">
+				<div class="col-md-12 col-xs-12">
+					{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroDepartamento','class'=>'btn btn-primary'], $secure = null)!!}
+				</div>
+			</div>
+		</div>	
 	{!!Form::close()!!}	
 @endsection
 

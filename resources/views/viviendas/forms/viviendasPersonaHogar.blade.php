@@ -1,4 +1,9 @@
 <div class="container">
+	<div class="form-group">
+		<div class="col-lg-12 col-md-12 col-xs-12">
+			<h5>Datos de Vivienda</h5>
+		</div>
+	</div>
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('sector_id','Sector:')!!}

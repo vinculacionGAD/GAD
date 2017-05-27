@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="form-group">
 		<div class="col-lg-12 col-md-12 col-xs-12">
-			<h5>Datos de Discapacidades</h5>
+			<h5>Datos de Salud</h5>
 		</div>
 	</div>	
 	<div class="form-group">

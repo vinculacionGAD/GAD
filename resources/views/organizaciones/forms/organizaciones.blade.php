@@ -87,10 +87,9 @@
                            				 	<i  class="fa fa-user fa-4x" style="font-size: 16em;" aria-hidden="true"></i>
                             					<img src="" class="">
                           				 	 <input type="file" name="logotipo" id="logotipo" accept="image/*" required>
-                       				    </label>
-					
+                       				    </label>					
 				</div>
-        </div>
-			</div>
+        	</div>
 		</div>
+	</div>
 </div>

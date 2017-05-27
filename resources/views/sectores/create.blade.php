@@ -14,7 +14,15 @@
 				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Sectores</h1>
 			</div>
 		</div>
-		@include('sectores.forms.sectores')	
+
+		<div class="col-md-12 col-sm-12 col-xs-12 registro">
+			<div class="col-md-6 col-sm-12 col-xs-12">
+				@include('sectores.forms.sectores')
+			</div>
+
+			<div class="col-md-6 col-sm-12 col-xs-12">
+				{!!Form::label('ubicacion_id','Ubicación:')!!}
+			</div>		
 
 		<style type="text/css">
 			#map{
@@ -118,6 +126,7 @@
 				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroSector','class'=>'btn btn-primary'], $secure = null)!!}
 			</div>
 		</div>
+	</div>	
 		
 	{!!Form::close()!!}		
 @endsection

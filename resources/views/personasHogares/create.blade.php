@@ -14,12 +14,18 @@
 				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Miembros de Familia</h1>
 			</div>
 		</div>	
-		@include('personasHogares.forms.personasHogares')			
-		@include('salud.forms.salud')	
 
-		<div class="form-group">
-			<div class="col-md-6 col-xs-12">
-				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroPersonaHogar','class'=>'btn btn-primary'], $secure = null)!!}
+		<div class="col-md-12 col-sm-12 col-xs-12 registro">
+			<div class="col-md-6 col-sm-12 col-xs-12">
+				@include('personasHogares.forms.personasHogares')			
+				<div class="form-group">
+					<div class="col-md-12 col-xs-12">
+						{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroPersonaHogar','class'=>'btn btn-primary'], $secure = null)!!}
+					</div>
+				</div>
+			</div>	
+			<div class="col-md-6 col-sm-12 col-xs-12">
+				@include('salud.forms.salud')	
 			</div>
 		</div>
 		
