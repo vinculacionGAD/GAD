@@ -14,16 +14,30 @@
 				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Hospitales</h1>
 			</div>
 		</div>
-		@include('recursos.forms.recursos')			
-		@include('hospitales.forms.hospitales')
-		<style type="text/css">
-			#map{
-				width: 400px;
-				height: 300px;
-				margin-left: 10px;
-			}
-		</style>
-		<div id="map"></div>
+		<div class="col-md-12 registro">
+	        <div class="col-md-4 col-xs-12">
+				@include('recursos.forms.recursos')	
+			</div>	
+			<div class="col-md-4 col-sm-6 col-xs-12"> 		
+				@include('hospitales.forms.hospitales')
+				<br>	
+				<div class="form-group">
+					<div class="col-md-6 col-xs-12">
+						{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroHospital','class'=>'btn btn-primary'], $secure = null)!!}
+					</div>
+				</div>
+			</div>
+		<div class="col-md-4 col-sm-6 col-xs-12"> 
+		{!!Form::label('Ubicacion','Ubicacion:')!!}
+			<style type="text/css">
+				#map{
+					width: 400px;
+					height: 300px;
+					margin-left: 10px;
+				}
+			</style>
+			<div id="map"></div>
+		</div>
     	<script>
   
 			var map;
@@ -112,12 +126,6 @@
 	<input type="hidden" name="longitud" id="longitud">			
 
 	<br/>			
-
-	<div class="form-group">
-		<div class="col-md-6 col-xs-12">
-			{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroHospital','class'=>'btn btn-primary'], $secure = null)!!}
-		</div>
-	</div>
-		
+</div>
 	{!!Form::close()!!}		
 @endsection

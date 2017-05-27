@@ -62,7 +62,12 @@ class VoluntariosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->ajax()){
+            voluntarios::create($request->all());
+            return response()->json([
+                "mensaje" => "creado"
+                ]);
+        }
     }
 
     /**
@@ -84,7 +89,8 @@ class VoluntariosController extends Controller
      */
     public function edit($id)
     {
-        //
+      $voluntarios = voluntarios::find($id);
+      return response()->json($voluntarios->toArray());
     }
 
     /**

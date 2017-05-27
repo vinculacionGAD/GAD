@@ -429,3 +429,30 @@ $("#registroVivienda").click(function(){
 		}*/
 	});
 });
+
+$("#registroVoluntarios").click(function(){
+	var datos = new FormData($("#frmVoluntarios")[0]);	
+	var route = "/voluntario"
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'POST',
+		dataType: 'json',	
+		contentType: false,
+		processData: false,	
+		data: datos,
+
+		success:function(){
+			$("#msj-insert-voluntario").fadeIn();
+		}/*,
+		error:function(msj){
+			//console.log(msj.responseJSON.comunidad);
+			$("#msj-comunidad").html(msj.responseJSON.comunidad);
+			$("#msj-observacion").html(msj.responseJSON.observacion);
+			$("#msj-error-comunidad").fadeIn();
+			$("#msj-error-observacion").fadeIn();
+		}*/
+	});
+});

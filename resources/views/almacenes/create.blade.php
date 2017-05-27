@@ -14,17 +14,23 @@
 				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Almacenes</h1>
 			</div>
 		</div>
-		@include('recursos.forms.recursos')			
-		@include('almacenes.forms.almacenes')
+		<div class="col-md-12 registro">
+	        <div class="col-md-4 col-xs-12">
+				@include('recursos.forms.recursos')
+				@include('almacenes.forms.almacenes')
+			</div>	
+			 <div class="col-md-4 col-sm-6 col-xs-12"> 
+				<style type="text/css">
+					#map{
+						width: 600px;
+						height: 378px;
+						margin-left: 10px;
+					}
+				</style>
+				{!!Form::label('Ubicacion','Ubicacion:')!!}
+				<br><div id="map"></div>
+			
 
-		<style type="text/css">
-			#map{
-				width: 400px;
-				height: 300px;
-				margin-left: 10px;
-			}
-		</style>
-		<div id="map"></div>
     	<script>
   
 			var map;
@@ -104,6 +110,7 @@
   			markers = [];
 		}
 
+
 	</script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdrwQmzjIoACEil9sn4bti0WzrVpkJkI&callback=initMap"
@@ -114,9 +121,12 @@
 
 	<br/>
 
-	<div class="form-group">
-		<div class="col-md-6 col-xs-12">
-			{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroAlmacen','class'=>'btn btn-primary'], $secure = null)!!}
+			<div class="form-group">
+				<div class="col-md-6 col-xs-12">
+					{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroAlmacen','class'=>'btn btn-primary'], $secure = null)!!}
+				</div>
+			</div>
+
 		</div>
 	</div>
 		

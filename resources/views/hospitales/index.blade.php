@@ -17,7 +17,7 @@
 	<br/>
 	<table class="table">
 		<thead>
-			<th>Nombre del Hospital</th>
+			<th>Hospital</th>
 			<th>Dirección</th>
 			<th>Contacto</th>
 			<th>Número de Médicos</th>

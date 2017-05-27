@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-	
 	{!!Form::open(['class'=>'form-horizontal', 'id'=>'frmProyectos', 'method'=>'POST'])!!}
 
 		<div id="msj-insert-proyecto" class="alert alert-success alert-dismissible" role="alert" style="display: none">
@@ -17,8 +16,11 @@
 		</div>
 		@include('proyectos.forms.proyectos')			
 
+		<div class="form-group">
+			<div class="col-md-6 col-xs-12">
+				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroProyecto','class'=>'btn btn-primary'], $secure = null)!!}
+			</div>
+		</div>
 		
-	  
-	 {!!Form::close()!!}		
-	
+	{!!Form::close()!!}		
 @endsection

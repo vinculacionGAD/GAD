@@ -18,6 +18,6 @@
 				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroVoluntario','class'=>'btn btn-primary'], $secure = null)!!}
 			</div>
 		</div>
-		
+		</div>	
 	{!!Form::close()!!}		
 @endsection

@@ -15,17 +15,7 @@
 			</div>
 		</div>
 		@include('organizaciones.forms.organizaciones')	
-		<div class="form-group">
-			<div class="col-md-6 col-xs-12">
-				{!!Form::label('Logotipo','Logotipo:')!!}
-				{!!Form::file('logotipo')!!}		
-			</div>	
-		</div>
-		<div class="form-group">
-			<div class="col-md-6 col-xs-12">
-				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroOrganizacion','class'=>'btn btn-primary'], $secure = null)!!}
-			</div>
-		</div>
 		
+			
 	{!!Form::close()!!}		
 @endsection

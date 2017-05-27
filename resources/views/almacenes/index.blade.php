@@ -17,7 +17,7 @@
 	<br/>
 	<table class="table">
 		<thead>
-			<th>Nombre Almacén</th>
+			<th>Almacén</th>
 			<th>Dirección</th>
 			<th>Observación</th>
 			<th></th>

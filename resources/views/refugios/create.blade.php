@@ -14,9 +14,21 @@
 				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Refugios</h1>
 			</div>
 		</div>
+		<div class="col-md-12 registro">
+	        <div class="col-md-4 col-xs-12">
 		@include('recursos.forms.recursos')			
-		@include('refugios.forms.refugios')	
-
+		</div>	
+			<div class="col-md-4 col-sm-6 col-xs-12">
+			@include('refugios.forms.refugios')	
+			<br>
+			<div class="form-group">
+			<div class="col-md-6 col-xs-12">
+				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroRefugio','class'=>'btn btn-primary'], $secure = null)!!}
+			</div>
+		</div>
+</div>	
+			<div class="col-md-4 col-sm-6 col-xs-12">
+			{!!Form::label('Ubicacion','Ubicacion:')!!}
 		<style type="text/css">
 			#map{
 				width: 400px;
@@ -25,6 +37,7 @@
 			}
 		</style>
 		<div id="map"></div>
+</div>
     	<script>
   
 			var map;
@@ -114,10 +127,8 @@
 
 	<br/>			
 
-		<div class="form-group">
-			<div class="col-md-6 col-xs-12">
-				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroRefugio','class'=>'btn btn-primary'], $secure = null)!!}
-			</div>
+		
+		
 		</div>
 		
 	{!!Form::close()!!}		
