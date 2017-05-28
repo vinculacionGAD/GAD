@@ -9,7 +9,7 @@ class sectores extends Model
 	protected $table = "sectores";
 
     protected $fillable = [
-		'sector', 'abreviatura', 'ubicacion', 'observacion', 'latitud','longitud', 'comunidad_id'
+		'sector', 'abreviatura', 'ubicacion', 'observacion', 'latitud','longitud', 'comunidad_id', 'imagen'
 	];
 
 	public function familias(){

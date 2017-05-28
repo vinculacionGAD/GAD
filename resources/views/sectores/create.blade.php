@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-	{!!Form::open(['class'=>'form-horizontal', 'id'=>'frmSectores', 'method'=>'POST'])!!}
+	{!!Form::open(['class'=>'form-horizontal', 'id'=>'frmSectores', 'files'=>true, 'method'=>'POST'])!!}
 
 		<div id="msj-insert-sector" class="alert alert-success alert-dismissible" role="alert" style="display: none">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -18,6 +18,10 @@
 		<div class="col-md-12 col-sm-12 col-xs-12 registro">
 			<div class="col-md-6 col-sm-12 col-xs-12">
 				@include('sectores.forms.sectores')
+				<div class="col-md-6 col-xs-12">
+					{!!Form::label('imagen','Imagen:')!!}
+					{!!Form::file('imagen')!!}		
+				</div>	
 			</div>
 
 			<div class="col-md-6 col-sm-12 col-xs-12">

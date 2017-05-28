@@ -19,7 +19,7 @@ class CreatePersonasHogaresTable extends Migration
             $table->string('trabaja_si_no', 1);
             $table->timestamps();
             $table->integer('persona_id')->unsigned();                
-            $table->integer('actividad_laboral_id')->unsigned();                
+            $table->integer('actividad_laboral_id')->unsigned()->nullable();                
             $table->integer('salud_id')->unsigned();
             $table->foreign('persona_id')->references('id')->on('personas');
             $table->foreign('actividad_laboral_id')->references('id')->on('actividades_laborales');

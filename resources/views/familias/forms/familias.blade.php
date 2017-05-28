@@ -28,15 +28,4 @@
 			{!!Form::select('actividad_laboral_id', $actividades_laborales, null, ['id'=>'actividad_laboral_id', 'class'=>'form-control'])!!}
 		</div>
 	</div>
-	<div class="form-group">	
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('refugio_id','Refugio:')!!}
-			{!!Form::select('refugio_id', $refugios, null, ['id'=>'refugio_id', 'class'=>'form-control'])!!}
-		</div>
-	</div>	
-	<div class="form-group">	
-		<div class="col-lg-12 col-md-12 col-xs-12">
-			<hr/>
-		</div>
-	</div>
 </div>

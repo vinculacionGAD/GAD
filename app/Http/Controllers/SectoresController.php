@@ -11,6 +11,8 @@ use Illuminate\Routing\Route;
 use Session;
 use Redirect;
 use DB;
+use Storage;
+use Hash;
 
 class SectoresController extends Controller
 {
@@ -53,10 +55,32 @@ class SectoresController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->ajax()){
-            sectores::create($request->all());
+
+        $archivo = $request->file('imagen');
+        $nombre_original = $archivo->getClientOriginalName();
+        $extension = $archivo->getClientOriginalExtension();
+        $nuevo_nombre = "imagenSector".$nombre_original;
+        $r1 = Storage::disk('local')->put($nuevo_nombre, \File::get($archivo));
+        $ruta_imagen = "imagenes/".$nuevo_nombre;        
+
+        if($r1){
+            sectores::create([
+                    'sector' => $request->input("sector"),
+                    'abreviatura' => $request->input("abreviatura"),
+                    'ubicacion' => $request->input("ubicacion"),
+                    'observacion' => $request->input("observacion"),
+                    'comunidad_id' => $request->input("comunidad_id"),
+                    'latitud' => $request->input("latitud"),
+                    'longitud' => $request->input("longitud"),
+                    'imagen' => $ruta_imagen,
+                    ]
+                );
             return response()->json([
                 "mensaje" => "creado"
+                ]);
+        }else{
+            return response()->json([
+                "mensaje" => "error imagen"
                 ]);
         }
     }

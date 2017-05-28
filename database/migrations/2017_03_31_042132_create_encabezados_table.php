@@ -15,7 +15,7 @@ class CreateEncabezadosTable extends Migration
     {
         Schema::create('encabezados', function (Blueprint $table) {
             $table->increments('id');            
-            $table->string('observacion');
+            $table->string('observacion')->nullable();
             $table->date('fecha_registro');
             $table->timestamps();
             $table->integer('tipo_transaccion_id')->unsigned();

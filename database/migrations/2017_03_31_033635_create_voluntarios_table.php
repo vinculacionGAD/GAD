@@ -15,18 +15,18 @@ class CreateVoluntariosTable extends Migration
     {
         Schema::create('voluntarios', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('trabajo', 50);
+            $table->string('trabajo', 50)->nullable();
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
             $table->timestamps();
             $table->integer('persona_id')->unsigned();                
             $table->integer('pais_id')->unsigned();                
             $table->integer('organizacion_id')->unsigned();                
-            $table->integer('rol_voluntario_id')->unsigned();    
+            $table->integer('rol_voluntario_id')->unsigned()->nullable();    
             $table->foreign('persona_id')->references('id')->on('personas');
             $table->foreign('pais_id')->references('id')->on('paises');
             $table->foreign('organizacion_id')->references('id')->on('organizaciones');
-            $table->foreign('rol_voluntario_id')->references('id')->on('roles_voluntarios');            
+            $table->foreign('rol_voluntario_id')->references('id')->on('roles_voluntarios');       
         });
     }
 

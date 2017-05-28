@@ -16,15 +16,15 @@ class CreateOrganizacionesTable extends Migration
         Schema::create('organizaciones', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre', 100);
-            $table->string('acronimo', 10);
+            $table->string('acronimo', 10)->nullable();
             $table->string('tipo_organizacion', 10);
-            $table->string('region', 30);
+            $table->string('region', 30)->nullable();
             $table->string('telefono', 10);
-            $table->string('sitio_web', 45);
-            $table->string('anio', 4);
-            $table->string('twitter', 45);
-            $table->string('logotipo');
-            $table->string('observacion');
+            $table->string('sitio_web', 45)->nullable();
+            $table->string('anio', 4)->nullable();
+            $table->string('twitter', 45)->nullable();
+            $table->string('logotipo')->nullable();
+            $table->string('observacion')->nullable();
             $table->timestamps();
             $table->integer('pais_id')->unsigned();                
             $table->foreign('pais_id')->references('id')->on('paises');

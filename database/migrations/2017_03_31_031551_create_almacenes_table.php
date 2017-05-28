@@ -15,7 +15,7 @@ class CreateAlmacenesTable extends Migration
     {
         Schema::create('almacenes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('observacion');
+            $table->string('observacion')->nullable();
             $table->timestamps();
             $table->integer('recurso_id')->unsigned();                
             $table->foreign('recurso_id')->references('id')->on('recursos');

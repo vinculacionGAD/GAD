@@ -15,7 +15,7 @@ class CreateOficinasTable extends Migration
     {
         Schema::create('oficinas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('comentario');
+            $table->string('comentario')->nullable();
             $table->timestamps();
             $table->integer('recurso_id')->unsigned();                
             $table->foreign('recurso_id')->references('id')->on('recursos');

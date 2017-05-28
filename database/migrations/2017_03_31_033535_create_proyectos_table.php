@@ -18,10 +18,10 @@ class CreateProyectosTable extends Migration
             $table->string('proyecto', 80);
             $table->string('status', 1);
             $table->date('fecha_inicio');
-            $table->date('fecha_fin');
-            $table->decimal('presupuesto',6,2);
+            $table->date('fecha_fin')->nullable();
+            $table->decimal('presupuesto',6,2)->nullable();
             $table->string('moneda', 30);
-            $table->string('observacion');
+            $table->string('observacion')->nullable();
             $table->timestamps();            
             $table->integer('organizacion_id')->unsigned();                
             $table->integer('programa_id')->unsigned();

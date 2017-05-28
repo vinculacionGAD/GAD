@@ -18,11 +18,11 @@ class CreatePersonasTable extends Migration
             $table->string('doc_identificacion', 13);
             $table->string('nombres', 30);
             $table->string('apellido_paterno', 20);
-            $table->string('apellido_materno', 20);
+            $table->string('apellido_materno', 20)->nullable();
             $table->date('fecha_nacimiento');
             $table->string('sexo', 1);
-            $table->string('correo_electronico', 45);
-            $table->string('telefono_movil', 10);
+            $table->string('correo_electronico', 45)->nullable();
+            $table->string('telefono_movil', 10)->nullable();
             $table->timestamps();
             $table->string('estado_civil', 10);
         });

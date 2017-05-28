@@ -9,7 +9,7 @@ class viviendas extends Model
 	protected $table = "viviendas";
 
     protected $fillable = [
-		'tipo_construccion', 'anios_vida', 'ubicacion'
+		'tipo_construccion', 'anios_vida', 'ubicacion', 'latitud', 'longitud', 'imagen'
 	];
 
 	public function familias(){

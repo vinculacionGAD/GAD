@@ -16,7 +16,11 @@
 		</div>
 		@include('proyectos.forms.proyectos')			
 
-		
+		<div class="form-group"  class="btn-registrar">
+			<div class="col-md-6 col-xs-12" style="margin-left: 20px;">
+				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroProyecto','class'=>'btn btn-primary'], $secure = null)!!}
+			</div>
+		</div>
 		
 	{!!Form::close()!!}		
 @endsection

@@ -19,7 +19,9 @@ class CreateDetallesTable extends Migration
             $table->timestamps();
             $table->integer('encabezado_id')->unsigned();
             $table->integer('tipo_transaccion_id')->unsigned();
+            $table->integer('producto_id')->unsigned();
             $table->foreign('encabezado_id')->references('id')->on('encabezados');
+            $table->foreign('producto_id')->references('id')->on('productos');
             $table->foreign('tipo_transaccion_id')->references('tipo_transaccion_id')->on('encabezados');
         });
     }

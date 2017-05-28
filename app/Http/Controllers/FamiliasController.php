@@ -16,6 +16,8 @@ use Illuminate\Routing\Route;
 use Session;
 use Redirect;
 use DB;
+use Storage;
+use Hash;
 
 class FamiliasController extends Controller
 {
@@ -47,10 +49,10 @@ class FamiliasController extends Controller
         $personas = personas::pluck('nombres', 'id');
         $actividades_laborales = actividades_laborales::pluck('actividad_laboral', 'id');
         $discapacidades = discapacidades::pluck('tipo_discapacidad', 'id');
-        $refugios = refugios::pluck('nombre_contacto', 'id');
+        //$refugios = refugios::pluck('nombre_contacto', 'id');
         $sectores = sectores::pluck('sector', 'id');
 
-        return view('familias.create',compact('personas','actividades_laborales','discapacidades','refugios','sectores'));
+        return view('familias.create',compact('personas','actividades_laborales','discapacidades','sectores'));
     }
 
     /**
@@ -61,9 +63,37 @@ class FamiliasController extends Controller
      */
     public function store(Request $request)
     {
+
+        $archivo = $request->file('imagen');
+        $nombre_original = $archivo->getClientOriginalName();
+        $extension = $archivo->getClientOriginalExtension();
+        $nuevo_nombre = "imagenVivienda".$nombre_original;
+        $r1 = Storage::disk('local')->put($nuevo_nombre, \File::get($archivo));
+        $ruta_imagen = "imagenes/".$nuevo_nombre;
+
         salud::create($request->all());
 
-        viviendas::create($request->all());
+        if($r1){
+            viviendas::create([
+                    'tipo_construccion' => $request->input("tipo_construccion"),
+                    'anios_vida' => $request->input("anios_vida"),
+                    'ubicacion' => $request->input("ubicacion"),
+                    'latitud' => $request->input("latitud"),
+                    'logintud' => $request->input("logintud"),
+                    'detalle' => $request->input("detalle"),
+                    'imagen' => $ruta_imagen,
+                    ]
+                );
+            response()->json([
+                "mensaje" => "creado"
+                ]);
+        }else{
+            return response()->json([
+                "mensaje" => "error imagen"
+                ]);
+        }
+
+        //viviendas::create($request->all());
 
         $idSal = "";
         $idSalud = DB::select("SELECT MAX(id) as idSalu FROM saluds");
@@ -97,7 +127,6 @@ class FamiliasController extends Controller
             'persona_hogar_id'=>$idPer,
             'vivienda_id'=>$idViv,
             'sector_id'=>$request['sector_id'],
-            'refugio_id'=>$request['refugio_id'],
             'jefe_hogar'=>$idJefe,
             ]);
 

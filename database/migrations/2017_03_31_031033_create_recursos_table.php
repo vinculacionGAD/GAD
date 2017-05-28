@@ -18,9 +18,9 @@ class CreateRecursosTable extends Migration
             $table->string('nombre_recurso', 100);
             $table->string('direccion', 80);
             $table->string('telefono', 10);
-            $table->string('latitud', 45);
-            $table->string('longitud', 45);
-            $table->string('correo', 30);
+            $table->string('latitud', 45)->nullable();
+            $table->string('longitud', 45)->nullable();
+            $table->string('correo', 30)->nullable();
             $table->timestamps();
             $table->integer('tipo_instalacion_id')->unsigned();                
             $table->foreign('tipo_instalacion_id')->references('id')->on('tipos_instalaciones');
