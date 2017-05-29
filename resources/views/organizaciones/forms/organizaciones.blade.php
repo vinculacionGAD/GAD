@@ -17,7 +17,7 @@
 					<div class="form-group">
 						<div class="col-lg-12 col-md-12 col-sm-12">
 							{!!Form::label('tipo_organizacion','Tipo Organización:')!!}
-							{!!Form::select('tipo_organizacion', ['Publica' => 'Pública', 'Privada' => 'Privada'], null, ['class'=>'form-control', 'id'=>'tipo_organizacion'])!!}
+							{!!Form::select('tipo_organizacion', ['Publica' => 'Pública', 'Privada' => 'Privada'], null, ['class'=>'form-control', 'id'=>'tipo_organizacion', 'placeholder'=>'Seleccione un tipo de organización'])!!}
 						</div>		
 					</div>
 
@@ -73,7 +73,7 @@
 					<div class="form-group">	
 						<div class="col-lg-12 col-md-12 col-xs-12">
 							{!!Form::label('pais_id','Pais:')!!}
-							{!!Form::select('pais_id', $paises, null, ['id'=>'pais_id', 'class'=>'form-control'])!!}
+							{!!Form::select('pais_id', $paises, null, ['id'=>'pais_id', 'class'=>'form-control', 'placeholder'=>'Seleccione un pais'])!!}
 						</div>
 					</div>
 			</div>

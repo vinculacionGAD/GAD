@@ -31,8 +31,8 @@
 		
 		<div class="form-group">
 			<div class="col-lg-12 col-md-12 col-xs-12">
-				{!!Form::label('Estado','Estado:')!!}
-				{!!Form::select('moneda', ['Activo' => 'A', 'Pendiente' => 'P', 'Finalizado' => 'F'], null, ['class'=>'form-control', 'id'=>'estado', 'placeholder'=>'Seleccione un estado'])!!}
+				{!!Form::label('status','Estado:')!!}
+				{!!Form::select('status', ['A' => 'Activo', 'P' => 'Pendiente', 'F' => 'Finalizado'], null, ['class'=>'form-control', 'id'=>'status', 'placeholder'=>'Seleccione un estado'])!!}
 			</div>
 		</div>
 
@@ -56,14 +56,14 @@
 		<div class="form-group">	
 			<div class="col-lg-12 col-md-12 col-xs-12">
 				{!!Form::label('programa_id','Programa:')!!}
-				{!!Form::select('programa_id', $programas, null, ['id'=>'programa_id', 'class'=>'form-control'])!!}
+				{!!Form::select('programa_id', $programas, null, ['id'=>'programa_id', 'class'=>'form-control', 'placeholder'=>'Seleccione un programa'])!!}
 			</div>
 		</div>
 
 		<div class="form-group">	
 			<div class="col-lg-12 col-md-12 col-xs-12">
 				{!!Form::label('organizacion_id','Organización:')!!}
-				{!!Form::select('organizacion_id', $organizaciones, null, ['id'=>'organizacion_id', 'class'=>'form-control'])!!}
+				{!!Form::select('organizacion_id', $organizaciones, null, ['id'=>'organizacion_id', 'class'=>'form-control', 'placeholder'=>'Seleccione una organización'])!!}
 			</div>
 		</div>
 

@@ -24,7 +24,7 @@
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('tipo_producto_id','Tipo Producto:')!!}
-			{!!Form::select('tipo_producto_id', $tipos_productos, null, ['id'=>'tipo_producto_id', 'class'=>'form-control'])!!}
+			{!!Form::select('tipo_producto_id', $tipos_productos, null, ['id'=>'tipo_producto_id', 'class'=>'form-control', 'placeholder'=>'Escoja el tipo de producto'])!!}
 		</div>
 	</div>
 

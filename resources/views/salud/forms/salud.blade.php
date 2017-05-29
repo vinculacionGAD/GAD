@@ -43,7 +43,7 @@
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('discapacidad_id','Discapacidad:')!!}
-			{!!Form::select('discapacidad_id', $discapacidades, null, ['id'=>'discapacidad_id', 'class'=>'form-control'])!!}
+			{!!Form::select('discapacidad_id', $discapacidades, null, ['id'=>'discapacidad_id', 'class'=>'form-control','placeholder'=>'Seleccione un tipo de discapacidad'])!!}
 		</div>
 	</div>	
 	<div class="form-group">

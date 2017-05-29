@@ -10,7 +10,7 @@
 				<input type="hidden" id="id">
 				{!!Form::open(['id'=>'frmEditarProveedores', 'method'=>'POST'])!!}
 					<div class="col-md-12 registro">
-     	<div class="col-md-6 col-xs-12">
+     	<div class="col-md-12 col-xs-12">
 			<div class="form-group">	
 				<div class="col-lg-12 col-md-12 col-xs-12">
 					{!!Form::label('persona_id','Persona:')!!}

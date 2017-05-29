@@ -24,7 +24,7 @@
 	<div class="form-group">	
 		<div class="col-lg-6 col-md-12 col-xs-12">
 			{!!Form::label('departamento_id','Departamento:')!!}
-			{!!Form::select('departamento_id', $departamentos, null, ['id'=>'departamento_id', 'class'=>'form-control'])!!}
+			{!!Form::select('departamento_id', $departamentos, null, ['id'=>'departamento_id', 'class'=>'form-control', 'placeholder'=>'Seleccione un departamento'])!!}
 		</div>
 	</div>
 

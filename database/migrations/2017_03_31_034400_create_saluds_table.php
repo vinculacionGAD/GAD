@@ -23,7 +23,7 @@ class CreateSaludsTable extends Migration
             $table->string('observacion')->nullable();
             $table->date('fecha_parto')->nullable();
             $table->timestamps();
-            $table->integer('discapacidad_id')->unsigned();                
+            $table->integer('discapacidad_id')->unsigned()->nullable();                
             $table->foreign('discapacidad_id')->references('id')->on('discapacidades');
         });
     }

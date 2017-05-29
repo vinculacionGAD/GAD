@@ -16,7 +16,7 @@ class CreateFamiliasTable extends Migration
         Schema::create('familias', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('persona_id')->unsigned();                
+            //$table->integer('persona_id')->unsigned();                
             $table->integer('vivienda_id')->unsigned();                
             $table->integer('persona_hogar_id')->unsigned();                
             //$table->integer('refugio_id')->unsigned();                

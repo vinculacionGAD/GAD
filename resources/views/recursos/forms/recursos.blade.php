@@ -22,14 +22,14 @@
 	<div class="form-group">
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Correo','Correo:')!!}
-			{!!Form::text('correo',null,['id'=>'correo','class'=>'form-control', 'placeholder'=>'Ingresa un correo', 'maxlength'=>'30', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
+			{!!Form::text('correo',null,['id'=>'correo','class'=>'form-control', 'placeholder'=>'Ingresa un correo', 'maxlength'=>'30'])!!}
 		</div>		
 	</div>
 
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('tipo_instalacion_id','Tipo de Instalación:')!!}
-			{!!Form::select('tipo_instalacion_id', $tipos_instalaciones, null, ['id'=>'tipo_instalacion_id', 'class'=>'form-control'])!!}
+			{!!Form::select('tipo_instalacion_id', $tipos_instalaciones, null, ['id'=>'tipo_instalacion_id', 'class'=>'form-control', 'placeholder'=>'Escoga un tipo de instalación'])!!}
 		</div>
 	</div>
 </div>

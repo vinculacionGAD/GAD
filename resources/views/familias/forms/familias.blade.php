@@ -25,7 +25,7 @@
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('actividad_laboral_id','Actividad Laboral:')!!}
-			{!!Form::select('actividad_laboral_id', $actividades_laborales, null, ['id'=>'actividad_laboral_id', 'class'=>'form-control'])!!}
+			{!!Form::select('actividad_laboral_id', $actividades_laborales, null, ['id'=>'actividad_laboral_id', 'class'=>'form-control', 'placeholder'=>'Seleccione una actividad laboral'])!!}
 		</div>
 	</div>
 </div>

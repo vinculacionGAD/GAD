@@ -29,7 +29,7 @@
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('comunidad_id','Comunidad:')!!}
-			{!!Form::select('comunidad_id', $comunidades, null, ['id'=>'comunidad_id', 'class'=>'form-control'])!!}
+			{!!Form::select('comunidad_id', $comunidades, null, ['id'=>'comunidad_id', 'class'=>'form-control', 'placeholder'=>'Seleccione una comunidad'])!!}
 		</div>
 	</div>
 </div>

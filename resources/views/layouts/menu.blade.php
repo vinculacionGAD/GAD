@@ -62,15 +62,15 @@
                   <li><a><i class="fa fa-home"></i>Familias<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/familias/create">Ingresar Familia</a></li>
-                      <li><a href="/familias/">Ver y Editar Familias</a></li>
+                      <li><a href="/familias/">Administrar Familias</a></li>
                       <li><a href="/personasHogares/create">Ingresar Miembro Familia</a></li>
-                      <li><a href="/personasHogares/">Ver y Editar Miembros de Familia</a></li>
+                      <li><a href="/personasHogares/">Administrar Miembros de Familia</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-shopping-basket"></i>Productos<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/productos/create">Ingresar Producto</a></li>
-                      <li><a href="/productos/">Ver y Editar Productos</a></li>
+                      <li><a href="/productos/">Administrar Productos</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-cube"></i>Inventario<span class="fa fa-chevron-down"></span></a>
@@ -82,11 +82,11 @@
                   <li><a><i class="fa fa-clone"></i>Definiciones Generales<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/comunidades/create">Ingresar Comunidad</a></li>
-                      <li><a href="/comunidades/">Ver y Editar Comunidades</a></li>
+                      <li><a href="/comunidades/">Administrar Comunidades</a></li>
                       <li><a href="/departamentos/create">Ingresar Departamento</a></li>
-                      <li><a href="/departamentos/">Ver y Editar Departamentos</a></li>
+                      <li><a href="/departamentos/">Administrar Departamentos</a></li>
                       <li><a href="/sectores/create">Ingresar Sector</a></li>
-                      <li><a href="/sectores/">Ver y Editar Sectores</a></li>
+                      <li><a href="/sectores/">Administrar Sectores</a></li>
                     </ul>
                   </li>
                   </ul>
