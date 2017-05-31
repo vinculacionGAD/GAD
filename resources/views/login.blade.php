@@ -15,8 +15,6 @@
     {!!Html::style('plugins/font-awesome/css/font-awesome.min.css')!!}
     <!-- NProgress -->
     {!!Html::style('plugins/nprogress/nprogress.css')!!}
-    <!-- Animate.css -->
-    <link href="https://colorlib.com/polygon/gentelella/css/animate.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     {!!Html::style('css/custom.min.css')!!}
     <!-- Estilos SICGOM -->
@@ -32,21 +30,26 @@
     <div>
       <a class="hiddenanchor" id="signup"></a>
       <a class="hiddenanchor" id="signin"></a>
-    
+      <div id="lod" style="display:none"> 
+          <img src="{{asset('img/load.gif')}}" alt="" style="position: absolute;margin-left: 640px;z-index: 1;margin-top: 53px;width: 80px;">
+        <h4 style="position: absolute;margin-left: 640px;z-index: 1;margin-top: 136px;">Cargando...
+                </h4>
+    </div>
+    {!!Form::open(['method'=>'POST','id'=>'login_from'])!!} 
+     <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
       <div class="login_wrapper">
-        
-        <div class="animate form login_form">
+          <div>
           <section class="login_content">
-            <form>
               <h1>GAD - UTM</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Usuario" required="" />
+                <input type="text" id="usuario" class="form-control" placeholder="Usuario" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Clave" required="" />
+                <input type="password" id="clave" class="form-control" placeholder="Clave" />
               </div>
+    {!!Form::close()!!}
               <div>
-                <button class="btn btn btn-dark form-control" id="Bton_Iniciar"  href="index.html">Iniciar Sessión</button>
+                <button class="btn btn btn-dark form-control" id="Bton_Iniciar"  href="javascript:void(0)">Iniciar Sessión</button>
                 <a class="reset_pass" href="#">Olvido su clave?</a>
               </div>
 
@@ -62,51 +65,15 @@
 
                 <div>
                   <h1>GAD - UTM!</h1>
-                  <p>©2017 All Rights Reserved. Municipio del canton 24 de Mayo    </p>
+                  <p>©2017 All Rights Reserved. Municipio del canton 24 de Mayo </p>
                 </div>
               </div>
-            </form>
-          </section>
-        </div>
-
-        <div id="register" class="animate form registration_form">
-          <section class="login_content">
-            <form>
-              <h1>Create Account</h1>
-              <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
-              </div>
-              <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
-              </div>
-              <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
-              </div>
-              <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
-              </div>
-
-              <div class="clearfix"></div>
-
-              <div class="separator">
-                <p class="change_link">Already a member ?
-                  <a href="#signin" class="to_register"> Log in </a>
-                </p>
-
-                <div class="clearfix"></div>
-                <br />
-
-                <div>
-                  <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
-                  <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                </div>
-              </div>
-            </form>
           </section>
         </div>
       </div>
     </div>
   </body>
-    {!!Html::script('js/login-sicgom.js')!!}
+    {!!Html::script('plugins/jquery/dist/jquery-3.2.1.js')!!}
+    {!!Html::script('js/login_gad.js')!!}
 
 </html>

@@ -117,15 +117,21 @@ Route::get('vivienda','ViviendasController@listing');
 Route::post('viviendas/{id}','ViviendasController@modificar');
 //fin gestion viviendas
 
-Route::get('/', function () {
-    return view('login');
+Route::group(['middleware' => ['web']], function () {
+	Route::get('/', function () {
+		if (Auth::guest()){
+    		return view('login');
+    	}else{
+    		 return Redirect::to('app');
+    	}
+	});
 });
-
 
 Route::get('/app/usuarios', function(){
-	return view('usuarios.CrearUsuarios');
-});
+		return view('usuarios.CrearUsuarios');
+	});
+Route::get('/app','AppController@index');
 
-Route::get('/app', function(){
-	return view('layouts.app');
-});
+// Login del sistema
+Route::post('logeo','LoginController@login_gad');
+Route::get('logout','LoginController@logout_gad');

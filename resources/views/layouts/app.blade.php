@@ -91,7 +91,7 @@
                       </a>
                     </li>
                     <li><a href="javascript:;">Ayuda</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
+                    <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
                   </ul>
                 </li>
 
