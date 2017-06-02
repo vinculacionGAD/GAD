@@ -65,7 +65,7 @@
 
                 <div>
                   <h1>GAD - UTM!</h1>
-                  <p>©2017 All Rights Reserved. Municipio del canton 24 de Mayo </p>
+                  <p>©2017 All Rights Reserved. GAD Municipal del Cantón Sucre </p>
                 </div>
               </div>
           </section>

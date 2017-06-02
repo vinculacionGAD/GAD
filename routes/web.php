@@ -17,6 +17,12 @@ Route::get('almacen','AlmacenesController@listing');
 Route::post('almacenes/{id}','AlmacenesController@modificar');
 //fin de gestion de almacenes
 
+//Inicio de gestion de bomberos
+Route::resource('bomberos','BomberosController');
+Route::get('bombero','BomberosController@listing');
+Route::post('bomberos/{id}','BomberosController@modificar');
+//fin de gestion de bomberos
+
 //Inicio de gestion de comunidades
 Route::resource('comunidades','ComunidadesController');
 Route::get('comunidad','ComunidadesController@listing');
@@ -40,6 +46,12 @@ Route::resource('hospitales','HospitalesController');
 Route::get('hospital','HospitalesController@listing');
 Route::post('hospitales/{id}','HospitalesController@modificar');
 //fin de gestion de hospitales
+
+//Inicio de gestion de marina
+Route::resource('marinas','MarinaController');
+Route::get('marina','MarinaController@listing');
+Route::post('marinas/{id}','MarinaController@modificar');
+//fin de gestion de marina
 
 //Inicio de gestion de organizaciones
 Route::resource('organizaciones','OrganizacionesController');
@@ -65,6 +77,12 @@ Route::get('personaHogar','PersonasHogaresController@listing');
 Route::post('personasHogares/{id}','PersonasHogaresController@modificar');
 //fin Gestion PersonasHogares
 
+//Inicio de gestion de policias
+Route::resource('policias','PoliciasController');
+Route::get('policia','PoliciasController@listing');
+Route::post('policias/{id}','PoliciasController@modificar');
+//fin de gestion de policias
+
 //Inicio Gestion Productos
 Route::resource('productos','ProductosController');
 Route::get('producto','ProductosController@listing');
@@ -88,6 +106,12 @@ Route::resource('proyectos','ProyectosController');
 Route::get('proyecto','ProyectosController@listing');
 Route::post('proyectos/{id}','ProyectosController@modificar');
 //fin de gestion de proyectos
+
+//Inicio de gestion de puntosEncuentro
+Route::resource('puntosEncuentro','PuntosEncuentroController');
+Route::get('puntoEncuentro','PuntosEncuentroController@listing');
+Route::post('puntosEncuentro/{id}','PuntosEncuentroController@modificar');
+//fin de gestion de puntosEncuentro
 
 //Inicio de gestion de refugios
 Route::resource('refugios','RefugiosController');

@@ -24,6 +24,7 @@ function Mostrar(btn){
 			$("#direccion").val(value.direccion);		
 			$("#telefono").val(value.telefono);
 			$("#correo").val(value.correo);
+			$("#tipo_instalacion_id").val(value.tipo_instalacion_id);
 			$("#observacion").val(value.observacion);		
 			$("#latitud").val(value.latitud);
 			$("#longitud").val(value.longitud);

@@ -4,14 +4,14 @@
 
 		<div id="msj-insert-refugio" class="alert alert-success alert-dismissible" role="alert" style="display: none">
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-			<strong>Refugio Agregado Correctamente</strong>
+			<strong>Albergue Agregado Correctamente</strong>
 		</div>
 
 		<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token"> 
 
 		<div class="form-group">
 			<div class="col-md-6 col-xs-12">
-				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Refugios</h1>
+				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Albergues</h1>
 			</div>
 		</div>
 		<div class="col-md-12 registro">

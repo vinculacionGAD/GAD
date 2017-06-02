@@ -29,6 +29,18 @@ class recursos extends Model
         return $this->hasmany(refugios::class);
     }
 
+    public function bomberos(){
+        return $this->hasmany(bomberos::class);
+    }
+
+    public function policias(){
+        return $this->hasmany(policias::class);
+    }
+
+    public function marina(){
+        return $this->hasmany(marina::class);
+    }
+
     public function tiposIntalaciones(){
     	return $this->belongsto(tipos_instalacion::class);
     }

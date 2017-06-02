@@ -28,6 +28,7 @@ function Mostrar(btn){
 			$("#observacion").val(value.observacion);		
 			$("#latitud").val(value.latitud);
 			$("#longitud").val(value.longitud);
+			$("#tipo_instalacion_id").val(value.tipo_instalacion_id);
 			$("#nombre_contacto").val(value.nombre_contacto);
 			$("#telefono_contacto").val(value.telefono_contacto);
 			$("#capacidad_maxima").val(value.capacidad_maxima);

@@ -3,22 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\puntos_encuentro;
+use Illuminate\Routing\Route;
+use Session;
+use Redirect;
+use DB;
 
-class AppController extends Controller
+class PuntosEncuentroController extends Controller
 {
+
+    public function listing(){
+        $puntos_encuentro = puntos_encuentro::all();
+
+        return response()->json(
+            $puntos_encuentro->toArray()    
+        );
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-     public function __construct()
-    {
-        //$this->middleware('auth');
-    }
-    
     public function index()
     {
-        return view('layouts.app');
+        return view('puntosEncuentro.index');
     }
 
     /**
@@ -28,7 +36,7 @@ class AppController extends Controller
      */
     public function create()
     {
-        //
+        return view('puntosEncuentro.create');
     }
 
     /**
@@ -39,7 +47,12 @@ class AppController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->ajax()){
+            puntos_encuentro::create($request->all());
+            return response()->json([
+                "mensaje" => "creado"
+                ]);
+        } 
     }
 
     /**
@@ -61,7 +74,11 @@ class AppController extends Controller
      */
     public function edit($id)
     {
-        //
+        $punto_encuentro = puntos_encuentro::find($id);
+
+        return response()->json(
+            $punto_encuentro->toArray()
+        );
     }
 
     /**
@@ -74,6 +91,21 @@ class AppController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function modificar(Request $request, $id) 
+    {
+        $puntos_encuentro = DB::update("update puntos_encuentro SET latitud = ?, longitud = ? WHERE id = ?", [$request->input('latitud'), $request->input('longitud'), $id]);
+
+        if($puntos_encuentro == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

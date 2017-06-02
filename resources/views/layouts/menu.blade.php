@@ -47,18 +47,28 @@
                       <li><a href="/almacenes/">Administrar Almacenes</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-cubes"></i>Albergues<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/refugios/create">Ingresar Albergue</a></li>
+                      <li><a href="/refugios/">Administrar Albergues</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-cubes"></i>Hospitales<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/hospitales/create">Ingresar Hospital</a></li>
                       <li><a href="/hospitales/">Administar Hospitales</a></li>
                     </ul>
-                  </li>
-                  <li><a><i class="fa fa-cubes"></i>Refugios<span class="fa fa-chevron-down"></span></a>
+                  </li>  
+                  <li><a><i class="fa fa-cubes"></i>Entidades Respuesta<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/refugios/create">Ingresar Refugio</a></li>
-                      <li><a href="/refugios/">Administrar Refugios</a></li>
+                      <li><a href="/bomberos/create">Ingresar Bombero</a></li>
+                      <li><a href="/bomberos/">Administar Bomberos</a></li>
+                      <li><a href="/marinas/create">Ingresar Marina</a></li>
+                      <li><a href="/marinas/">Administar Marina</a></li>
+                      <li><a href="/policias/create">Ingresar Policia</a></li>
+                      <li><a href="/policias/">Administar Policias</a></li>                      
                     </ul>
-                  </li>
+                  </li>                 
                   <li><a><i class="fa fa-home"></i>Familias<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/familias/create">Ingresar Familia</a></li>

@@ -25,6 +25,33 @@ $("#registroAlmacen").click(function(){
 	});
 });
 
+$("#registroBombero").click(function(){
+	var datos = new FormData($("#frmBomberos")[0]);
+	var route = "/bomberos"
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'POST',
+		dataType: 'json',
+		contentType: false,
+		processData: false,	
+		data: datos,
+
+		success:function(){
+			$("#msj-insert-bombero").fadeIn();
+		}/*,
+		error:function(msj){
+			//console.log(msj.responseJSON.comunidad);
+			$("#msj-comunidad").html(msj.responseJSON.comunidad);
+			$("#msj-observacion").html(msj.responseJSON.observacion);
+			$("#msj-error-comunidad").fadeIn();
+			$("#msj-error-observacion").fadeIn();
+		}*/
+	});
+});
+
 $("#registroComunidad").click(function(){
 	var datos = new FormData($("#frmComunidad")[0]);	
 	var route = "/comunidades"
@@ -122,6 +149,33 @@ $("#registroHospital").click(function(){
 
 		success:function(){
 			$("#msj-insert-hospital").fadeIn();
+		}/*,
+		error:function(msj){
+			//console.log(msj.responseJSON.comunidad);
+			$("#msj-comunidad").html(msj.responseJSON.comunidad);
+			$("#msj-observacion").html(msj.responseJSON.observacion);
+			$("#msj-error-comunidad").fadeIn();
+			$("#msj-error-observacion").fadeIn();
+		}*/
+	});
+});
+
+$("#registroMarina").click(function(){
+	var datos = new FormData($("#frmMarina")[0]);
+	var route = "/marinas"
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'POST',
+		dataType: 'json',
+		contentType: false,
+		processData: false,	
+		data: datos,
+
+		success:function(){
+			$("#msj-insert-marina").fadeIn();
 		}/*,
 		error:function(msj){
 			//console.log(msj.responseJSON.comunidad);
@@ -241,6 +295,33 @@ $("#registroPersona").click(function(){
 	});
 });
 
+$("#registroPolicia").click(function(){
+	var datos = new FormData($("#frmPolicia")[0]);
+	var route = "/policias"
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'POST',
+		dataType: 'json',
+		contentType: false,
+		processData: false,	
+		data: datos,
+
+		success:function(){
+			$("#msj-insert-policia").fadeIn();
+		}/*,
+		error:function(msj){
+			//console.log(msj.responseJSON.comunidad);
+			$("#msj-comunidad").html(msj.responseJSON.comunidad);
+			$("#msj-observacion").html(msj.responseJSON.observacion);
+			$("#msj-error-comunidad").fadeIn();
+			$("#msj-error-observacion").fadeIn();
+		}*/
+	});
+});
+
 $("#registroProducto").click(function(){
 	var datos = new FormData($("#frmProductos")[0]);
 	var route = "/productos"
@@ -338,6 +419,33 @@ $("#registroProyecto").click(function(){
 
 		success:function(){
 			$("#msj-insert-proyecto").fadeIn();
+		}/*,
+		error:function(msj){
+			//console.log(msj.responseJSON.comunidad);
+			$("#msj-comunidad").html(msj.responseJSON.comunidad);
+			$("#msj-observacion").html(msj.responseJSON.observacion);
+			$("#msj-error-comunidad").fadeIn();
+			$("#msj-error-observacion").fadeIn();
+		}*/
+	});
+});
+
+$("#registroPuntoEncuentro").click(function(){
+	var datos = new FormData($("#frmPuntoEncuentro")[0]);	
+	var route = "/puntosEncuentro"
+	var token = $("#token").val();
+
+	$.ajax({
+		url: route,
+		headers: {'X-CSRF-TOKEN': token},
+		type: 'POST',
+		dataType: 'json',
+		contentType: false,
+		processData: false,	
+		data: datos,
+
+		success:function(){
+			$("#msj-insert-puntoEncuentro").fadeIn();
 		}/*,
 		error:function(msj){
 			//console.log(msj.responseJSON.comunidad);
