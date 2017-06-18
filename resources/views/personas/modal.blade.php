@@ -58,7 +58,7 @@
 			<div class="form-group">
 				<div class="col-lg-12 col-md-12 col-sm-12">
 					{!!Form::label('CorreoElectronico','Correo Electronico:')!!}
-					{!!Form::text('correo_electronico',null,['id'=>'correo_electronico','class'=>'form-control', 'placeholder'=>'Ingresa el correo electrónico', 'maxlength'=>'45', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
+					{!!Form::text('correo_electronico',null,['id'=>'correo_electronico','class'=>'form-control', 'placeholder'=>'Ingresa el correo electrónico', 'maxlength'=>'45'])!!}
 				</div>		
 			</div>
 

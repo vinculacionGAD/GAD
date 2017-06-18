@@ -3,12 +3,14 @@
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('nombre_contacto','Nombre Contacto:')!!}
 			{!!Form::text('nombre_contacto', null, ['id'=>'nombre_contacto','class'=>'form-control', 'placeholder'=>'Ingresa el nombre del encargado', 'maxlength'=>'45', 'onkeypress'=>'return validaLetrasYEspacio(event)'])!!}
+			<span id="span_nombre_contacto"></span>
 		</div>
 	</div>
 	<div class="form-group">
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('telefono_contacto','Teléfono Contacto:')!!}
 			{!!Form::text('telefono_contacto', null,['id'=>'telefono_contacto','class'=>'form-control', 'placeholder'=>'Ingresa el número de teléfono del encargado', 'maxlength'=>'10', 'onkeypress'=>'return validaNumeros(event)'])!!}
+			<span id="span_telefono_contacto"></span>
 		</div>
 	</div>
 	<div class="form-group">

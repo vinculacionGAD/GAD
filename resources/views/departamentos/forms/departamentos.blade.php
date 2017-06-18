@@ -3,6 +3,7 @@
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('departamento','Departamento:')!!}
 			{!!Form::text('departamento', null,['id'=>'departamento','class'=>'form-control', 'placeholder'=>'Ingresa el nombre del departamento', 'maxlength'=>'45', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
+			<span id="span_departamento"></span>
 		</div>
 	</div>
 	<div class="form-group">

@@ -19,6 +19,9 @@
 
 	        <div class="col-md-4 col-xs-12">
 				@include('recursos.forms.recursos')	
+				<div class="col-md-6 col-xs-12">
+					{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroPolicia','class'=>'btn btn-primary'], $secure = null)!!}
+				</div>
 			</div>	
 
 			<div class="col-md-4 col-sm-6 col-xs-12"> 		
@@ -121,12 +124,6 @@
 
 			<input type="hidden" name="latitud" id="latitud">
 			<input type="hidden" name="longitud" id="longitud">				
-
-			<div class="form-group">
-				<div class="col-md-6 col-xs-12">
-					{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroPolicia','class'=>'btn btn-primary'], $secure = null)!!}
-				</div>
-			</div>				
 		</div>		
 	{!!Form::close()!!}		
 @endsection

@@ -5,7 +5,9 @@
 						<div class="col-lg-12 col-md-12 col-xs-12">
 							{!!Form::label('Nombre','Nombre:')!!}
 							{!!Form::text('nombre',null,['id'=>'nombre','class'=>'form-control', 'placeholder'=>'Ingresa el nombre de la organización', 'maxlength'=>'100', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
-						</div>
+							<span id="span_nombre"></span>
+              				<span id="span_mensaje_nombre" style="display: block;color: red;"></span>
+						</div>						
 					</div>
 					<div class="form-group">
 						<div class="col-lg-12 col-md-12 col-xs-12">
@@ -32,6 +34,8 @@
 						<div class="col-lg-12 col-md-12 col-sm-12">
 							{!!Form::label('Telefono','Teléfono:')!!}
 							{!!Form::text('telefono',null,['id'=>'telefono','class'=>'form-control', 'placeholder'=>'Ingresa el número de teléfono', 'maxlength'=>'10', 'onkeypress'=>'return validaNumeros(event)'])!!}
+							<span id="span_telefono"></span>
+              				<span id="span_mensaje_telefono" style="display: block;color: red;"></span>
 						</div>		
 					</div>
                      <br>

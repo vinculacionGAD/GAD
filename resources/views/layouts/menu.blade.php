@@ -97,6 +97,7 @@
                       <li><a href="/departamentos/">Administrar Departamentos</a></li>
                       <li><a href="/sectores/create">Ingresar Sector</a></li>
                       <li><a href="/sectores/">Administrar Sectores</a></li>
+                      <li><a href="/puntosEncuentro/create">Ingresar Puntos de Encuentro</a></li>
                     </ul>
                   </li>
                   </ul>

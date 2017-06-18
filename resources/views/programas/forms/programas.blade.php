@@ -3,6 +3,7 @@
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Programa','Programa:')!!}
 			{!!Form::text('programa',null,['id'=>'programa','class'=>'form-control', 'placeholder'=>'Ingresa el nombre del programa', 'maxlength'=>'50', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
+			<span id="span_programa"></span>
 		</div>
 	</div>
 

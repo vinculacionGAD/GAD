@@ -16,22 +16,20 @@
 		</div>
 		<div class="col-md-12 registro">
 	        <div class="col-md-4 col-xs-12">
-		@include('recursos.forms.recursos')			
-		</div>	
+				@include('recursos.forms.recursos')			
+				<div class="col-md-6 col-xs-12">
+					{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroRefugio','class'=>'btn btn-primary'], $secure = null)!!}
+				</div>
+			</div>	
 			<div class="col-md-4 col-sm-6 col-xs-12">
-			@include('refugios.forms.refugios')	
-			<br>
-			<div class="form-group">
-			<div class="col-md-6 col-xs-12">
-				{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroRefugio','class'=>'btn btn-primary'], $secure = null)!!}
-			</div>
-		</div>
-</div>	
+				@include('refugios.forms.refugios')	
+				<br>			
+			</div>	
 			<div class="col-md-4 col-sm-6 col-xs-12">
 			{!!Form::label('Ubicacion','Ubicacion:')!!}
 		<style type="text/css">
 			#map{
-				width: 400px;
+				width: 300px;
 				height: 300px;
 				margin-left: 10px;
 			}

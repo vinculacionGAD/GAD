@@ -3,6 +3,7 @@
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('comunidad','Comunidad:')!!}
 			{!!Form::text('comunidad', null,['id'=>'comunidad', 'class'=>'form-control', 'placeholder'=>'Ingresa el nombre de la comunidad', 'maxlength'=>'45', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
+			<span id="span_comunidades"></span>
 		</div>
 	</div>
 </div>

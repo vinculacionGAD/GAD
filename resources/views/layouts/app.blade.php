@@ -19,6 +19,11 @@
     {!!Html::style('css/custom.min.css')!!}
     {!!Html::style('css/sicgom.css')!!}
 
+    <!-- notificacion -->
+    {!!Html::style('css/pnotify.css')!!}
+    <!-- notificacion -->
+    {!!Html::style('css/pnotify.brighttheme.css')!!}
+
     @yield('css')
   </head>
 
@@ -218,8 +223,32 @@
     {!!Html::script('js/sicgom.js')!!}
 
     <!-- Other Scripts -->
-    {!!Html::script('js/script.js')!!}
+    {!!Html::script('js/create/scriptAlmacenesCreate.js')!!}
+    {!!Html::script('js/create/scriptBomberosCreate.js')!!}
+    {!!Html::script('js/create/scriptComunidadesCreate.js')!!}
+    {!!Html::script('js/create/scriptDepartamentosCreate.js')!!}
+    {!!Html::script('js/create/scriptFamiliasCreate.js')!!}
+    {!!Html::script('js/create/scriptHospitalesCreate.js')!!}
+    {!!Html::script('js/create/scriptMarinaCreate.js')!!}
+    {!!Html::script('js/create/scriptOrganizacionesCreate.js')!!}
+    {!!Html::script('js/create/scriptPersonasHogarCreate.js')!!}
+    {!!Html::script('js/create/scriptPersonalesCreate.js')!!}
+    {!!Html::script('js/create/scriptPersonasCreate.js')!!}
+    {!!Html::script('js/create/scriptPoliciasCreate.js')!!}
+    {!!Html::script('js/create/scriptProductosCreate.js')!!}
+    {!!Html::script('js/create/scriptProgramasCreate.js')!!}
+    {!!Html::script('js/create/scriptProveedoresCreate.js')!!}
+    {!!Html::script('js/create/scriptProyectosCreate.js')!!}
+    {!!Html::script('js/create/scriptPuntosEncuentroCreate.js')!!}
+    {!!Html::script('js/create/scriptRefugiosCreate.js')!!}
+    {!!Html::script('js/create/scriptSectoresCreate.js')!!}
+    {!!Html::script('js/create/scriptViviendasCreate.js')!!}
+    {!!Html::script('js/create/scriptVoluntariosCreate.js')!!}
     {!!Html::script('js/funciones.js')!!}
+
+    <!-- notificacion -->
+    {!!Html::script('js/pnotify.js')!!}
+    {!!Html::script('js/pnotify.desktop.js')!!}
     @yield('js')
     
     @section('scripts')

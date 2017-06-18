@@ -26,8 +26,8 @@
 
 		<style type="text/css">
 			#map{
-				width: 360px;
-				height: 300px;
+				width: 320px;
+				height: 280px;
 				margin-left: 10px;
 			}
 		</style>

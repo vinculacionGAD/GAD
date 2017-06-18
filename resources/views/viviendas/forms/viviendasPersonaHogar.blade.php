@@ -8,12 +8,14 @@
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('sector_id','Sector:')!!}
 			{!!Form::select('sector_id', $sectores, null, ['id'=>'sector_id', 'class'=>'form-control', 'placeholder'=>'Seleccione un sector'])!!}
+			<span id="span_sector_id"></span>
 		</div>
 	</div>	
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('tipo_construccion','Tipo de Construcción:')!!}
 			{!!Form::select('tipo_construccion', ['Madera' => 'Madera', 'Cemento' => 'Cemento', 'Mixta' => 'Mixta'], null, ['id'=>'tipo_construccion', 'class'=>'form-control', 'placeholder'=>'Seleccione un tipo de construcción'])!!}
+			<span id="span_tipo_construccion"></span>
 		</div>
 	</div>
 	<div class="form-group">	
@@ -26,6 +28,7 @@
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('anios_vida','Años de Vida:')!!}
 			{!!Form::text('anios_vida',null,['id'=>'anios_vida','class'=>'form-control', 'placeholder'=>'Ingresa el número de años de vida', 'maxlength'=>'4', 'onkeypress'=>'return validaNumeros(event)'])!!}
+			<span id="span_anios_vida"></span>
 		</div>
 	</div>
 	<div class="form-group">	

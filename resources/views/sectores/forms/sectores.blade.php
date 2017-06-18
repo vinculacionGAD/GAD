@@ -3,6 +3,7 @@
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Sector','Sector:')!!}
 			{!!Form::text('sector',null,['id'=>'sector','class'=>'form-control', 'placeholder'=>'Ingresa el nombre del sector', 'maxlength'=>'45', 'onkeypress'=>'return validaLetrasEspacioYNumeros(event)'])!!}
+			<span id="span_sector"></span>
 		</div>
 	</div>
 	<div class="form-group">

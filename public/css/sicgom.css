@@ -1,40 +1,46 @@
 .figure{
-	text-align: center;
-	display: flex;
+    text-align: center;
+    display: flex;
   /* alineacion vertical */
   align-items: center;
    /* alineacion horizontal */
   justify-content: center;
 }
-
+.margin_top_10px{
+    margin-top: 10px;
+}
 .login_wrapper{
-	margin-top: 0px !important;
+    margin-top: 0px !important;
 }
 
 .logo-escudo{
-	width: 100px;
-	margin-top: 30px;
+    width: 100px;
 }
 
 body.login{
-	background: url('../img/fondo.png');
+    background: url('../img/fondo.png');
 }
 
-
-.margintop10{
-	margin-top: 10px;
+.btn-IngresarUsuario{
+    border: none;
+    background: #3a7999;
+    color: #f2f2f2;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    position: relative;
+    box-sizing: border-box;
+    transition: all 500ms ease;
+    background: rgba(0,0,0,0);
+    color: #3a7999;
+    box-shadow: inset 0 0 0 3px #3a7999
 }
 
-.moverBtn_G_personas{
-	margin-top: 10px;
+input[type=text]:focus {
+    background-color: lightblue;
 }
 
-
-
-/*********************************************
-* ESTILOS DE LOGIN
-*********************************************/
-.error{
+    .error{
         border-color: #e83e3e;
         background-color: #f9e1de;
     }
@@ -42,7 +48,7 @@ body.login{
         border-color: #e83e3e;
     }
     .error_span:after{
-        content: 'x';
+        /*content: 'x';*/
         color: #fff;
         position: absolute;
         top: 55px;
