@@ -77,6 +77,12 @@
                       <li><a href="/personasHogares/">Administrar Miembros de Familia</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-shopping-basket"></i>Perdidas<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/perdidas/create">Ingresar Perdida</a></li>
+                      <li><a href="/perdidas/">Administrar Perdida</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-shopping-basket"></i>Productos<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/productos/create">Ingresar Producto</a></li>

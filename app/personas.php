@@ -28,4 +28,8 @@ class personas extends Model
     public function personasHogares(){
     	return $this->hasmany(personas_hogares::class);
     }
+
+    public function perdidas(){
+        return $this->hasmany(perdidas::class);
+    }
 }

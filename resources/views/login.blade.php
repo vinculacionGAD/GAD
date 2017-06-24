@@ -56,7 +56,7 @@
               <div class="clearfix"></div>
 
               <div class="separator">
-                <p class="change_link">New to site?
+                <p class="change_link">Nuevo usuario?
                   <a href="#signup" class="to_register"> Crear Cuenta </a>
                 </p>
 
@@ -65,7 +65,7 @@
 
                 <div>
                   <h1>GAD - UTM!</h1>
-                  <p>©2017 All Rights Reserved. GAD Municipal del Cantón Sucre </p>
+                  <p>©2017 All Rights Reserved. GAD Municipal del Cantón 24 de Mayo </p>
                 </div>
               </div>
           </section>

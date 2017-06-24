@@ -19,7 +19,7 @@ class CreateProyectosTable extends Migration
             $table->string('status', 1);
             $table->date('fecha_inicio');
             $table->date('fecha_fin')->nullable();
-            $table->decimal('presupuesto',6,2)->nullable();
+            $table->decimal('presupuesto',10,2)->nullable();
             $table->string('moneda', 30);
             $table->string('observacion')->nullable();
             $table->timestamps();            

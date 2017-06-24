@@ -59,6 +59,12 @@ Route::get('organizacion','OrganizacionesController@listing');
 Route::post('organizaciones/{id}','OrganizacionesController@modificar');
 //fin de gestion de organizaciones
 
+//inicio Gestion Perdidas
+Route::resource('perdidas','PerdidasController');
+Route::get('perdida','PerdidasController@listing');
+Route::post('perdidas/{id}','PerdidasController@modificar');
+//fin Gestion Perdidas
+
 //inicio Gestion Personales
 Route::resource('personales','PersonalesController');
 Route::get('personal','PersonalesController@listing');

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SGDN - GAD SUCRE</title>
+    <title>SGDN - GAD 24 DE MAYO</title>
 
     <!-- Bootstrap -->
     {!!Html::style('plugins/bootstrap/dist/css/bootstrap.min.css')!!}
@@ -33,7 +33,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><span>SGDN - GAD SUCRE</span></a>
+              <a href="index.html" class="site_title"><span>SGDN - GAD 24 DE MAYO</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -179,7 +179,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gestión de Desastres Naturales <a href="http://utm.edu.ec" target="_black">GAD SUCRE</a> <a href="http://fci.utm.edu.ec" target="_black"></a>
+            Gestión de Desastres Naturales <a href="http://utm.edu.ec" target="_black">GAD 24 DE MAYO</a> <a href="http://fci.utm.edu.ec" target="_black"></a>
           </div>
           <div class="clearfix"></div>
         </footer>
@@ -231,6 +231,7 @@
     {!!Html::script('js/create/scriptHospitalesCreate.js')!!}
     {!!Html::script('js/create/scriptMarinaCreate.js')!!}
     {!!Html::script('js/create/scriptOrganizacionesCreate.js')!!}
+    {!!Html::script('js/create/scriptPerdidasCreate.js')!!}
     {!!Html::script('js/create/scriptPersonasHogarCreate.js')!!}
     {!!Html::script('js/create/scriptPersonalesCreate.js')!!}
     {!!Html::script('js/create/scriptPersonasCreate.js')!!}
