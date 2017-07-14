@@ -13,6 +13,7 @@
 			<div class="col-md-6 col-xs-12">
 				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Hospitales</h1>
 			</div>
+			
 		</div>
 
 		<div class="col-md-12 registro">
