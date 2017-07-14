@@ -147,6 +147,20 @@ Route::get('vivienda','ViviendasController@listing');
 Route::post('viviendas/{id}','ViviendasController@modificar');
 //fin gestion viviendas
 
+//Rutas de Reportes
+Route::get('app/crear_reporte_productos/{tipo}', 'PdfController@index');
+Route::get('app/crear_reporte_albergues/{tipo}','PdfController@crear_reporte_albergues');
+Route::get('app/crear_reporte_hospitales/{tipo}','PdfController@crear_reporte_hospitales');
+Route::get('app/crear_reporte_marinas/{tipo}','PdfController@crear_reporte_marinas');
+Route::get('app/crear_reporte_bomberos/{tipo}','PdfController@crear_reporte_bomberos');
+Route::get('app/crear_reporte_policia/{tipo}','PdfController@crear_reporte_policias');
+Route::get('app/crear_reporte_proyectos/{tipo}','PdfController@crear_reporte_proyectos');
+Route::get('app/crear_reporte_personal/{tipo}','PdfController@crear_reporte_personales');
+Route::get('app/crear_reporte_perdida/{tipo}','PdfController@crear_reporte_perdida');
+Route::get('welcomeAdmin/crear_reporte_Empleado/{tipo}','PdfController@crear_reporte_Empleados');
+
+//fin de reportes
+
 Route::group(['middleware' => ['web']], function () {
 	Route::get('/', function () {
 		if (Auth::guest()){

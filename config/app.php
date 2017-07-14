@@ -162,6 +162,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+
+
 
         /*
          * Package Service Providers...
@@ -183,7 +186,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Class Aliases
+    | Class AliasesPHP
+
+Barryvdh\DomPDF\ServiceProvider::class,
+1
+Barryvdh\DomPDF\ServiceProvider::class,
     |--------------------------------------------------------------------------
     |
     | This array of class aliases will be registered when this application
@@ -228,6 +235,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        'PDF' => 'Barryvdh\DomPDF\Facade',
 
     ],
 
