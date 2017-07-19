@@ -47,10 +47,10 @@
                       <li><a href="/almacenes/">Administrar Almacenes</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-cubes"></i>Albergues<span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-cubes"></i>Refugios<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/refugios/create">Ingresar Albergue</a></li>
-                      <li><a href="/refugios/">Administrar Albergues</a></li>
+                      <li><a href="/refugios/create">Ingresar Refugio</a></li>
+                      <li><a href="/refugios/">Administrar Refugios</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-cubes"></i>Hospitales<span class="fa fa-chevron-down"></span></a>

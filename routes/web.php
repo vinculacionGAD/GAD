@@ -157,7 +157,7 @@ Route::get('app/crear_reporte_policia/{tipo}','PdfController@crear_reporte_polic
 Route::get('app/crear_reporte_proyectos/{tipo}','PdfController@crear_reporte_proyectos');
 Route::get('app/crear_reporte_personal/{tipo}','PdfController@crear_reporte_personales');
 Route::get('app/crear_reporte_perdida/{tipo}','PdfController@crear_reporte_perdida');
-Route::get('welcomeAdmin/crear_reporte_Empleado/{tipo}','PdfController@crear_reporte_Empleados');
+Route::get('app/crear_reporte_Empleado/{tipo}','PdfController@crear_reporte_Empleados');
 
 //fin de reportes
 

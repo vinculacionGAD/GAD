@@ -17,7 +17,7 @@
                         <a href="/app/crear_reporte_perdida/1" target="bland_" class="moverImprimirFactura  btn btn-success">Imprimir Reporte</a>
                         </ul>
                     </ul>
-	</div>s
+	</div>
 
 	@include('perdidas.modal')	
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Pérdidas</h1>
