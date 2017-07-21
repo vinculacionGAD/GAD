@@ -15,7 +15,7 @@
 	@include('almacenes.modal')
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Almacenes</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table table-bordered">
 		<thead>
 			<th>Almacén</th>
 			<th>Dirección</th>

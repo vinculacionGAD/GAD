@@ -22,7 +22,7 @@
 	@include('proyectos.modal')	
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Proyectos</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table">
 		<thead>
 			<th>Nombre</th>
 			<th>Fecha Inicio</th>

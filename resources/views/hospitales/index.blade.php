@@ -22,7 +22,7 @@
 	@include('hospitales.modal')
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Hospitales</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table table-bordered table-condensed">
 		<thead>
 			<th>Hospital</th>
 			<th>Dirección</th>

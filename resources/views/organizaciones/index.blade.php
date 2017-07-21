@@ -15,7 +15,7 @@
 	@include('organizaciones.modal')
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Organizaciones</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table table-bordered">
 		<thead>
 			<th>Nombre</th>
 			<th>Tipo Organización</th>

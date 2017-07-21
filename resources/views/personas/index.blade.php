@@ -15,7 +15,7 @@
 	@include('personas.modal')	
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Personas</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table-bordered table">
 		<thead>
 			<th>Cédula</th>
 			<th>Nombre Completo</th>

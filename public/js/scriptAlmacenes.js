@@ -1,4 +1,8 @@
 $(document).ready(function(){
+      $('#tablee').DataTable();
+    });
+
+$(document).ready(function(){
 	Carga();
 });
 

@@ -24,7 +24,7 @@
 	@include('refugios.modal')
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Albergues</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table table-bordered">
 		<thead>
 			<th>Nombre Albergue</th>
 			<th>Dirección</th>

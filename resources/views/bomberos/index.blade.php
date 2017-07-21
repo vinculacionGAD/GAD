@@ -22,7 +22,7 @@
 	@include('bomberos.modal')
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Cuerpos de Bombero</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table table-bordered">
 		<thead>
 			<th>Cuerpo de Bombero</th>
 			<th>Dirección</th>

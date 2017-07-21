@@ -9,6 +9,9 @@
 
     <title>SGDN - GAD 24 DE MAYO</title>
 
+    <!-- datatable -->
+ <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+
     <!-- Bootstrap -->
     {!!Html::style('plugins/bootstrap/dist/css/bootstrap.min.css')!!}
     <!-- Font Awesome -->
@@ -246,6 +249,9 @@
     {!!Html::script('js/create/scriptViviendasCreate.js')!!}
     {!!Html::script('js/create/scriptVoluntariosCreate.js')!!}
     {!!Html::script('js/funciones.js')!!}
+
+  <!-- datetable -->
+    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>>
 
     <!-- notificacion -->
     {!!Html::script('js/pnotify.js')!!}

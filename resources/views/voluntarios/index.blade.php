@@ -15,7 +15,7 @@
 	@include('voluntarios.modal')
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Voluntarios</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table-bordered table">
 		<thead>
 			<th>Voluntario</th>
 			<th>Fecha Inicio </th>

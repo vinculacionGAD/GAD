@@ -15,7 +15,7 @@
 	@include('proveedores.modal')	
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Proveedores</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table-bordered table">
 		<thead>
 			<th>Nombre</th>
 			<th></th>
