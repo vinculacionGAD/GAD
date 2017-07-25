@@ -139,6 +139,18 @@ class PdfController extends Controller
      return $this->crearPDF($perdidas, $vistaurl,$tipo);
     }
 
+    public function crear_reporte_programa($tipo){
+
+     $vistaurl="Pdf.reporte_por_programa";
+     $programa=DB::select("SELECT programas.programa, proyectos.proyecto, proyectos.status, proyectos.fecha_inicio, proyectos.fecha_fin,
+        proyectos.presupuesto, proyectos.moneda, proyectos.observacion, organizaciones.nombre, organizaciones.tipo_organizacion,
+        organizaciones.telefono, organizaciones.sitio_web, organizaciones.twitter, paises.nombre_pais FROM
+        proyectos INNER JOIN programas ON proyectos.programa_id = programas.id
+        INNER JOIN organizaciones ON proyectos.organizacion_id = organizaciones.id
+        INNER JOIN paises ON organizaciones.pais_id = paises.id WHERE programas.id"); 
+     return $this->crearPDF($programa, $vistaurl,$tipo);
+    }
+
 
 
      

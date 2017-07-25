@@ -12,6 +12,7 @@
 		<strong>Almacén eliminado correctamente!</strong>
 	</div>
 	
+	
 	@include('almacenes.modal')
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Almacenes</h1>
 	<br/>

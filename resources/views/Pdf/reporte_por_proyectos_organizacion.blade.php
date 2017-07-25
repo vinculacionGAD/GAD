@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte de Policia</title>
+  <title>Reporte de Proyecto</title>
 <style>
  
  .col-md-12 {

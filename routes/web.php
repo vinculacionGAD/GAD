@@ -147,6 +147,12 @@ Route::get('vivienda','ViviendasController@listing');
 Route::post('viviendas/{id}','ViviendasController@modificar');
 //fin gestion viviendas
 
+//Inicio Gestion Usuarios
+Route::resource('usuario','UsuarioControllers');
+Route::get('usuarios','UsuarioControllers@store');
+Route::post('viviendas/{id}','ViviendasController@modificar');
+//fin gestion usuarios
+
 //Rutas de Reportes
 Route::get('app/crear_reporte_productos/{tipo}', 'PdfController@index');
 Route::get('app/crear_reporte_albergues/{tipo}','PdfController@crear_reporte_albergues');
@@ -157,7 +163,7 @@ Route::get('app/crear_reporte_policia/{tipo}','PdfController@crear_reporte_polic
 Route::get('app/crear_reporte_proyectos/{tipo}','PdfController@crear_reporte_proyectos');
 Route::get('app/crear_reporte_personal/{tipo}','PdfController@crear_reporte_personales');
 Route::get('app/crear_reporte_perdida/{tipo}','PdfController@crear_reporte_perdida');
-Route::get('app/crear_reporte_Empleado/{tipo}','PdfController@crear_reporte_Empleados');
+Route::get('app/crear_reporte_programa/{tipo}','PdfController@crear_reporte_Programa');
 
 //fin de reportes
 

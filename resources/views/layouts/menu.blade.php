@@ -95,6 +95,11 @@
                       <li><a href="/productos/create">Repartición de Alimentos</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-cube"></i>Usuario<span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/usuario/">Administracion de Usuario</a></li>
+                    </ul>
+                  </li>
                   <li><a><i class="fa fa-clone"></i>Definiciones Generales<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/comunidades/create">Ingresar Comunidad</a></li>
