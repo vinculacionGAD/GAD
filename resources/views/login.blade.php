@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>GAD - UTM </title>
+    <title>GAD MUNICIPAL SUCRE</title>
 
     <!-- Bootstrap -->
     {!!Html::style('plugins/bootstrap/dist/css/bootstrap.min.css')!!}
@@ -25,7 +25,7 @@
 
   <body class="login">
   <div class="figure">
-    <img class="logo-escudo" src="{{asset('img/escudo.png')}}">
+    <img class="logo-escudo" src="{{asset('img/escudo1.png')}}">
   </div>
     <div>
       <a class="hiddenanchor" id="signup"></a>
@@ -40,7 +40,7 @@
       <div class="login_wrapper">
           <div>
           <section class="login_content">
-              <h1>GAD - UTM</h1>
+              <h1>GAD MUNICIPAL SUCRE</h1>
               <div>
                 <input type="text" id="usuario" class="form-control" placeholder="Usuario" required="" />
               </div>
@@ -64,8 +64,8 @@
                 <br />
 
                 <div>
-                  <h1>GAD - UTM!</h1>
-                  <p>©2017 All Rights Reserved. GAD Municipal del Cantón 24 de Mayo </p>
+                  <h4>UNIVERSIDAD TÉCNICA DE MANABÍ FACULTAD DE CIENCIAS INFORMÁTICAS</h4>
+                  <p>©2017. GAD Municipal del Cantón Sucre </p>
                 </div>
               </div>
           </section>

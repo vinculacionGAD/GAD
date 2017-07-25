@@ -18,11 +18,20 @@ use DB;
 class VoluntariosController extends Controller
 {
     public function listing(){
-        $voluntarios = voluntarios::all();
+        $voluntarios = DB::table('voluntarios')
+                        ->join('personas', 'personas.id', '=', 'voluntarios.persona_id')
+                        ->join('roles_voluntarios', 'roles_voluntarios.id', '=', 'voluntarios.rol_voluntario_id')
+                        ->join('paises', 'paises.id', '=', 'voluntarios.pais_id')
+                        ->join('organizaciones', 'organizaciones.id', '=', 'voluntarios.organizacion_id')
+                        ->select('voluntarios.*', 'roles_voluntarios.rol', 
+                        'personas.nombres', 'personas.apellido_paterno', 'personas.apellido_materno','paises.nombre_pais', 'organizaciones.nombre')->get();
+
+        return $voluntarios;
+        /*$voluntarios = voluntarios::all();
 
         return response()->json(
             $voluntarios->toArray()    
-        );
+        );*/
     }
     /**
      * Display a listing of the resource.
@@ -62,6 +71,7 @@ class VoluntariosController extends Controller
      */
     public function store(Request $request)
     {
+        //console.log('LLegó');
         if($request->ajax()){
             voluntarios::create($request->all());
             return response()->json([
@@ -89,8 +99,11 @@ class VoluntariosController extends Controller
      */
     public function edit($id)
     {
-      $voluntarios = voluntarios::find($id);
-      return response()->json($voluntarios->toArray());
+      $voluntario = voluntarios::find($id);
+
+        return response()->json(
+            $voluntario->toArray()
+        );
     }
 
     /**
@@ -103,6 +116,21 @@ class VoluntariosController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function modificar(Request $request, $id) 
+    {
+        $voluntarios = DB::update("update voluntarios SET fecha_inicio = ?, fecha_fin = ?, persona_id = ?, trabajo = ?, pais_id = ?, organizacion_id = ?, rol_voluntario_id = ? WHERE id = ?", [$request->input('fecha_inicio'), $request->input('fecha_fin'), $request->input('persona_id'), $request->input('trabajo'), $request->input('pais_id'), $request->input('organizacion_id'), $request->input('rol_voluntario_id'), $id]);
+
+        if($voluntarios == 1){
+            return response()->json([
+                "mensaje" => "listo"
+            ]);    
+        }else {
+            return response()->json([
+                "mensaje" => "error"
+            ]);    
+        }        
     }
 
     /**

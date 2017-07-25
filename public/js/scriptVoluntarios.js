@@ -13,38 +13,31 @@ function Carga(){
 	$("#datos").empty();
 	$.get(route, function(res){
 		$(res).each(function(key, value){	
-			var codigo = '"'+value.id+'"';			
-			tablaDatos.append("<tr><td>"+value.persona_id+"</td><td>"+value.fecha_inicio+"</td><td>"+value.fecha_fin+"</td><td>"+value.pais_id+"</td><td>"+value.organizacion_id+"</td><td><button value="+value.id+" OnClick='Mostrar("+codigo+");' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr>");			
-			//tablaDatos.append("<tr><td>"+value.nombre_recurso+"</td><td>"+value.direccion+"</td><td>"+value.nombre_contacto+"</td><td>"+value.telefono_contacto+"</td><td><button value="+value.id+" OnClick='Mostrar("+codigo+");' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");			
+			//var codigo = '"'+value.id+'"';			
+			tablaDatos.append("<tr><td>"+value.nombres+' '+value.apellido_paterno+' '+value.apellido_materno+"</td><td>"+value.fecha_inicio+"</td><td>"+value.fecha_fin+"</td><td>"+value.trabajo+"</td><td>"+value.nombre_pais+"</td><td>"+value.nombre+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr>");						
 		});
 	});
 }
 
 function Mostrar(btn){
-	var route = "/voluntario/"+btn+"/edit"
+	var route = "/voluntarios/"+btn.value+"/edit"
 
 	$.get(route, function(res){
 		$(res).each(function(key, value){
-			$("#nombre_recurso").val(value.nombre_recurso);
-			$("#direccion").val(value.direccion);		
-			$("#telefono").val(value.telefono);
-			$("#correo").val(value.correo);
-			$("#observacion").val(value.observacion);		
-			$("#latitud").val(value.latitud);
-			$("#longitud").val(value.longitud);
-			$("#nombre_contacto").val(value.nombre_contacto);
-			$("#telefono_contacto").val(value.telefono_contacto);
-			$("#capacidad_maxima").val(value.capacidad_maxima);
-			$("#poblacion").val(value.poblacion);
-			$("#estado").val(value.estado);
-			$("#recurso_id").val(value.recurso_id);
+			$("#trabajo").val(value.trabajo);
+			$("#fecha_inicio").val(value.fecha_inicio);		
+			$("#fecha_fin").val(value.fecha_fin);
+			$("#persona_id").val(value.persona_id);
+			$("#pais_id").val(value.pais_id);		
+			$("#organizacion_id").val(value.organizacion_id);
+			$("#rol_voluntario_id").val(value.rol_voluntario_id);
 			$("#id").val(value.id);
 		});
 	});
 }
 
 function Eliminar(btn){
-	var route = "/refugios/"+btn.value+"";
+	var route = "/voluntarios/"+btn.value+"";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -59,10 +52,10 @@ function Eliminar(btn){
 	});
 }
 
-$("#actualizarRefugio").click(function(){
+$("#actualizarVoluntario").click(function(){
 	var value = $("#id").val();
-	var datos = new FormData($("#frmEditaRefugio")[0]);
-	var route = "/refugios/"+value+"";
+	var datos = new FormData($("#frmEditarVoluntario")[0]);
+	var route = "/voluntarios/"+value+"";
 	var token = $("#token").val();
 
 	$.ajax({
@@ -73,12 +66,11 @@ $("#actualizarRefugio").click(function(){
 		contentType: false,
 		processData: false,	
 		data: datos,
-
+		
 		success:  function(){
 			Carga();
 			$("#myModal").modal('toggle');
-			$("#msj-update-refugio").fadeIn();
+			$("#msj-update-voluntario").fadeIn();
 		}
 	});
 });
-

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>SGDN - GAD 24 DE MAYO</title>
+    <title>GAD MUNICIPAL SUCRE</title>
 
     <!-- datatable -->
  <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
@@ -35,20 +35,20 @@
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><span>SGDN - GAD 24 DE MAYO</span></a>
-            </div>
+            <!--div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><span>SUCRE</span></a>
+            </div-->
 
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
             <div class="profile">
               <div class="profile_pic">
-                <img src="{{asset('img/escudo.png')}}" alt="..." class="img-circle profile_img">
+                <img src="{{asset('img/escudo1.png')}}" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Bienvenido,</span>
-                <h2>Gestión de Desastres Naturales</h2>
+                <h2>Gestión de Riesgos</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -58,7 +58,7 @@
            @include('layouts.menu');
 
             <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
+            <!--div class="sidebar-footer hidden-small">
               <a data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
               </a>
@@ -71,7 +71,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Logout">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
-            </div>
+            </div-->
             <!-- /menu footer buttons -->
           </div>
         </div>
@@ -91,19 +91,19 @@
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Perfil</a></li>
+                    <!--li><a href="javascript:;"> Perfil</a></li>
                     <li>
                       <a href="javascript:;">
                         <span class="badge bg-red pull-right">50%</span>
                         <span>Configuración</span>
                       </a>
-                    </li>
+                    </li-->
                     <li><a href="javascript:;">Ayuda</a></li>
                     <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
                   </ul>
                 </li>
 
-                <li role="presentation" class="dropdown">
+                <!--li role="presentation" class="dropdown">
                   <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-envelope-o"></i>
                     <span class="badge bg-green">6</span>
@@ -166,7 +166,7 @@
                       </div>
                     </li>
                   </ul>
-                </li>
+                </li-->
               </ul>
             </nav>
           </div>
@@ -182,7 +182,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gestión de Desastres Naturales <a href="http://utm.edu.ec" target="_black">GAD 24 DE MAYO</a> <a href="http://fci.utm.edu.ec" target="_black"></a>
+            Gestión de Riesgo <a href="http://utm.edu.ec" target="_black">GADM SUCRE</a> <a href="http://fci.utm.edu.ec" target="_black"></a>
           </div>
           <div class="clearfix"></div>
         </footer>

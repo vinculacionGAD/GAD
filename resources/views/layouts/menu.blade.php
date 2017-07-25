@@ -1,7 +1,8 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>MENÚ PRINCIPAL</h3>
+                
+                <h3>________________________</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-bar-chart-o"></i>Programas<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
@@ -71,10 +72,10 @@
                   </li>                 
                   <li><a><i class="fa fa-home"></i>Familias<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/familias/create">Ingresar Familia</a></li>
-                      <li><a href="/familias/">Administrar Familias</a></li>
+                      <li><a href="/familias/create">Ingresar Familia</a></li>                     
                       <li><a href="/personasHogares/create">Ingresar Miembro Familia</a></li>
-                      <li><a href="/personasHogares/">Administrar Miembros de Familia</a></li>
+                      <li><a href="/familias/">Ver Familias</a></li>
+                      <!--li><a href="/personasHogares/">Administrar Miembros de Familia</a></li-->
                     </ul>
                   </li>
                   <li><a><i class="fa fa-shopping-basket"></i>Perdidas<span class="fa fa-chevron-down"></span></a>
@@ -83,7 +84,7 @@
                       <li><a href="/perdidas/">Administrar Perdida</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-shopping-basket"></i>Productos<span class="fa fa-chevron-down"></span></a>
+                  <!--li><a><i class="fa fa-shopping-basket"></i>Productos<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/productos/create">Ingresar Producto</a></li>
                       <li><a href="/productos/">Administrar Productos</a></li>
@@ -94,7 +95,7 @@
                       <li><a href="/productos/create">Ingresar Almacén</a></li>
                       <li><a href="/productos/create">Repartición de Alimentos</a></li>
                     </ul>
-                  </li>
+                  </li-->
                   <li><a><i class="fa fa-cube"></i>Usuario<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/usuario/">Administracion de Usuario</a></li>

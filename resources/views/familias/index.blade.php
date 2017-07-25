@@ -34,13 +34,17 @@
 	</div>
 
 	@include('familias.modal')
-	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Almacenes</h1>
+	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Familias y Miembros</h1>
 	<br/>
 	<table class="table">
 		<thead>
-			<th>Columna 1</th>
-			<th>Columna 2</th>
-			<th>Columna 3</th>
+			<th>Vivienda</th>
+			<th>Persona</th>			
+			<th>Edad</th>
+			<th>Parentesco</th>
+			<th>Jefe Hogar</th>
+			<th>Sector</th>
+			<th>Comunidad</th>
 			<th></th>
 		</thead>
 		<tbody id="datos"></tbody>

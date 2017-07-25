@@ -23,11 +23,9 @@ class FamiliasController extends Controller
 {
     
     public function listing(){
-        $familias = familias::all();
+        $familias = DB::select('SELECT personas.nombres, personas.apellido_paterno, personas.apellido_materno, personas_hogares.parentesco, TIMESTAMPDIFF(YEAR,personas.fecha_nacimiento,CURRENT_DATE) as edad, familias.jefe_hogar, familias.vivienda_id, sectores.sector, comunidades.comunidad FROM personas, personas_hogares, familias, sectores, comunidades WHERE personas_hogares.persona_id = personas.id AND familias.persona_hogar_id = personas_hogares.id AND familias.sector_id = sectores.id AND sectores.comunidad_id = comunidades.id ORDER BY familias.vivienda_id ASC');
 
-        return response()->json(
-            $familias->toArray()    
-        );
+        return $familias;
     }
     /**
      * Display a listing of the resource.

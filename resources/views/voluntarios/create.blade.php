@@ -2,7 +2,10 @@
 @section('content')
 	{!!Form::open(['class'=>'form-horizontal', 'id'=>'frmVoluntarios', 'method'=>'POST'])!!}
 
-		@include('alerts.success')
+		<div id="msj-insert-voluntario" class="alert alert-success alert-dismissible" role="alert" style="display: none">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<strong>Voluntario Agregado Correctamente</strong>
+		</div>
 
 		<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token"> 
 
