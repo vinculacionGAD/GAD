@@ -10,6 +10,8 @@
 		</div>
 
 		<input type="hidden" name="_token" value="{{ csrf_token() }}" id="token"> 
+		<input type="hidden" name="_token" value="id_reporte" id="id_reporte"> 
+
 
 		<div class="form-group">
 			<div class="col-md-6 col-xs-12">

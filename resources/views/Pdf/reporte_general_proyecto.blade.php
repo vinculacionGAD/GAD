@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Reporte de Factura de Ventas</title>
+  <meta charset="UTF-8">
+  <title>Reporte de Proyecto</title>
 <style>
  
  .col-md-12 {
@@ -106,47 +106,39 @@ table {
 
 
 </style>
-	  
+    
 </head>
 <body>
 
 <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title" align="center">TALLER INDUSTRIAL "ZAMBRANO"</h3><br>
-                  <h3 class="box-title" align="center">REPORTE DE FACTURA DE VENTA</h3>
+                  <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
+                  <h3 class="box-title" align="center">REPORTE DE PROYECTOS</h3>
                  
                 </div><!-- /.box-header -->
                 <div class="box-body">
                                          
-                  <table class="table table-responsive " border="1">
+                  <table class="" border="1">
                     <thead>
                     <tr>
-                          <th>CLIENTE</th>
-                          <th>FECHA</th>
-                          <th>SUBTOTAL</th>
-                          <th>TOTAL</th>
-                          <th>ESTADO DE VENTA</th>
+                          <th>PROGRAMA</th>
+                          <th>PROYECTO</th>
+                          <th style="width: 80px;">INICIO</th>
+                          <th>FIN    </th>
+                          <th >MONTO</th>
+                          <th ">MONEDA</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($data as $vent)
+                      @foreach($data as $PROYECTOS)
                         <tr>
-                        @if($vent->estado_venta==0)
-                          <td>{{$vent->idCliente}}</td>
-                          <td>{{$vent->fecha}}</td>
-                          <td>{{$vent->subtotal}}</td>
-                          <td>{{$vent->totalPagar}}</td>
-                          <td>Pendiente</td>
-
-                     @else
-
-                          <td>{{$vent->cliente}}</td>
-                          <td>{{$vent->fecha}}</td>
-                          <td>{{$vent->subtotal}}</td>
-                          <td>{{$vent->totalPagar}}</td>
-                          <td>Entregado</td>
-                    @endif
+                          <td style="width: 25PX;">{{$PROYECTOS->programa}}</td>
+                          <td>{{$PROYECTOS->proyecto}}</td>
+                          <td>{{$PROYECTOS->fecha_inicio}}</td>
+                          <td>{{$PROYECTOS->fecha_fin}}</td>
+                          <td>{{$PROYECTOS->presupuesto}}</td>
+                          <td>{{$PROYECTOS->moneda}}</td>
                         </tr>
                        @endforeach
 
