@@ -151,6 +151,18 @@ class PdfController extends Controller
      return $this->crearPDF($programa, $vistaurl,$tipo);
     }
 
+     public function crear_reporte_organizacion($tipo,$id){
+
+     $vistaurl="Pdf.reporte_general_organizacion";
+     $organizacion=DB::select("SELECT programas.programa, proyectos.proyecto, proyectos.status, proyectos.fecha_inicio, proyectos.fecha_fin,
+         proyectos.presupuesto, proyectos.moneda, proyectos.observacion, organizaciones.nombre, organizaciones.tipo_organizacion,
+        organizaciones.telefono, organizaciones.sitio_web, organizaciones.twitter, paises.nombre_pais FROM
+        proyectos INNER JOIN programas ON proyectos.programa_id = programas.id 
+        INNER JOIN organizaciones ON proyectos.organizacion_id = organizaciones.id
+        INNER JOIN paises ON organizaciones.pais_id = paises.id WHERE organizaciones.id = $id"); 
+     return $this->crearPDF($organizacion, $vistaurl,$tipo);
+    }
+
 
 
      
