@@ -29,6 +29,12 @@ Route::get('comunidad','ComunidadesController@listing');
 Route::post('comunidades/{id}','ComunidadesController@modificar');
 //fin de gestion de comunidades
 
+//Inicio de gestion de bomberos
+Route::resource('cruzRoja','CruzRojaController');
+Route::get('cruz','CruzRojaController@listing');
+Route::post('cruzRoja/{id}','CruzRojaController@modificar');
+//fin de gestion de bomberos
+
 //Inicio de gestion de departamentos
 Route::resource('departamentos','DepartamentosController');
 Route::get('departamento','DepartamentosController@listing');

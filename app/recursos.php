@@ -41,6 +41,10 @@ class recursos extends Model
         return $this->hasmany(marina::class);
     }
 
+    public function CruzRoja(){
+        return $this->hasmany(marina::CruzRoja);
+    }
+
     public function tiposIntalaciones(){
     	return $this->belongsto(tipos_instalacion::class);
     }

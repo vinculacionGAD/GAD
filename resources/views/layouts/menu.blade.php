@@ -64,6 +64,8 @@
                     <ul class="nav child_menu">
                       <li><a href="/bomberos/create">Ingresar Bombero</a></li>
                       <li><a href="/bomberos/">Administar Bomberos</a></li>
+                      <li><a href="/cruzRoja/create">Ingresar Cruz Roja</a></li>
+                      <li><a href="/cruzRoja/">Administar Cruz Roja</a></li> 
                       <li><a href="/marinas/create">Ingresar Marina</a></li>
                       <li><a href="/marinas/">Administar Marina</a></li>
                       <li><a href="/policias/create">Ingresar Policia</a></li>

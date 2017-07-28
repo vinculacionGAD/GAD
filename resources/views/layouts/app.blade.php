@@ -229,6 +229,7 @@
     {!!Html::script('js/create/scriptAlmacenesCreate.js')!!}
     {!!Html::script('js/create/scriptBomberosCreate.js')!!}
     {!!Html::script('js/create/scriptComunidadesCreate.js')!!}
+    {!!Html::script('js/create/scriptCruzRojaCreate.js')!!}
     {!!Html::script('js/create/scriptDepartamentosCreate.js')!!}
     {!!Html::script('js/create/scriptFamiliasCreate.js')!!}
     {!!Html::script('js/create/scriptHospitalesCreate.js')!!}
