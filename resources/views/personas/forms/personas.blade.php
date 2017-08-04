@@ -74,8 +74,8 @@
 					{!!Form::label('EstadoCivil','Estado Civil:')!!}
 					{!!Form::select('estado_civil', ['Soltero' => 'Soltero', 'Casado' => 'Casado', 'Viudo' => 'Viudo', 'Divorciado' => 'Divorciado', 'Union Libre' => 'Union Libre' ], null, ['class'=>'form-control', 'id'=>'estado_civil', 'placeholder'=>'Seleccione un estado civil'])!!}
 					<span id="span_estado_civil"></span>
-				</div>		
-			</div>
+				</div>
+		    
 		</div>	
 	</div>
 </div>
