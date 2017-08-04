@@ -163,6 +163,16 @@ class PdfController extends Controller
      return $this->crearPDF($organizacion, $vistaurl,$tipo);
     }
 
+    public function crear_reporte_perdidas($tipo,$id){
+
+     $vistaurl="Pdf.reporte_general_perdidas";
+     $perdidas=DB::select("SELECT personas.doc_identificacion, CONCAT(personas.nombres, ' ', personas.apellido_paterno, ' ', personas.apellido_materno) 
+         AS nombre_persona, TIMESTAMPDIFF(YEAR,personas.fecha_nacimiento,CURRENT_DATE) as edad, personas.fecha_nacimiento,
+         personas.sexo, personas.correo_electronico, personas.telefono_movil, perdidas.descripcion, perdidas.monto_estimado,
+         perdidas.fecha_perdida FROM perdidas INNER JOIN personas ON perdidas.persona_id = personas.id WHERE perdidas.persona_id = $id"); 
+     return $this->crearPDF($perdidas, $vistaurl,$tipo);
+    }
+
 
 
      

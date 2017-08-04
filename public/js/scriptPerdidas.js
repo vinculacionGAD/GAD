@@ -31,6 +31,15 @@ function Mostrar(btn){
 	});
 }
 
+function MostrarIdReporte(btn){
+	var route = "/perdidas/"+btn.value+"/edit"
+
+	$.get(route, function(res){		
+		$("#persona_id").val(res.persona_id);		
+		$("#id").val(res.id);
+	});
+}
+
 function Eliminar(btn){
 	var route = "/perdidas/"+btn.value+"";
 	var token = $("#token").val();

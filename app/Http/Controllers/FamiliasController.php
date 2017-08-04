@@ -152,7 +152,10 @@ class FamiliasController extends Controller
      */
     public function edit($id)
     {
-        //
+       $familias = familias::find($id);
+        return response()->json(
+            $familias->toArray()
+        );
     }
 
     /**
