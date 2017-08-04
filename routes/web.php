@@ -171,6 +171,7 @@ Route::get('app/crear_reporte_personal/{tipo}','PdfController@crear_reporte_pers
 Route::get('app/crear_reporte_perdida/{tipo}','PdfController@crear_reporte_perdida');
 Route::get('app/crear_reporte_programa/{tipo}/{id}','PdfController@crear_reporte_Programa');
 Route::get('app/crear_reporte_organizacion/{tipo}/{id}','PdfController@crear_reporte_organizacion');
+Route::get('app/crear_reporte_perdidas/{tipo}/{id}','PdfController@crear_reporte_perdidas');
 //fin de reportes
 
 Route::group(['middleware' => ['web']], function () {
