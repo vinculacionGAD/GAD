@@ -18,12 +18,16 @@
 	        <div class="col-md-4 col-xs-12">
 				@include('recursos.forms.recursos')
 				@include('almacenes.forms.almacenes')
+				<div class="col-md-6 col-xs-12">
+					{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroAlmacen','class'=>'btn btn-primary'], $secure = null)!!}
+				</div>
 			</div>	
+			
 			 <div class="col-md-4 col-sm-6 col-xs-12"> 
 				<style type="text/css">
 					#map{
 						width: 400px;
-						height: 300px;
+						height: 275px;
 						margin-left: 10px;
 					}
 				</style>
@@ -116,17 +120,22 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdrwQmzjIoACEil9sn4bti0WzrVpkJkI&callback=initMap"
     async defer></script>
 
-	<input type="hidden" name="latitud" id="latitud">
-	<input type="hidden" name="longitud" id="longitud">			
-
 	<br/>
 
-			<div class="form-group">
-				<div class="col-md-6 col-xs-12">
-					{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroAlmacen','class'=>'btn btn-primary'], $secure = null)!!}
-				</div>
+    <div class="container">
+		<div class="form-group">
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				<label for="latitud">Latitud: </label>
+				<input type="text" name="latitud" id="latitud" class="form-control">
 			</div>
+			<div class="col-lg-12 col-md-12 col-xs-12">
+			<label for="longitud">Longitud: </label>
+				<input type="text" name="longitud" id="longitud" class="form-control">			
+			</div>
+		</div>
+	</div>	
 
+	<br/>
 		</div>
 	</div>
 {!!Form::close()!!}		

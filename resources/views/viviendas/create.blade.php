@@ -114,8 +114,18 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdrwQmzjIoACEil9sn4bti0WzrVpkJkI&callback=initMap"
     async defer></script>
 
-	<input type="hidden" name="latitud" id="latitud">
-	<input type="hidden" name="longitud" id="longitud">			
+	<div class="container">
+		<div class="form-group">
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				<label for="latitud">Latitud: </label>
+				<input type="text" name="latitud" id="latitud" class="form-control">
+			</div>
+			<div class="col-lg-12 col-md-12 col-xs-12">
+			<label for="longitud">Longitud: </label>
+				<input type="text" name="longitud" id="longitud" class="form-control">			
+			</div>
+		</div>
+	</div>	
 
 	<br/>
 

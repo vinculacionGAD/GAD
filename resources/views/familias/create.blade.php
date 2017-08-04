@@ -27,7 +27,7 @@
 		<style type="text/css">
 			#map{
 				width: 320px;
-				height: 280px;
+				height: 200px;
 				margin-left: 10px;
 			}
 		</style>
@@ -116,8 +116,18 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdrwQmzjIoACEil9sn4bti0WzrVpkJkI&callback=initMap"
     async defer></script>
 
-	<input type="hidden" name="latitud" id="latitud">
-	<input type="hidden" name="longitud" id="longitud">
+	<div class="container">
+		<div class="form-group">
+			<div class="col-lg-12 col-md-12 col-xs-12">
+				<label for="latitud">Latitud: </label>
+				<input type="text" name="latitud" id="latitud" class="form-control">
+			</div>
+			<div class="col-lg-12 col-md-12 col-xs-12">
+			<label for="longitud">Longitud: </label>
+				<input type="text" name="longitud" id="longitud" class="form-control">			
+			</div>
+		</div>
+	</div>	
 
 			</div>		
 			<div class="col-md-4 col-sm-12 col-xs-12">

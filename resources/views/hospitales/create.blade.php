@@ -20,11 +20,22 @@
 
 	        <div class="col-md-4 col-xs-12">
 				@include('recursos.forms.recursos')	
+				<div class="form-group">
+					<div class="col-lg-12 col-md-12 col-xs-12">
+						<label for="latitud">Latitud: </label>
+						<input type="text" name="latitud" id="latitud" class="form-control">
+					</div>
+				</div>				
 			</div>	
 
 			<div class="col-md-4 col-sm-6 col-xs-12"> 		
 				@include('hospitales.forms.hospitales')
-				<br>					
+				<div class="form-group">
+					<div class="col-lg-12 col-md-12 col-xs-12">
+					<label for="longitud">Longitud: </label>
+						<input type="text" name="longitud" id="longitud" class="form-control">	
+					</div>
+				</div>				
 			</div>
 
 			<div class="col-md-4 col-sm-6 col-xs-12"> 
@@ -37,6 +48,10 @@
 					}
 				</style>
 				<div id="map"></div>
+				<br/>
+				<div class="col-md-6 col-xs-12">
+					{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroHospital','class'=>'btn btn-primary'], $secure = null)!!}
+				</div>
 			</div>
 
     		<script>
@@ -121,14 +136,6 @@
 
     		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdrwQmzjIoACEil9sn4bti0WzrVpkJkI&callback=initMap" async defer></script>
 
-			<input type="hidden" name="latitud" id="latitud">
-			<input type="hidden" name="longitud" id="longitud">				
-
-			<div class="form-group">
-				<div class="col-md-6 col-xs-12">
-					{!!link_to('#', $title='Registrar', $attributes = ['id'=>'registroHospital','class'=>'btn btn-primary'], $secure = null)!!}
-				</div>
-			</div>				
 		</div>		
 	{!!Form::close()!!}		
 @endsection
