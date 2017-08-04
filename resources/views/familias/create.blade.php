@@ -33,6 +33,7 @@
 		</style>
 		<div id="map"></div>
     	<script>
+    	
   
 			var map;
 			var markers = [];
@@ -151,4 +152,13 @@
 
 		</div>		
 	{!!Form::close()!!}		
+@endsection
+
+@section('js')
+<script>
+$(document).ready(function() {
+  			$("#persona_id").select2();
+  			$("#parentesco").select2();
+		});
+</script>
 @endsection
