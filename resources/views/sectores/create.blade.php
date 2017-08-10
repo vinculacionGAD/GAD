@@ -140,3 +140,10 @@
 		
 	{!!Form::close()!!}		
 @endsection
+@section('js')
+<script>
+$(document).ready(function() {
+  			$("#comunidad_id").select2();
+		});
+</script>
+@endsection
