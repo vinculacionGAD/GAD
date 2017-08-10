@@ -49,8 +49,8 @@ class PersonasHogaresController extends Controller
         $refugios = refugios::pluck('nombre_contacto', 'id');
         $sectores = sectores::pluck('sector', 'id');
         //$familias = familias::pluck('id', 'id');
-        $familias = DB::table('familias')->where('jefe_hogar', 'S')->pluck('id');
-
+        $familias = DB::table('familias')->where('jefe_hogar', 'S')->pluck('id','id');
+        //return $familias;
         return view('personasHogares.create',compact('personas','actividades_laborales','discapacidades','refugios','sectores','familias'));
     }
 
@@ -82,7 +82,7 @@ class PersonasHogaresController extends Controller
         $idJefe = "N";
 
         $idViv = "";
-        $idVivienda = DB::select("SELECT vivienda_id as idVivi FROM familias")->where('familias.id', $request['persona_hogar_id'])->first();
+        $idVivienda = DB::select("SELECT vivienda_id as idVivi FROM familias where familias.id = ?",[$request->input('persona_hogar_id')]);
 
         foreach ($idVivienda as $idVi ) {
             $idViv=$idVi->idVivi;
@@ -90,9 +90,9 @@ class PersonasHogaresController extends Controller
 
          familias::create([
             'persona_hogar_id'=>$request['persona_hogar_id'],
-            'vivienda_id'=>$idVivienda,
-            'sector_id'=>$request['sector_id'],
-            'refugio_id'=>$request['refugio_id'],
+            'vivienda_id'=>$idViv,
+            'sector_id'=>$request->input('sector_id'),
+            //'refugio_id'=>$request->input('refugio_id'),
             'jefe_hogar'=>$idJefe,
             ]);
 
