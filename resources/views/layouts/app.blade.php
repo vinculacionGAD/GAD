@@ -27,6 +27,10 @@
     <!-- notificacion -->
     {!!Html::style('css/pnotify.brighttheme.css')!!}
 
+    <!-- SELECT2JS -->
+    {!!Html::style('plugins/select2/dist/css/select2.min.css')!!}
+
+
     @yield('css')
   </head>
 
@@ -257,6 +261,10 @@
     <!-- notificacion -->
     {!!Html::script('js/pnotify.js')!!}
     {!!Html::script('js/pnotify.desktop.js')!!}
+
+    <!--select2 -->
+    {!!Html::script('plugins/select2/dist/js/select2.full.min.js')!!}
+
     @yield('js')
     
     @section('scripts')

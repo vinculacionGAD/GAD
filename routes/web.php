@@ -179,7 +179,7 @@ Route::group(['middleware' => ['web']], function () {
 		if (Auth::guest()){
     		return view('login');
     	}else{
-    		 return Redirect::to('app');
+    		 return Redirect('app');
     	}
 	});
 });
@@ -187,8 +187,9 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/app/usuarios', function(){
 		return view('usuarios.CrearUsuarios');
 	});
+//Route::get('/home','AppController@index');
 Route::get('/app','AppController@index');
 
 // Login del sistema
-Route::post('logeo','LoginController@login_gad');
-Route::get('logout','LoginController@logout_gad');
+Route::post('/logeo','LoginController@login_gad');
+Route::get('/logout','LoginController@logout_gad');
