@@ -46,7 +46,7 @@ class FamiliasController extends Controller
     public function create()
     {
         //$personas = personas::pluck('nombres,apellido_paterno','id');
-        $personas = DB::select("select id,concat(nombres,' ',apellido_paterno) as persona from personas");
+        $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
         //return $personas;
         $actividades_laborales = actividades_laborales::pluck('actividad_laboral', 'id');
         $discapacidades = discapacidades::pluck('tipo_discapacidad', 'id');

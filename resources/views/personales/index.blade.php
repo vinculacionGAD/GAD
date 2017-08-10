@@ -20,7 +20,7 @@
 	</div>
 
 	@include('personales.modal')	
-	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Personales</h1>
+	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Funcionarios</h1>
 	<br/>
 	<table id="tablee" class="table table-bordered">
 		<thead>

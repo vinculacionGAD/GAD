@@ -159,6 +159,10 @@
 $(document).ready(function() {
   			$("#persona_id").select2();
   			$("#parentesco").select2();
+  			$("#actividad_laboral_id").select2();
+  			$("#discapacidad_id").select2();
+  			$("#sector_id").select2();
+  			$("#tipo_construccion").select2();
 		});
 </script>
 @endsection

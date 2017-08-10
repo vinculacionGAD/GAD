@@ -26,7 +26,8 @@ class ProveedoresController extends Controller
      */
     public function index()
     {
-        $personas = personas::pluck('nombres', 'id');
+        //$personas = personas::pluck('nombres', 'id');
+        $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
         return view('proveedores.index',compact('personas'));
     }
 
@@ -37,7 +38,8 @@ class ProveedoresController extends Controller
      */
     public function create()
     {
-        $personas = personas::pluck('nombres', 'id');
+        //$personas = personas::pluck('nombres', 'id');
+        $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
         return view('proveedores.create',compact('personas'));
     }
 

@@ -3,7 +3,12 @@
 	<div class="form-group">	
 		<div class="col-lg-6 col-md-12 col-xs-12">
 			{!!Form::label('persona_id','Persona:')!!}
-			{!!Form::select('persona_id', $personas, null, ['id'=>'persona_id', 'class'=>'form-control', 'placeholder'=>'Seleccione una persona'])!!}
+			<select name="persona_id" id="persona_id" class="form-control js-example-basic-single" placeholder="Seleccione el Jefe de Hogar">
+			<option value="">Seleccione una persona</option>
+			@foreach($personas  as $p)
+				<option value="{{$p->id}}">{{$p->persona}}</option>
+			@endforeach
+			</select>
 			<span id="span_persona_id"></span>
 		</div>
 	</div>
@@ -27,7 +32,12 @@
 	<div class="form-group">	
 		<div class="col-lg-6 col-md-12 col-xs-12">
 			{!!Form::label('departamento_id','Departamento:')!!}
-			{!!Form::select('departamento_id', $departamentos, null, ['id'=>'departamento_id', 'class'=>'form-control', 'placeholder'=>'Seleccione un departamento'])!!}
+			<select name="departamento_id" id="departamento_id" class="form-control js-example-basic-single" placeholder="Seleccione un departamento">
+			<option value="">Seleccione un departamento</option>
+			@foreach($departamentos  as $d)
+				<option value="{{$d->id}}">{{$d->departamento}}</option>
+			@endforeach
+			</select>
 			<span id="span_departamento_id"></span>
 		</div>
 	</div>

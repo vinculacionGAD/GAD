@@ -35,8 +35,10 @@ class PersonalesController extends Controller
     public function index()
     {       
 
-       $departamentos = departamentos::pluck('departamento', 'id');
-       $personas = personas::pluck('nombres', 'id');
+       //$departamentos = departamentos::pluck('departamento', 'id');
+        $departamentos = DB::select("select id,departamento from departamentos");
+       //$personas = personas::pluck('nombres', 'id');
+       $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
 
         return view('personales.index',compact('departamentos','personas'));
         //return view('personales.index',compact('personales'));
@@ -52,8 +54,10 @@ class PersonalesController extends Controller
     {
         /*$nombre_persona = DB::query("SELECT CONCAT(nombres, ' ', apellido_paterno, ' ', apellido_materno) AS persona FROM personas");*/
 
-        $departamentos = departamentos::pluck('departamento', 'id');
-        $personas = personas::pluck('nombres', 'id');
+        //$departamentos = departamentos::pluck('departamento', 'id');
+        $departamentos = DB::select("select id,departamento from departamentos");
+        //$personas = personas::pluck('nombres', 'id');
+        $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
 
         return view('personales.create',compact('departamentos','personas'));
     }

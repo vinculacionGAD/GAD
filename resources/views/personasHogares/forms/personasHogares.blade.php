@@ -7,17 +7,29 @@
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('persona_id','Persona:')!!}
-			{!!Form::select('persona_id', $personas, null, ['id'=>'persona_id', 'class'=>'form-control', 'placeholder'=>'Seleccione una persona'])!!}
+			<select name="persona_id" id="persona_id" class="form-control js-example-basic-single" placeholder="Seleccione una persona">
+			<option value="">Seleccione una persona</option>
+			@foreach($personas  as $p)
+				<option value="{{$p->id}}">{{$p->persona}}</option>
+			@endforeach
+			</select>
 			<span id="span_persona_id"></span>
 		</div>
 	</div>
+
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
-			{!!Form::label('persona_hogar_id','Familia:')!!}
-			{!!Form::select('persona_hogar_id', $familias, null, ['id'=>'persona_hogar_id', 'class'=>'form-control', 'placeholder'=>'Seleccione una familia'])!!}
+			{!!Form::label('persona_hogar_id','Jefe Familia:')!!}
+			<select name="persona_hogar_id" id="persona_hogar_id" class="form-control js-example-basic-single" placeholder="Seleccione el jefe de familia">
+			<option value="">Seleccione el jefe de familia</option>
+			@foreach($familias  as $f)
+				<option value="{{$f->id}}">{{$f->jefe_hogar}}</option>
+			@endforeach
+			</select>
 			<span id="span_persona_hogar_id"></span>
 		</div>
 	</div>
+
 	<div class="form-group">
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Parentesco','Parentesco:')!!}

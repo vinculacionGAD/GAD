@@ -41,7 +41,8 @@ class VoluntariosController extends Controller
     public function index()
     {
         $organizaciones = organizaciones::pluck('nombre', 'id');
-        $personas = personas::pluck('nombres', 'id');
+        //$personas = personas::pluck('nombres', 'id');
+        $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
         $paises = paises::pluck('nombre_pais', 'id');
         $roles_voluntarios = roles_voluntarios::pluck('rol', 'id');
 
@@ -56,7 +57,8 @@ class VoluntariosController extends Controller
     public function create()
     {
         $organizaciones = organizaciones::pluck('nombre', 'id');
-        $personas = personas::pluck('nombres', 'id');
+        //$personas = personas::pluck('nombres', 'id');
+        $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
         $paises = paises::pluck('nombre_pais', 'id');
         $roles_voluntarios = roles_voluntarios::pluck('rol', 'id');
 

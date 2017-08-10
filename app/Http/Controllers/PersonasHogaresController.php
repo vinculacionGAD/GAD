@@ -43,13 +43,15 @@ class PersonasHogaresController extends Controller
      */
     public function create()
     {
-        $personas = personas::pluck('nombres', 'id');
+        //$personas = personas::pluck('nombres', 'id');
+        $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
         $actividades_laborales = actividades_laborales::pluck('actividad_laboral', 'id');
         $discapacidades = discapacidades::pluck('tipo_discapacidad', 'id');
         $refugios = refugios::pluck('nombre_contacto', 'id');
         $sectores = sectores::pluck('sector', 'id');
         //$familias = familias::pluck('id', 'id');
-        $familias = DB::table('familias')->where('jefe_hogar', 'S')->pluck('id','id');
+        //$familias = DB::table('familias')->where('jefe_hogar', 'S')->pluck('id','id');
+        $familias = DB::select("SELECT familias.id, concat(personas.nombres,' ',personas.apellido_paterno,' ',personas.apellido_materno) AS jefe_hogar FROM personas, personas_hogares, familias WHERE familias.persona_hogar_id = personas_hogares.id AND personas_hogares.persona_id = personas.id AND familias.jefe_hogar = 'S'");
         //return $familias;
         return view('personasHogares.create',compact('personas','actividades_laborales','discapacidades','refugios','sectores','familias'));
     }

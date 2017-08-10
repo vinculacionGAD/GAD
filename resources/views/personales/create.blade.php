@@ -23,4 +23,12 @@
 		</div>
 		
 	{!!Form::close()!!}		
+	@section('js')
+	<script>
+	$(document).ready(function() {
+	  			$("#persona_id").select2();
+	  			$("#departamento_id").select2();
+			});
+	</script>
+	@endsection
 @endsection
