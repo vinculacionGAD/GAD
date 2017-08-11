@@ -6,15 +6,16 @@ use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
-    /**
-     * Display a listing of the resource.
+      /**
+     * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-     public function __construct()
+      public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
+
     
     public function index()
     {

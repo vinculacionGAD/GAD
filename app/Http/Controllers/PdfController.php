@@ -173,6 +173,14 @@ class PdfController extends Controller
      return $this->crearPDF($perdidas, $vistaurl,$tipo);
     }
 
+     public function crear_reporte_almacenes($tipo){
+
+     $vistaurl="Pdf.reporte_general_almacenes";
+     $perdidas=DB::select("SELECT recursos.*, tipos_instalaciones.tipo_instalacion, almacenes.observacion 
+FROM almacenes INNER JOIN ( recursos INNER JOIN tipos_instalaciones ON recursos.tipo_instalacion_id = tipos_instalaciones.id ) 
+ON recursos.id = almacenes.recurso_id"); 
+     return $this->crearPDF($perdidas, $vistaurl,$tipo);
+    }
 
 
      

@@ -18,7 +18,6 @@
          loader_login('off');        
       }else{
           loader_login('on');
-          debugger
         $.ajax({
             url:'/logeo',
             type:'POST',

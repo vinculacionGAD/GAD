@@ -116,8 +116,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdrwQmzjIoACEil9sn4bti0WzrVpkJkI&callback=initMap"
     async defer></script>
 
-	<input type="hidden" name="latitud" id="latitud">
-	<input type="hidden" name="longitud" id="longitud">			
+	<input type="text" name="latitud" id="latitud">
+	<input type="text" name="longitud" id="longitud">			
 
 	<br/>
 
