@@ -7,10 +7,16 @@
 	<div class="form-group">	
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('persona_id','Persona:')!!}
-			{!!Form::select('persona_id', $personas, null, ['id'=>'persona_id', 'class'=>'form-control', 'placeholder'=>'Seleccione el Jefe de Hogar'])!!}
+			<select name="persona_id" id="persona_id" class="form-control js-example-basic-single" placeholder="Seleccione el Jefe de Hogar">
+			<option value="">Seleccione el Jefe de Hogar</option>
+			@foreach($personas  as $p)
+				<option value="{{$p->id}}">{{$p->persona}}</option>
+			@endforeach
+			</select>
 			<span id="span_persona_id"></span>
 		</div>
 	</div>
+	
 	<div class="form-group">
 		<div class="col-lg-12 col-md-12 col-xs-12">
 			{!!Form::label('Parentesco','Parentesco:')!!}

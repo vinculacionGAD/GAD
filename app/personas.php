@@ -32,4 +32,8 @@ class personas extends Model
     public function perdidas(){
         return $this->hasmany(perdidas::class);
     }
+
+    public function cargosPersonas(){
+        return $this->hasmany(cargosPersonas::class);
+    }
 }

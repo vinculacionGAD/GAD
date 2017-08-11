@@ -80,8 +80,15 @@
 							{!!Form::select('pais_id', $paises, null, ['id'=>'pais_id', 'class'=>'form-control', 'placeholder'=>'Seleccione un pais'])!!}
 						</div>
 					</div>
+
+					<div class="form-group">
+						<div class="col-lg-12 col-md-12 col-xs-12">
+							{!!Form::label('Logotipo','Logotipo:')!!}
+							{!!Form::file('logotipo')!!}	
+						</div>
+					</div>
 			</div>
-        <div class="col-md-4 col-sm-6 col-xs-12">
+        <!--div class="col-md-4 col-sm-6 col-xs-12">
 			<div class="form-group">
 				<div class="col-md-6 col-xs-12" style="margin-left: 70px;"> 
                     {!!Form::label('Logotipo','Logotipo:')!!}  
@@ -94,6 +101,6 @@
                        				    </label>					
 				</div>
         	</div>
-		</div>
+		</div-->
 	</div>
 </div>

@@ -26,7 +26,16 @@
 
 			<div class="col-md-4 col-sm-6 col-xs-12"> 		
 				@include('marinas.forms.marinas')
-				<br>					
+				<div class="form-group">
+					<div class="col-lg-12 col-md-12 col-xs-12">
+						<label for="latitud">Latitud: </label>
+						<input type="text" name="latitud" id="latitud" class="form-control">
+					</div>
+					<div class="col-lg-12 col-md-12 col-xs-12">
+					<label for="longitud">Longitud: </label>
+						<input type="text" name="longitud" id="longitud" class="form-control">	
+					</div>
+				</div>	
 			</div>
 
 			<div class="col-md-4 col-sm-6 col-xs-12"> 
@@ -121,9 +130,7 @@
 			</script>
 
     		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdrwQmzjIoACEil9sn4bti0WzrVpkJkI&callback=initMap" async defer></script>
-
-			<input type="hidden" name="latitud" id="latitud">
-			<input type="hidden" name="longitud" id="longitud">				
+				
 		</div>		
 	{!!Form::close()!!}		
 @endsection

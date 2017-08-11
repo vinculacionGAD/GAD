@@ -19,3 +19,10 @@
 			
 	{!!Form::close()!!}		
 @endsection
+@section('js')
+<script>
+$(document).ready(function() {
+  			$("#pais_id").select2();
+		});
+</script>
+@endsection

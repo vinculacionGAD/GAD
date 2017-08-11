@@ -24,3 +24,12 @@
 		
 	{!!Form::close()!!}		
 @endsection
+@section('js')
+<script>
+$(document).ready(function() {
+  			$("#moneda").select2();
+  			$("#programa_id").select2();
+  			$("#organizacion_id").select2();
+		});
+</script>
+@endsection

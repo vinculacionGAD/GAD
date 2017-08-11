@@ -21,15 +21,16 @@
         $.ajax({
             url:'/logeo',
             type:'POST',
-            dataType: 'json',
             headers :{'X-CSRF-TOKEN': token},
             data:{usuario:$usuario,password:password},
-            success:function(response){   
+            success:function(response){ 
+                debugger
                 loader_login('off');
-                   if(response.sms=="login"){
-                 loader_login('off');
+                   if(response=="login"){
+                 //loader_login('off');
                   alert("Bienvenido");
-                  redirect('/app');
+                  redirect('/home');
+                  //window.location="/home";
                   }else{
                   loader_login('off');
                   alert("Usuario Incorrectos");

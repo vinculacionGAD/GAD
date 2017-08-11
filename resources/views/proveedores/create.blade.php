@@ -20,3 +20,11 @@
 		
 	{!!Form::close()!!}		
 @endsection
+
+@section('js')
+<script>
+$(document).ready(function() {
+  			$("#persona_id").select2();
+		});
+</script>
+@endsection

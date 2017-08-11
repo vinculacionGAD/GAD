@@ -24,3 +24,13 @@
 		</div>	
 	{!!Form::close()!!}		
 @endsection
+@section('js')
+<script>
+$(document).ready(function() {
+  			$("#rol_voluntario_id").select2();
+  			$("#organizacion_id").select2();
+  			$("#pais_id").select2();
+  			$("#persona_id").select2();
+		});
+</script>
+@endsection

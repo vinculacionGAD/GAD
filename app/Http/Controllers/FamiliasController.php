@@ -18,6 +18,7 @@ use Redirect;
 use DB;
 use Storage;
 use Hash;
+use Response;
 
 class FamiliasController extends Controller
 {
@@ -44,7 +45,9 @@ class FamiliasController extends Controller
      */
     public function create()
     {
-        $personas = personas::pluck('nombres', 'id');
+        //$personas = personas::pluck('nombres,apellido_paterno','id');
+        $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
+        //return $personas;
         $actividades_laborales = actividades_laborales::pluck('actividad_laboral', 'id');
         $discapacidades = discapacidades::pluck('tipo_discapacidad', 'id');
         //$refugios = refugios::pluck('nombre_contacto', 'id');

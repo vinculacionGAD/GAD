@@ -12,15 +12,6 @@
 		<strong>Programa eliminado correctamente!</strong>
 	</div>
 
-	<div>
-		<ul class="nav navbar-right panel_toolbox">
-                <ul class="nav navbar-right panel_toolbox">                    
-                  <a href="/welcomeAdmin/crear_reporte_hospitales/1" target="bland_" class="moverImprimirFactura  btn btn-success">Imprimir Reporte</a>
-                </ul>
-        </ul>
-	</div>
-
-
 	@include('programas.modal')	
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Programas</h1>
 	<br/>
@@ -29,7 +20,7 @@
 			<th>Nombre</th>
 			<th>Observacion</th>
 			<th>Accion</th>
-			<th></th>
+			<th>Reporte</th>
 		</thead>
 		<tbody id="datos"></tbody>	
 	</table>	
