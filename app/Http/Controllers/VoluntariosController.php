@@ -40,13 +40,21 @@ class VoluntariosController extends Controller
      */
     public function index()
     {
+        $voluntarios = DB::table('voluntarios')
+                        ->join('personas', 'personas.id', '=', 'voluntarios.persona_id')
+                        ->join('roles_voluntarios', 'roles_voluntarios.id', '=', 'voluntarios.rol_voluntario_id')
+                        ->join('paises', 'paises.id', '=', 'voluntarios.pais_id')
+                        ->join('organizaciones', 'organizaciones.id', '=', 'voluntarios.organizacion_id')
+                        ->select('voluntarios.*', 'roles_voluntarios.rol', 
+                        'personas.nombres', 'personas.apellido_paterno', 'personas.apellido_materno','paises.nombre_pais', 'organizaciones.nombre')->get();
+
         $organizaciones = organizaciones::pluck('nombre', 'id');
         //$personas = personas::pluck('nombres', 'id');
         $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
         $paises = paises::pluck('nombre_pais', 'id');
         $roles_voluntarios = roles_voluntarios::pluck('rol', 'id');
 
-        return view('voluntarios.index',compact('organizaciones','personas','paises','roles_voluntarios'));
+        return view('voluntarios.index',compact('organizaciones','personas','paises','roles_voluntarios','voluntarios'));
     }
 
     /**

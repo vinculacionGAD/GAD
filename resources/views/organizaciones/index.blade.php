@@ -23,8 +23,21 @@
 			<th>Sitio Web</th>
 			<th>Twitter</th>
 			<th></th>
+			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>	
+		<tbody>
+			@foreach($organizaciones as $org) 
+                <tr>
+                  <td>{{$org->nombre}}</td>
+                  <td>{{$org->tipo_organizacion}}</td>
+                  <td>{{$org->telefono}}</td>
+                  <td>{{$org->sitio_web}}</td>
+                  <td>{{$org->twitter}}</td>
+                  <td><button value="{{$org->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                  <td><a href='/app/crear_reporte_organizacion/1/{{$org->id}}' target='blank_' value="{{$org->id}}" OnClick='MostrarIdReporte(this);' class='btn btn-success'>Generar Reporte</a></td>
+                </tr> 
+            @endforeach
+		</tbody>
 	</table>	
 @endsection
 

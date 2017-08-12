@@ -27,12 +27,21 @@
 			<th>Cuerpo de Bombero</th>
 			<th>Dirección</th>
 			<th>Contacto</th>
-			<th>Número de Bomberos</th>
-			<th>Número de Carros</th>
+			<th>Bomberos</th>
+			<th>Carros</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
-
+		<tbody>
+			@foreach($bomberos as $bom) 
+                <tr>
+                  <td>{{$bom->nombre_recurso}}</td>
+                  <td>{{$bom->direccion}}</td>
+                  <td>{{$bom->telefono}}</td>
+                  <td>{{$bom->n_bomberos}}</td>
+                  <td>{{$bom->n_carros}}</td>
+                  <td><button value="{{$bom->id}}" OnClick='Mostrar({{$bom->id}});' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr> 
+            @endforeach
+		</tbody>
 	</table>	
 @endsection
 

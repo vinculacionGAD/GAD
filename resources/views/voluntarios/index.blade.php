@@ -25,7 +25,19 @@
 			<th>Organizacion</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
+		<tbody>
+			@foreach($voluntarios as $vol) 
+                <tr>
+                  <td>{{$vol->nombres}} {{$vol->apellido_paterno}} {{$vol->apellido_materno}}</td>
+                  <td>{{$vol->fecha_inicio}}</td>
+                  <td>{{$vol->fecha_fin}}</td>
+                  <td>{{$vol->trabajo}}</td>
+                  <td>{{$vol->nombre_pais}}</td>
+                  <td>{{$vol->nombre}}</td>
+                  <td><button value="{{$vol->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                </tr> 
+            @endforeach
+		</tbody>
 
 	</table>	
 @endsection

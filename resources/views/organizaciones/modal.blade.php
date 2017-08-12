@@ -11,7 +11,7 @@
 				{!!Form::open(['files'=>true, 'id'=>'frmEditaOrganizaciones', 'method'=>'POST'])!!}
 					<div class="container">
 						<div class="col-md-12 registro">
-    					 <div class="col-md-4 col-xs-12">
+    					 <div class="col-md-6 col-xs-12">
 								<div class="form-group">		
 									<div class="col-lg-12 col-md-12 col-xs-12">
 										{!!Form::label('Nombre','Nombre:')!!}
@@ -45,9 +45,16 @@
 										{!!Form::text('telefono',null,['id'=>'telefono','class'=>'form-control', 'placeholder'=>'Ingresa el número de teléfono', 'maxlength'=>'10', 'onkeypress'=>'return validaNumeros(event)'])!!}
 									</div>		
 								</div>
+
+								<div class="form-group">
+									<div class="col-lg-12 col-md-12 col-xs-12">
+										{!!Form::label('Logotipo','Logotipo:')!!}
+										{!!Form::file('logotipo')!!}	
+									</div>
+								</div>
 			                     
 			           </div>
-				         <div class="col-md-4 col-sm-6 col-xs-12">   
+				         <div class="col-md-6 col-sm-6 col-xs-12">   
 									<div class="form-group">
 										<div class="col-lg-12 col-md-12 col-sm-12">
 											{!!Form::label('SitioWeb','Sitio Web:')!!}
@@ -82,22 +89,9 @@
 											{!!Form::select('pais_id', $paises, null, ['id'=>'pais_id', 'class'=>'form-control'])!!}
 										</div>
 									</div>
+
 							</div>
-					        <div class="col-md-4 col-sm-6 col-xs-12">
-								<div class="form-group">
-									<div class="col-md-6 col-xs-12"> 
-					                    {!!Form::label('Logotipo','Logotipo:')!!}  
-									    <div class="foto"><span type="file"></span>
-					                        				</div>
-					                        				<label class="uploader foto" ondragover="return false">
-					                           				 	<i  class="fa fa-user fa-4x" style="font-size: 16em;" aria-hidden="true"></i>
-					                            					<img src="" class="">
-					                          				 	 <input type="file" name="logotipo" id="logotipo" accept="image/*" required>
-					                       				    </label>
-										
-									</div>
-					            </div>
-							</div>
+					        
 						</div>
 					</div>
 				{!!Form::close()!!}	

@@ -31,8 +31,14 @@ class CruzRojaController extends Controller
      */
     public function index()
     {
+        $cruz_roja = DB::table('cruz_roja')
+                        ->join('recursos', 'recursos.id', '=', 'cruz_roja.recurso_id')
+                        ->select('recursos.*', 'cruz_roja.id as cruz_roja_id',
+                            'cruz_roja.n_miembros', 'cruz_roja.n_camas',
+                            'n_ambulancias','cruz_roja.observacion')->get();
+
         $tipos_instalaciones = tipos_instalaciones::pluck('tipo_instalacion', 'id');
-        return view('cruzRoja.index',compact('tipos_instalaciones'));
+        return view('cruzRoja.index',compact('tipos_instalaciones', 'cruz_roja'));
     }
 
     /**

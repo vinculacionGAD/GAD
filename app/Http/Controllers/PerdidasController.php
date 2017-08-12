@@ -30,9 +30,14 @@ class PerdidasController extends Controller
      */
     public function index()
     {
-        //$personas = personas::pluck('nombres', 'id');
+        $perdidas = DB::table('perdidas')
+                        ->join('personas', 'personas.id', '=', 'perdidas.persona_id')
+                        ->select('personas.doc_identificacion', 'personas.nombres', 'personas.apellido_paterno', 'personas.apellido_materno',
+                            'perdidas.id', 'perdidas.descripcion', 
+                            'perdidas.fecha_perdida', 'perdidas.monto_estimado')->get();
+
         $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
-        return view('perdidas.index',compact('personas'));
+        return view('perdidas.index',compact('personas','perdidas'));
     }
 
     /**

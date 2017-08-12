@@ -31,8 +31,14 @@ class MarinaController extends Controller
      */
     public function index()
     {
+        $marina = DB::table('marina')
+                        ->join('recursos', 'recursos.id', '=', 'marina.recurso_id')
+                        ->select('recursos.*', 'marina.id as marina_id',
+                            'marina.n_botes', 'marina.n_personas',
+                            'marina.observacion')->get();
+
         $tipos_instalaciones = tipos_instalaciones::pluck('tipo_instalacion', 'id');
-        return view('marinas.index',compact('tipos_instalaciones'));
+        return view('marinas.index',compact('tipos_instalaciones', 'marina'));
     }
 
     /**

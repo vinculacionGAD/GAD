@@ -32,8 +32,18 @@
 			<th>Número de Personas</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
-
+		<tbody>
+			@foreach($marina as $mar) 
+                <tr>
+                  <td>{{$mar->nombre_recurso}}</td>
+                  <td>{{$mar->direccion}}</td>
+                  <td>{{$mar->telefono}}</td>
+                  <td>{{$mar->n_botes}}</td>
+                  <td>{{$mar->n_personas}}</td>
+                  <td><button value="{{$mar->id}}" OnClick='Mostrar({{$mar->id}});' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                  </tr> 
+            @endforeach
+		</tbody>
 	</table>	
 @endsection
 

@@ -32,8 +32,19 @@
 			<th>Número de Motos</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
-
+		<tbody>
+			@foreach($policias as $pol) 
+                <tr>
+                  <td>{{$pol->nombre_recurso}}</td>
+                  <td>{{$pol->direccion}}</td>
+                  <td>{{$pol->telefono}}</td>
+                  <td>{{$pol->n_policias}}</td>
+                  <td>{{$pol->n_carros}}</td>
+                  <td>{{$pol->n_motos}}</td>
+                  <td><button value="{{$pol->id}}" OnClick='Mostrar({{$pol->id}});' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                  </tr> 
+            @endforeach
+		</tbody>
 	</table>	
 @endsection
 

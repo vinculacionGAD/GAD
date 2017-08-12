@@ -28,8 +28,13 @@ class AlmacenesController extends Controller
      */
     public function index()
     {
+        $almacenes = DB::table('almacenes')
+                        ->join('recursos', 'recursos.id', '=', 'almacenes.recurso_id')
+                        ->select('recursos.*', 'almacenes.id as almacen_id', 
+                        'almacenes.observacion')->get();
+
         $tipos_instalaciones = tipos_instalaciones::pluck('tipo_instalacion', 'id');
-        return view('almacenes.index',compact('tipos_instalaciones'));
+        return view('almacenes.index',compact('tipos_instalaciones','almacenes'));
     }
 
     /**

@@ -30,10 +30,11 @@ class ProyectosController extends Controller
      */
     public function index()
     {
+        $proyectos = proyectos::all();
         $organizaciones = organizaciones::pluck('nombre', 'id');
         $programas = programas::pluck('programa', 'id');
 
-        return view('proyectos.index',compact('organizaciones','programas'));
+        return view('proyectos.index',compact('organizaciones','programas','proyectos'));
     }
 
     /**

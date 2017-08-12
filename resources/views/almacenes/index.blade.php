@@ -23,7 +23,16 @@
 			<th>Observación</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
+		<tbody>
+			@foreach($almacenes as $alm) 
+                <tr>
+                  <td>{{$alm->nombre_recurso}}</td>
+                  <td>{{$alm->direccion}}</td>
+                  <td>{{$alm->observacion}}</td>
+                  <td><button value="{{$alm->id}}" OnClick='Mostrar({{$alm->id}});' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                </tr> 
+            @endforeach
+		</tbody>
 
 	</table>	
 @endsection

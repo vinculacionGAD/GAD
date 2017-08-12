@@ -32,7 +32,16 @@
 			<th>Contacto</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
+		<tbody>
+			@foreach($refugios as $ref) 
+                <tr>
+                  <td>{{$ref->nombre_recurso}}</td>
+                  <td>{{$ref->direccion}}</td>
+                  <td>{{$ref->nombre_contacto}}</td>
+                  <td>{{$ref->telefono_contacto}}</td>
+                  <td><button value="{{$ref->id}}" OnClick='Mostrar({{$ref->id}});' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr> 
+            @endforeach
+		</tbody>
 
 	</table>	
 @endsection

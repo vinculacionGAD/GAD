@@ -31,8 +31,14 @@ class PoliciasController extends Controller
      */
     public function index()
     {
+        $policias = DB::table('policias')
+                        ->join('recursos', 'recursos.id', '=', 'policias.recurso_id')
+                        ->select('recursos.*', 'policias.id as policia_id',
+                            'policias.n_policias', 'policias.n_carros',
+                            'policias.n_motos', 'policias.observacion')->get();
+
         $tipos_instalaciones = tipos_instalaciones::pluck('tipo_instalacion', 'id');
-        return view('policias.index',compact('tipos_instalaciones'));
+        return view('policias.index',compact('tipos_instalaciones', 'policias'));
     }
 
     /**
