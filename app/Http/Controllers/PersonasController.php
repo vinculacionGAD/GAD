@@ -28,7 +28,11 @@ class PersonasController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $personas = personas::all();
+=======
+         $personas = personas::all();
+>>>>>>> f228f97905a226accb34d638989ba5c3d32887b5
         return view('personas.index',compact('personas'));
     }
 

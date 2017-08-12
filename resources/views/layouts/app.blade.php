@@ -10,7 +10,7 @@
     <title>GAD MUNICIPAL SUCRE</title>
 
     <!-- datatable -->
- <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 
     <!-- Bootstrap -->
     {!!Html::style('plugins/bootstrap/dist/css/bootstrap.min.css')!!}
@@ -193,7 +193,7 @@
         <!-- /footer content -->
       </div>
     </div>
-
+    
     <!-- jQuery -->
     {!!Html::script('plugins/jquery/dist/jquery.min.js')!!}
     <!-- Bootstrap -->
@@ -230,6 +230,10 @@
     {!!Html::script('js/sicgom.js')!!}
 
     <!-- Other Scripts -->
+
+    <!-- datatable -->
+   <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
     {!!Html::script('js/create/scriptAlmacenesCreate.js')!!}
     {!!Html::script('js/create/scriptBomberosCreate.js')!!}
     {!!Html::script('js/create/scriptComunidadesCreate.js')!!}
@@ -254,9 +258,9 @@
     {!!Html::script('js/create/scriptViviendasCreate.js')!!}
     {!!Html::script('js/create/scriptVoluntariosCreate.js')!!}
     {!!Html::script('js/funciones.js')!!}
+      
 
-  <!-- datetable -->
-    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>>
+  
 
     <!-- notificacion -->
     {!!Html::script('js/pnotify.js')!!}
@@ -268,6 +272,7 @@
     @yield('js')
     
     @section('scripts')
+
     @show
   
   

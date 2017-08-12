@@ -1,21 +1,24 @@
-$(document).ready(function(){
-      $('#tablee').DataTable();
-    });
+
+     
+   
 
 $(document).ready(function(){
-	Carga();
+	//Carga();
+	 $('#tablee').DataTable();
 });
 
 function Carga(){
 	var tablaDatos = $("#datos");
-	var route = "/persona"
-
+	var route = "/persona";
+	var datos = ""; 
 	$("#datos").empty();
 	$.get(route, function(res){
 		$(res).each(function(key, value){
-			tablaDatos.append("<tr><td>"+value.doc_identificacion+"</td><td>"+value.nombres+" "+value.apellido_paterno+" "+value.apellido_materno+"</td><td>"+value.fecha_nacimiento+"</td><td>"+value.telefono_movil+"</td><td>"+value.estado_civil+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr>");
+			datos+="<tr><td>"+value.doc_identificacion+"</td><td>"+value.nombres+" "+value.apellido_paterno+" "+value.apellido_materno+"</td><td>"+value.fecha_nacimiento+"</td><td>"+value.telefono_movil+"</td><td>"+value.estado_civil+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr>";
 			//tablaDatos.append("<tr><td>"+value.doc_identificacion+"</td><td>"+value.nombres+" "+value.apellido_paterno+" "+value.apellido_materno+"</td><td>"+value.fecha_nacimiento+"</td><td>"+value.telefono_movil+"</td><td>"+value.estado_civil+"</td><td><button value="+value.id+" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><button class='btn btn-danger' value="+value.id+" OnClick='Eliminar(this);'>Eliminar</button></td></tr>");
 		});
+
+		tablaDatos.html(datos);
 	});
 }
 

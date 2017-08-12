@@ -24,6 +24,7 @@
 			<th>Estado Civil</th>
 			<th></th>
 		</thead>
+<<<<<<< HEAD
 		<tbody>
 			@foreach($personas as $per) 
                 <tr>
@@ -35,6 +36,21 @@
                   <td><button value="{{$per->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
                 </tr> 
             @endforeach
+=======
+		<tbody id="datos">
+			@foreach($personas as $persona)
+				<tr>
+					<td>{{$persona->doc_identificacion}}</td>
+					<td>{{$persona->nombres." ".$persona->apellido_paterno." ".$persona->apellido_materno}}</td>
+					<td>{{$persona->fecha_nacimiento}}</td>
+					<td>{{$persona->telefono_movil}}</td>
+					<td>{{$persona->estado_civil}}</td>
+					<td><button value="{{$persona->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button>
+					</td>
+				</tr>
+			@endforeach
+
+>>>>>>> f228f97905a226accb34d638989ba5c3d32887b5
 		</tbody>	
 	</table>	
 @endsection

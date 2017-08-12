@@ -120,6 +120,12 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKdrwQmzjIoACEil9sn4bti0WzrVpkJkI&callback=initMap"
     async defer></script>
 
+<<<<<<< HEAD
+	<input type="text" name="latitud" id="latitud">
+	<input type="text" name="longitud" id="longitud">			
+
+=======
+>>>>>>> origin/master
 	<br/>
 
     <div class="container">
