@@ -31,7 +31,6 @@
 			<th>Moneda</th>
 			<th></th>
 		</thead>
-<<<<<<< HEAD
 		   <tbody>
                    @foreach($Proyectos as $pro) 
                         <tr>
@@ -57,21 +56,7 @@
                           </td>
                         </tr> 
                     @endforeach                     
-                      </tbody>	
-=======
-		<tbody>
-			@foreach($proyectos as $pro) 
-                <tr>
-                  <td>{{$pro->proyecto}}</td>
-                  <td>{{$pro->fecha_inicio}}</td>
-                  <td>{{$pro->fecha_fin}}</td>
-                  <td>{{$pro->presupuesto}}</td>
-                  <td>{{$pro->moneda}}</td>
-                  <td><button value="{{$pro->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
-                </tr> 
-            @endforeach
-		</tbody>
->>>>>>> origin/master
+                      </tbody>			
 	</table>	
 @endsection
 

@@ -175,12 +175,10 @@ Route::get('app/crear_reporte_organizacion/{tipo}/{id}','PdfController@crear_rep
 Route::get('app/crear_reporte_perdidas/{tipo}/{id}','PdfController@crear_reporte_perdidas');
 //fin de reportes
 
-<<<<<<< HEAD
 Route::group(['middleware' => ['web']], function () {
-=======
+
 //Route::group(['middleware' => ['web']], function () {
-/*<<<<<<< HEAD
->>>>>>> origin/master
+
 		Route::get('/', function () {
 		    		return view('login');
     		});
@@ -211,9 +209,3 @@ Route::get('/app','AppController@index');
 // Login del sistema
 Route::post('/logeo','LoginController@login_gad');
 Route::get('/logout','LoginController@logout_gad');
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
-*/
->>>>>>> origin/master
