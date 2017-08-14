@@ -176,7 +176,6 @@ Route::get('app/crear_reporte_perdidas/{tipo}/{id}','PdfController@crear_reporte
 //fin de reportes
 
 Route::group(['middleware' => ['web']], function () {
-<<<<<<< HEAD
 		Route::get('/', function () {
 		    		return view('login');
     		});
@@ -185,7 +184,7 @@ Route::group(['middleware' => ['web']], function () {
 Route::post('/logeo',array('as'=>'login', 'uses'=>'LoginController@login_gad'));
 Route::get('/logout','LoginController@logout_gad');
 
-=======
+
 	Route::get('/', function () {
 		if (Auth::guest()){
     		return view('login');
@@ -193,7 +192,7 @@ Route::get('/logout','LoginController@logout_gad');
     		 return Redirect('app');
     	}
 	});
->>>>>>> origin/master
+
 });
 
 Route::get('/app/usuarios', function(){
@@ -201,10 +200,10 @@ Route::get('/app/usuarios', function(){
 	});
 //Route::get('/home','AppController@index');
 Route::get('/app','AppController@index');
-<<<<<<< HEAD
-=======
+
+
 
 // Login del sistema
 Route::post('/logeo','LoginController@login_gad');
 Route::get('/logout','LoginController@logout_gad');
->>>>>>> origin/master
+

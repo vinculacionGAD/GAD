@@ -19,8 +19,8 @@ function Carga(){
 	});
 }
 
-function Mostrar(btn){
-	var route = "/proyectos/"+btn.value+"/edit"
+function cargar_datos(id){
+	var route = "/proyectos/"+id+"/edit"
 
 	$.get(route, function(res){
 		$("#proyecto").val(res.proyecto);
@@ -49,6 +49,41 @@ function Eliminar(btn){
 			Carga();
 			$("#msj-delete-proyecto").fadeIn();
 		}
+	});
+}
+
+function EliminarProyectos(id){
+
+    swal({ 
+		title: "¿Deseas Elimar el Proyecto?",
+		text: "",
+		type: "warning",
+		showCancelButton: true,
+		confirmButtonColor: "#DD6B55",
+		confirmButtonText: "¡Eliminar!",
+		cancelButtonText: "No,Cancelar", 
+		closeOnConfirm: false,
+		closeOnCancel: false },
+
+		function(isConfirm){ 
+		if (isConfirm){
+			var route  ="/proyectos/"+id+"";
+		    var token  =$("#token").val();
+		    $.ajax({
+			    url: route,
+			    headers :{'X-CSRF-TOKEN': token},
+			    type: 'delete',
+			    dataType:'json',
+			        success:function(res){
+			         if(res.sms=='ok'){
+						swal("¡Hecho!","Proyecto Eliminado Correctamente","success"); 
+			            //$("#datatable").load("/lista_usuarios");
+			          }          
+			        }
+		 	     });
+        }else { 
+			swal("¡Error !","No se pudo Eliminar el Usuario ","error"); 
+		} 
 	});
 }
 

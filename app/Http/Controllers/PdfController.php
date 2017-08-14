@@ -28,7 +28,7 @@ class PdfController extends Controller
 
       public function crearPDF($datos,$vistaurl,$tipo)
     {
-
+        
         $data = $datos;
         $date = date('Y-m-d');
         $view =  \View::make($vistaurl, compact('data', 'date'))->render();

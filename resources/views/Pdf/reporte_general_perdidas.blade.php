@@ -115,32 +115,30 @@ table {
               <div class="box">
                 <div class="box-header with-border">
                   <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
-                  <h3 class="box-title" align="center">REPORTE DE ORGANIZACIONES</h3>
+                  <h3 class="box-title" align="center">REPORTE DE PERDIDAS DE FAMILIAS</h3>
                  
                 </div><!-- /.box-header -->
                 <div class="box-body">
                                          
-                  <table class="" border="1">
+                  <table class="" border="1" >
                     <thead>
                     <tr>
-                          <th>ORGANIZACION</th>
-                          <th style="width: 70px;">PROYECTO</th>
-                          <th style="width: 80px;">INICIO</th>
-                          <th style="width: 80px;">FIN    </th>
-                          <th style="width: 70px;">MONTO</th>
-                          <th >MONEDA</th>
-                          <th style="border: 1px solid white;"></th>
+                          <th style="width: 20px;">IDENTIFICACION</th>
+                          <th style="width: 70px;">PERSONA</th>
+                          <th style="width: 80px;">PERDIDA</th>
+                          <th style="width: 80px;">MONTO DE PERDIDA    </th>
+                          <th style="width: 70px;">FECHA</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($data as $organizacion)
+                      @foreach($data as $perdidas)
                         <tr>
-                          <td style="width: 25PX;">{{$organizacion->nombre}}</td>
-                          <td>{{$organizacion->proyecto}}</td>
-                          <td>{{$organizacion->fecha_inicio}}</td>
-                          <td>{{$organizacion->fecha_fin}}</td>
-                          <td>{{$organizacion->presupuesto}}</td>
-                          <td>{{$organizacion->moneda}}</td>
+                          <td>{{$perdidas->doc_identificacion}}</td>
+                          <td style="width: 25PX;">{{$perdidas->nombre_persona}}</td>
+                          <td>{{$perdidas->descripcion}}</td>
+                          <td>{{$perdidas->monto_estimado}}</td>
+                          <td>{{$perdidas->fecha_perdida }}</td>
+                          
                         </tr>
                        @endforeach
 

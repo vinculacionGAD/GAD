@@ -32,8 +32,8 @@ class ProyectosController extends Controller
     {
         $organizaciones = organizaciones::pluck('nombre', 'id');
         $programas = programas::pluck('programa', 'id');
-
-        return view('proyectos.index',compact('organizaciones','programas'));
+        $Proyectos = proyectos::all();
+        return view('proyectos.index',compact('organizaciones','programas','Proyectos'));
     }
 
     /**
@@ -126,6 +126,10 @@ class ProyectosController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $Proyectos = proyectos::find($id);
+        $Proyectos = $Proyectos->delete();
+        return response()->json([
+            "sms"=>"ok" 
+            ]);
     }
 }

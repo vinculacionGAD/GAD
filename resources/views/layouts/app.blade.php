@@ -9,6 +9,9 @@
 
     <title>GAD MUNICIPAL SUCRE</title>
 
+    <!-- csss de swal -->
+    {!!Html::style('css/sweetalert.css')!!}
+
     <!-- datatable -->
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
 
@@ -230,6 +233,9 @@
     {!!Html::script('js/sicgom.js')!!}
 
     <!-- Other Scripts -->
+
+    {!!Html::script('js/sweetalert.min.js')!!}
+
 
     <!-- datatable -->
    <script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>

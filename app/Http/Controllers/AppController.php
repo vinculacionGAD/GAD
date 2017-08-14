@@ -13,11 +13,11 @@ class AppController extends Controller
      */
       public function __construct()
     {
-<<<<<<< HEAD
+
         $this->middleware('auth');
-=======
+
        // $this->middleware('auth');
->>>>>>> origin/master
+
     }
 
     
