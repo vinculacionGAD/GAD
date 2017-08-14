@@ -173,6 +173,13 @@ Route::get('app/crear_reporte_perdida/{tipo}','PdfController@crear_reporte_perdi
 Route::get('app/crear_reporte_programa/{tipo}/{id}','PdfController@crear_reporte_Programa');
 Route::get('app/crear_reporte_organizacion/{tipo}/{id}','PdfController@crear_reporte_organizacion');
 Route::get('app/crear_reporte_perdidas/{tipo}/{id}','PdfController@crear_reporte_perdidas');
+Route::get('app/crear_reporte_ListarFamilia/{tipo}','PdfController@crear_reporte_ListarFamilia');
+Route::get('app/crear_reporte_ListarFamiliaVivienda/{tipo}/{id}','PdfController@crear_reporte_ListarFamiliaVivienda');
+Route::get('app/crear_reporte_comunidad/{tipo}/{id}','PdfController@crear_reporte_comunidad');
+Route::get('app/crear_reporte_sector/{tipo}/{id}','PdfController@crear_reporte_sector');
+
+
+
 //fin de reportes
 
 Route::group(['middleware' => ['web']], function () {
