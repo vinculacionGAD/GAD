@@ -35,21 +35,20 @@
         <h4 style="position: absolute;margin-left: 640px;z-index: 1;margin-top: 136px;">Cargando...
                 </h4>
     </div>
-    {!!Form::open(['method'=>'POST','id'=>'login_from'])!!} 
      <input  type="hidden" name="_token" value="{{ csrf_token() }}" id="token">
       <div class="login_wrapper">
           <div>
           <section class="login_content">
               <h1>GAD MUNICIPAL SUCRE</h1>
-              <div>
+              <div class="margin_top_10px">
                 <input type="text" id="usuario" class="form-control" placeholder="Usuario" required="" />
               </div>
-              <div>
+              <div class="margin_top_10px">
                 <input type="password" id="clave" class="form-control" placeholder="Clave" />
               </div>
-    {!!Form::close()!!}
-              <div>
-                <button class="btn btn btn-dark form-control" id="Bton_Iniciar"  href="javascript:void(0)">Iniciar Sessión</button>
+              <div class="margin_top_10px">
+                <button class="btn btn btn-dark form-control" id="Bton_Iniciar" type="button">Iniciar Sessión</button>
+
                 <a class="reset_pass" href="#">Olvido su clave?</a>
               </div>
 

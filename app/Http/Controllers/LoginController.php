@@ -17,12 +17,12 @@ class LoginController extends Controller
     
     public function login_gad(Request $request){
     	if(Auth::attempt(['email'=>$request['usuario'],'password'=>$request['password']]) ) {
-            return "login";
+            //return "login";
               //return redirect('/home');
-                //return response()->json(["sms"=>"login" ]);
+                return response()->json(["sms"=>"login" ]);
             }else{
-                //return response()->json(["sms"=>"error"]);
-                return "error";
+                return response()->json(["sms"=>"error"]);
+                //return "error";
             }   
     }
 

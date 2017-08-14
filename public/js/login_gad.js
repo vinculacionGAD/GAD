@@ -5,41 +5,48 @@
 });
 
  $('#Bton_Iniciar').click(function(){
-		login();
-	});
+    login();
+  });
+ 
+  $("#clave").keypress(function(tecla) {
+    if (tecla.which == 13) {
+        login();
+    }
+});
 
  function login(){
      loader_login('on');
-      var $usuario   = $('#usuario').val();
+     debugger
+      var usuario   = $('#usuario').val();
       var password  = $('#clave').val();
       var token     = $('#token').val();
       if(usuario=="" && password==""){
         alert("usuario y contraseña esta vacio");
          loader_login('off');        
       }else{
-          loader_login('on');
+          //loader_login('on');
         $.ajax({
             url:'/logeo',
             type:'POST',
             headers :{'X-CSRF-TOKEN': token},
-            data:{usuario:$usuario,password:password},
+            dataType:'json',
+            data:{usuario:usuario,password:password},
             success:function(response){ 
                 debugger
                 loader_login('off');
-                   if(response=="login"){
+                   if(response.sms=="login"){
                  //loader_login('off');
                   alert("Bienvenido");
-                  redirect('/home');
+                  redirect('/app');
                   //window.location="/home";
                   }else{
-                  loader_login('off');
+                  //loader_login('off');
                   alert("Usuario Incorrectos");
                  }
               }
           });
       }
     }
-
   function redirect(url){
     window.location=url;
   }
