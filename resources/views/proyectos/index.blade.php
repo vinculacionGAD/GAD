@@ -14,7 +14,7 @@
 	<div>
 				<ul class="nav navbar-right panel_toolbox">
                         <ul class="nav navbar-right panel_toolbox">                    
-                        <a href="/app/crear_reporte_proyectos/1" target="bland_" class="moverImprimirFactura  btn btn-success">Imprimir Reporte</a>
+                        <a href="/app/crear_reporte_proyectos/1" target="bland_" class="moverImprimirFactura  btn btn-success">Generar Reporte</a>
                         </ul>
                     </ul>
 	</div>
@@ -22,7 +22,7 @@
 	@include('proyectos.modal')	
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Proyectos</h1>
 	<br/>
-	<table id="tablee" class="table" border="3">
+	<table id="tablee" class="table" >
 		<thead>
 			<th>Nombre</th>
 			<th>Fecha Inicio</th>

@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Reporte de Hospitales</title>
+  <meta charset="UTF-8">
+  <title>Reporte</title>
 <style>
  
  .col-md-12 {
     width: 100%;
 } 
 
+.foto{
+  background-image: url("/img/escudo5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  margin-top: -210px;
+  background-size: 150px;
+}
+
 .box {
     position: relative;
     border-radius: 3px;
     background: #ffffff;
-    border-top: 3px solid #d2d6de;
+    border-top: 0px solid white;
     margin-bottom: 20px;
     width: 100%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    background-color: #ECF0F5;
+    background-color: white;
 }
 
 .box-header {
@@ -71,7 +80,7 @@
     margin-bottom: 20px;
 }
 
-table {
+.table {
     background-color: transparent;
 }
 
@@ -94,45 +103,58 @@ table {
     background-color: #777;
     border-radius: 10px;
 }
+.moverTotales{
+
+  margin-left:80%;
+}
 
 .bg-red {
     background-color: #dd4b39 !important;
 }
+.mover-titulo{
+  margin-top: 280px;
+}
+
+.mover-foto{
+
+  margin-right: 60px;
+}
+
 
 
 </style>
-	  
+    
 </head>
 <body>
 
 <div class="col-md-12">
-              <div class="box">
-                <div class="box-header with-border">
-                  <h3 class="box-title" align="center">MUNICIPIO DE SUCRE</h3><br>
+              <div class="box foto mover-foto">
+                <div class="box-header with-border mover-titulo">
+                  <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
                   <h3 class="box-title" align="center">REPORTE DE HOSPITALES</h3>
-                  <br><h3 class="box-title">FECHA: <?=  $date; ?></h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table  table  table-bordered border="3" >
+                 
+                 <table align="center" class="" border="1">
                   <thead>
                      <tr>
-                      <th style="width: 40px">HOSPITAL</th>
-                      <th style="width: 35px">DIRECCION</th>
-                      <th style="width: 35px">TELEFONO</th>
-                      <th style="width: 35px">TIPO</th>
-                      <th style="width: 35px">TOTAL MEDICOS</th>
-                      <th style="width: 35px">TOTAL CAMAS</th>
+                      <th align="center">HOSPITAL</th>
+                      <th align="center">DIRECCION</th>
+                      <th align="center">TELEFONO</th>
+                      <th align="center">TIPO</th>
+                      <th align="center">TOTAL MEDICOS</th>
+                      <th align="center">TOTAL CAMAS</th>
                     </tr>
                   </thead>
                     <tbody>
                   <?php foreach($data as $hospitales){ ?>
                     <tr>
                       <td style="" align="center"><?= $hospitales->nombre_recurso; ?></td>
-                      <td style= "" align="center"><span class="badge bg-red"><?= $hospitales->direccion ?></span></td>
+                      <td style= "" align="center"><span ><?= $hospitales->direccion ?></span></td>
                       <td style="" align="center"><?= $hospitales->telefono; ?></td>
                       <td style="" align="center"><?= $hospitales->tipo_instalacion; ?></td>
                       <td style="" align="center"><?= $hospitales->n_medicos; ?></td>
-                      <td style= "" align="center"><span class="badge bg-red"><?= $hospitales->n_camas ?></span></td>
+                      <td style= "" align="center"><span ><?= $hospitales->n_camas ?></span></td>
                     </tr>
                     
                     <?php  } ?>

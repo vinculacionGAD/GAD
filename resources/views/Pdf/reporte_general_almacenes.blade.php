@@ -2,14 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte de Almacen</title>
+  <title>Reporte</title>
 <style>
- .imagen{
-  background-image: 
- }
+ 
  .col-md-12 {
     width: 100%;
 } 
+
+.foto{
+  background-image: url("/img/escudo5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  margin-top: -490px;
+  background-size: 150px;
+}
 
 .box {
     position: relative;
@@ -21,7 +28,6 @@
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     background-color: white;
 }
-
 
 .box-header {
     color: #444;
@@ -74,7 +80,7 @@
     margin-bottom: 20px;
 }
 
-table {
+.table {
     background-color: transparent;
 }
 
@@ -105,6 +111,11 @@ table {
 .bg-red {
     background-color: #dd4b39 !important;
 }
+.mover-titulo{
+  margin-top: 550px;
+}
+
+
 
 
 
@@ -114,21 +125,21 @@ table {
 <body>
 
 <div class="col-md-12">
-              <div class="box">
-                <div class="box-header with-border">
+               <div class="box foto mover-foto">
+                <div class="box-header with-border mover-titulo">
                   <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
                   <h3 class="box-title" align="center">REPORTE DE ALMACENES</h3>
                  
                 </div><!-- /.box-header -->
                 <div class="box-body">
                                          
-                  <table class="" border="1">
+                  <table align="center" class="" border="1">
                     <thead>
                     <tr>
-                          <th style="width: 70px;">ALMACEN</th>
-                          <th style="width: 80px;">DIRECCION</th>
-                          <th style="width: 80px;">TELEFONO</th>
-                          <th style="width: 70px;">INSTALACION</th>
+                          <th align="center" style="width: 70px;">ALMACEN</th>
+                          <th align="center" style="width: 80px;">DIRECCION</th>
+                          <th align="center" style="width: 80px;">TELEFONO</th>
+                          <th align="center" style="width: 70px;">INSTALACION</th>
                           <th >OBSERVACION</th>
                       </tr>
                     </thead>
@@ -136,10 +147,10 @@ table {
                       @foreach($data as $almacen)
                         <tr>
                           <td style="width: 25PX;">{{$almacen->nombre_recurso}}</td>
-                          <td>{{$almacen->direccion}}</td>
-                          <td>{{$almacen->telefono}}</td>
-                          <td>{{$almacen->tipo_instalacion}}</td>
-                          <td>{{$almacen->observacion}}</td>
+                          <td align="center">{{$almacen->direccion}}</td>
+                          <td align="center">{{$almacen->telefono}}</td>
+                          <td align="center">{{$almacen->tipo_instalacion}}</td>
+                          <td align="center">{{$almacen->observacion}}</td>
                         </tr>
                        @endforeach
 

@@ -2,22 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte de Marina</title>
+  <title>Reporte</title>
 <style>
  
  .col-md-12 {
     width: 100%;
 } 
 
+.foto{
+  background-image: url("/img/escudo5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  margin-top: -180px;
+  background-size: 150px;
+}
+
 .box {
     position: relative;
     border-radius: 3px;
     background: #ffffff;
-    border-top: 3px solid #d2d6de;
+    border-top: 0px solid white;
     margin-bottom: 20px;
     width: 100%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    background-color: #ECF0F5;
+    background-color: white;
 }
 
 .box-header {
@@ -68,10 +77,10 @@
 .table {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
-table {
+.table {
     background-color: transparent;
 }
 
@@ -82,37 +91,35 @@ table {
 
 .badge {
     display: inline-block;
-    min-width: 2px;
+    min-width: 10px;
     padding: 3px 7px;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     line-height: 1;
     color: #fff;
     text-align: center;
-    align:center;
     white-space: nowrap;
     vertical-align: middle;
     background-color: #777;
     border-radius: 10px;
-    width: 100px;
+}
+.moverTotales{
+
+  margin-left:80%;
 }
 
 .bg-red {
-    background-color: #2EFEF7 !important;
-   
+    background-color: #dd4b39 !important;
+}
+.mover-titulo{
+  margin-top: 260px;
 }
 
-.bg-blue{
-background-color: #CEF6F5 !important;
+.mover-foto{
+
+  margin-right: 60px;
 }
 
-.id{
-width: 2px;
-align: center;
-}
-.centrar{
-  text-align:center;
-}
 
 
 </style>
@@ -121,30 +128,29 @@ align: center;
 <body>
 
 <div class="col-md-12">
-              <div class="box">
-                <div class="box-header with-border">
+              <div class="box foto mover-foto">
+                <div class="box-header with-border mover-titulo">
                   <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
                   <h3 class="box-title" align="center">REPORTE DE MARINOS</h3>
-                  <br><h3 class="box-title">FECHA: <?=  $date; ?></h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table class="">
+                  <table align="center" class="" border="1">
                   <thead>
-                     <tr class="bg-red">
-                      <th style="width: 40px">NOMBRE</th>
-                      <th style="width: 20px">DIRECCION</th>
-                      <th style="width: 20px">TELEFONO</th>
-                      <th style="width: 20px">TOTAL DE BOTES </th>
-                      <th style="width: 20px">TOTAL DE PERSONAS</th>
+                     <tr>
+                      <th align="center">NOMBRE</th>
+                      <th align="center">DIRECCION</th>
+                      <th align="center">TELEFONO</th>
+                      <th align="center">BOTES </th>
+                      <th align="center">PERSONAS</th>
                     </tr>
                   </thead>
                     <tbody>
                   <?php foreach($data as $marinas){ ?>
-                    <tr class="bg-blue">
+                    <tr>
                       <td style="" align="center"><?= $marinas->nombre_recurso; ?></td>
-                      <td style= "" align="center"><span class="badge bg-red"><?= $marinas->direccion ?></span></td>
-                      <td style="" align="center"><?= $marinas->telefono; ?></td>
-                      <td style= "" align="center"><span class="badge bg-red"><?= $marinas->n_botes ?></span></td>
+                      <td style= "" align="center"><span><?= $marinas->direccion ?></span></td>
+                      <td align="center"><?= $marinas->telefono; ?></td>
+                      <td align="center"><span><?= $marinas->n_botes ?></span></td>
                       <td style="" align="center"><?= $marinas->n_personas; ?></td>
                     </tr>                  
                     <?php  } ?>

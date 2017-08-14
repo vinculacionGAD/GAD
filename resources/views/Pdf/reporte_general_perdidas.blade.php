@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte de Organizaciones</title>
+  <title>Reporte</title>
 <style>
  
  .col-md-12 {
     width: 100%;
 } 
+
+.foto{
+  background-image: url("/img/escudo5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  margin-top: -230px;
+  background-size: 150px;
+}
 
 .box {
     position: relative;
@@ -19,7 +28,6 @@
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     background-color: white;
 }
-
 
 .box-header {
     color: #444;
@@ -72,7 +80,7 @@
     margin-bottom: 20px;
 }
 
-table {
+.table {
     background-color: transparent;
 }
 
@@ -103,6 +111,14 @@ table {
 .bg-red {
     background-color: #dd4b39 !important;
 }
+.mover-titulo{
+  margin-top: 280px;
+}
+
+.mover-foto{
+
+  margin-right: 60px;
+}
 
 
 
@@ -112,32 +128,32 @@ table {
 <body>
 
 <div class="col-md-12">
-              <div class="box">
-                <div class="box-header with-border">
+               <div class="box foto mover-foto">
+                <div class="box-header with-border mover-titulo">
                   <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
                   <h3 class="box-title" align="center">REPORTE DE PERDIDAS DE FAMILIAS</h3>
                  
                 </div><!-- /.box-header -->
                 <div class="box-body">
                                          
-                  <table class="" border="1" >
+                  <table align="center" class="" border="1" >
                     <thead>
                     <tr>
-                          <th style="width: 20px;">IDENTIFICACION</th>
-                          <th style="width: 70px;">PERSONA</th>
-                          <th style="width: 80px;">PERDIDA</th>
-                          <th style="width: 80px;">MONTO DE PERDIDA    </th>
-                          <th style="width: 70px;">FECHA</th>
+                          <th align="center">IDENTIFICACION</th>
+                          <th align="center">PERSONA</th>
+                          <th align="center">PERDIDA</th>
+                          <th align="center">MONTO DE PERDIDA    </th>
+                          <th align="center">FECHA</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach($data as $perdidas)
                         <tr>
-                          <td>{{$perdidas->doc_identificacion}}</td>
-                          <td style="width: 25PX;">{{$perdidas->nombre_persona}}</td>
-                          <td>{{$perdidas->descripcion}}</td>
-                          <td>{{$perdidas->monto_estimado}}</td>
-                          <td>{{$perdidas->fecha_perdida }}</td>
+                          <td align="center">{{$perdidas->doc_identificacion}}</td>
+                          <td align="center">{{$perdidas->nombre_persona}}</td>
+                          <td align="center">{{$perdidas->descripcion}}</td>
+                          <td align="center">{{$perdidas->monto_estimado}}</td>
+                          <td align="center">{{$perdidas->fecha_perdida }}</td>
                           
                         </tr>
                        @endforeach

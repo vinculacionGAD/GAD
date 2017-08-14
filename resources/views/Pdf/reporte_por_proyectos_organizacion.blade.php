@@ -2,22 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte de Proyecto</title>
+  <title>Reporte</title>
 <style>
  
  .col-md-12 {
     width: 100%;
 } 
 
+.foto{
+  background-image: url("/img/escudo5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  margin-top: -140px;
+  background-size: 150px;
+}
+
 .box {
     position: relative;
     border-radius: 3px;
     background: #ffffff;
-    border-top: 3px solid #d2d6de;
+    border-top: 0px solid white;
     margin-bottom: 20px;
     width: 100%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    background-color: #ECF0F5;
+    background-color: white;
 }
 
 .box-header {
@@ -71,7 +80,7 @@
     margin-bottom: 20px;
 }
 
-table {
+.table {
     background-color: transparent;
 }
 
@@ -102,6 +111,14 @@ table {
 .bg-red {
     background-color: #dd4b39 !important;
 }
+.mover-titulo{
+  margin-top: 220px;
+}
+
+.mover-foto{
+
+  margin-right: 60px;
+}
 
 
 
@@ -111,15 +128,15 @@ table {
 <body>
 
 <div class="col-md-12">
-              <div class="box">
-                <div class="box-header with-border">
+              <div class="box foto mover-foto">
+                <div class="box-header with-border mover-titulo">
                   <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
                   <h3 class="box-title" align="center">REPORTE DE PROYECTOS</h3>
                  
                 </div><!-- /.box-header -->
                 <div class="box-body">
                                          
-                  <table class="" border="1">
+                  <table align="center" class="" border="1">
                     <thead>
                     <tr>
                           <th>PROGRAMA</th>

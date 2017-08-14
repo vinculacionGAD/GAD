@@ -2,22 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reporte de PERDIDAS</title>
+  <title>Reporte</title>
 <style>
  
  .col-md-12 {
     width: 100%;
 } 
 
+.foto{
+  background-image: url("/img/escudo5.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  margin-top: -290px;
+  background-size: 150px;
+}
+
 .box {
     position: relative;
     border-radius: 3px;
     background: #ffffff;
-    border-top: 3px solid #d2d6de;
+    border-top: 0px solid white;
     margin-bottom: 20px;
     width: 100%;
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    background-color: #ECF0F5;
+    background-color: white;
 }
 
 .box-header {
@@ -71,7 +80,7 @@
     margin-bottom: 20px;
 }
 
-table {
+.table {
     background-color: transparent;
 }
 
@@ -102,6 +111,14 @@ table {
 .bg-red {
     background-color: #dd4b39 !important;
 }
+.mover-titulo{
+  margin-top: 360px;
+}
+
+.mover-foto{
+
+  margin-right: 60px;
+}
 
 
 
@@ -111,32 +128,31 @@ table {
 <body>
 
 <div class="col-md-12">
-              <div class="box">
-                <div class="box-header with-border">
+               <div class="box foto mover-foto">
+                <div class="box-header with-border mover-titulo">
                   <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
                   <h3 class="box-title" align="center">REPORTE DE PERDIDAS</h3>
                  
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                                         
-                  <table class="table table-responsive " border="1">
+                  <table align="center" class="table table-responsive " border="1">
                     <thead>
                     <tr>
-                          <th>CEDULA</th>
-                          <th>NOMBRE</th>
-                          <th>FECHA P</th>
-                          <th>DESCRIPCION</th>
-                          <th>MONTO</th>
+                          <th align="center">CEDULA</th>
+                          <th align="center">NOMBRE</th>
+                          <th align="center">FECHA PERDIDA</th>
+                          <th align="center">DESCRIPCION</th>
+                          <th align="center">MONTO</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach($data as $perdidas )
                         <tr>
-                          <td>{{$perdidas->doc_identificacion}}</td>
-                          <td>{{$perdidas->nombre_persona}}</td>
-                          <td>{{$perdidas->fecha_perdida}}</td>
-                          <td>{{$perdidas->descripcion}}</td>
-                          <td>{{$perdidas->monto_estimado}}</td>
+                          <td align="center">{{$perdidas->doc_identificacion}}</td>
+                          <td align="center">{{$perdidas->nombre_persona}}</td>
+                          <td align="center">{{$perdidas->fecha_perdida}}</td>
+                          <td align="center">{{$perdidas->descripcion}}</td>
+                          <td align="center">{{$perdidas->monto_estimado}}</td>
                         </tr>
                        @endforeach
 

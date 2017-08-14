@@ -14,7 +14,7 @@
 	<div>
 				<ul class="nav navbar-right panel_toolbox">
                         <ul class="nav navbar-right panel_toolbox">                    
-                        <a href="/app/crear_reporte_bomberos/1" target="bland_" class="moverImprimirFactura  btn btn-success">Imprimir Reporte</a>
+                        <a href="/app/crear_reporte_bomberos/1" target="bland_" class="moverImprimirFactura  btn btn-success">Generar Reporte</a>
                         </ul>
                     </ul>
 	</div>
