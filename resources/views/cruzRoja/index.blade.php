@@ -32,8 +32,19 @@
 			<th>Ambulancias</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
-
+		<tbody>
+			@foreach($cruz_roja as $cruz) 
+                <tr>
+                  <td>{{$cruz->nombre_recurso}}</td>
+                  <td>{{$cruz->direccion}}</td>
+                  <td>{{$cruz->telefono}}</td>
+                  <td>{{$cruz->n_miembros}}</td>
+                  <td>{{$cruz->n_camas}}</td>
+                  <td>{{$cruz->n_ambulancias}}</td>
+                  <td><button value="{{$cruz->id}}" OnClick='Mostrar({{$cruz->id}});' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                  </tr> 
+            @endforeach
+		</tbody>
 	</table>	
 @endsection
 

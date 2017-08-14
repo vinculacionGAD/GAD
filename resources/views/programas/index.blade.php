@@ -22,7 +22,16 @@
 			<th>Accion</th>
 			<th>Reporte</th>
 		</thead>
-		<tbody id="datos"></tbody>	
+		<tbody>
+			@foreach($programas as $pro) 
+                <tr>
+                  <td>{{$pro->programa}}</td>
+                  <td>{{$pro->observacion}}</td>
+                  <td><button value="{{$pro->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                  <td><a href='/app/crear_reporte_programa/1/{{$pro->id}}' target='blank_' value="{{$pro->id}}" OnClick='Mostrar_reporte(this);' class='btn btn-success'>Generar Reporte</a></td>                          
+                </tr> 
+            @endforeach
+		</tbody>	
 	</table>	
 @endsection
 

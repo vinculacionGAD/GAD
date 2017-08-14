@@ -28,7 +28,8 @@ class ComunidadesController extends Controller
      */
     public function index()
     {
-        return view('comunidades.index');
+        $comunidades = comunidades::all();
+        return view('comunidades.index', compact('comunidades'));
     }
 
     /**

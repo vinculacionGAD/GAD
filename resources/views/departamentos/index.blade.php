@@ -21,7 +21,15 @@
 			<th>Observación</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>	
+		<tbody>
+			@foreach($departamentos as $dep) 
+                <tr>
+                  <td>{{$dep->departamento}}</td>
+                  <td>{{$dep->observacion}}</td>
+                  <td><button value="{{$dep->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                  </tr> 
+            @endforeach
+		</tbody>
 	</table>	
 @endsection
 

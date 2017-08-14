@@ -31,8 +31,18 @@
 			<th>Fecha Pérdida</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
-
+		<tbody>
+			@foreach($perdidas as $per) 
+                <tr>
+                  <td>{{$per->doc_identificacion}}</td>
+                  <td>{{$per->nombres}} {{$per->apellido_paterno}} {{$per->apellido_materno}}</td>
+                  <td>{{$per->descripcion}}</td>
+                  <td>{{$per->monto_estimado}}</td>
+                  <td>{{$per->fecha_perdida}}</td>
+                  <td><button value="{{$per->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                  </tr> 
+            @endforeach
+		</tbody>
 	</table>	
 @endsection
 

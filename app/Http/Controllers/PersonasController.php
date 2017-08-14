@@ -28,7 +28,7 @@ class PersonasController extends Controller
      */
     public function index()
     {
-         $personas = personas::all();
+        $personas = personas::all();
         return view('personas.index',compact('personas'));
     }
 

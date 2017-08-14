@@ -24,16 +24,26 @@
 	<br/>
 	<table id="tablee" class="table table-bordered table-condensed">
 		<thead>
-			<th>Hospital</th>
+			<th>Nombre Hospital</th>
 			<th>Dirección</th>
 			<th>Contacto</th>
-			<th>Número de Médicos</th>
-			<th>Número de Enfermeros</th>
-			<th>Número de Quirófanos</th>
+			<th>Médicos</th>
+			<th>Enfermeros</th>
+			<th>Quirófanos</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
-
+		<tbody>
+			@foreach($hospitales as $hos) 
+                <tr>
+                  <td>{{$hos->nombre_recurso}}</td>
+                  <td>{{$hos->direccion}}</td>
+                  <td>{{$hos->telefono}}</td>
+                  <td>{{$hos->n_medicos}}</td>
+                  <td>{{$hos->n_enfermeros}}</td>
+                  <td>{{$hos->n_quirofano}}</td>
+                  <td><button value="{{$hos->id}}" OnClick='Mostrar({{$hos->id}});' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td></tr> 
+            @endforeach
+		</tbody>
 	</table>	
 @endsection
 

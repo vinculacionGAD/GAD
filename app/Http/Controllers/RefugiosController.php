@@ -32,8 +32,15 @@ class RefugiosController extends Controller
      */
     public function index()
     {
+        $refugios = DB::table('refugios')
+                        ->join('recursos', 'recursos.id', '=', 'refugios.recurso_id')
+                        ->select('recursos.*', 'refugios.id as refugio_id',
+                            'refugios.nombre_contacto', 'refugios.telefono_contacto',
+                            'refugios.capacidad_maxima', 'refugios.poblacion',
+                            'refugios.estado', 'refugios.observacion')->get();
+
         $tipos_instalaciones = tipos_instalaciones::pluck('tipo_instalacion', 'id');
-        return view('refugios.index',compact('tipos_instalaciones'));
+        return view('refugios.index',compact('tipos_instalaciones','refugios'));
     }
 
     /**

@@ -32,8 +32,15 @@ class HospitalesController extends Controller
 
     public function index()
     {
+        $hospitales = DB::table('hospitales')
+                        ->join('recursos', 'recursos.id', '=', 'hospitales.recurso_id')
+                        ->select('recursos.*', 'hospitales.id as hospital_id',
+                            'hospitales.n_medicos', 'hospitales.n_enfermeros',
+                            'hospitales.observacion', 'hospitales.n_quirofano',
+                            'hospitales.n_camas')->get();
+
         $tipos_instalaciones = tipos_instalaciones::pluck('tipo_instalacion', 'id');
-        return view('hospitales.index',compact('tipos_instalaciones'));
+        return view('hospitales.index',compact('tipos_instalaciones', 'hospitales'));
     }
 
     /**

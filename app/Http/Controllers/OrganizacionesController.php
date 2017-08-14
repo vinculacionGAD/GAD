@@ -30,8 +30,9 @@ class OrganizacionesController extends Controller
      */
     public function index()
     {
+        $organizaciones = organizaciones::all();
         $paises = paises::pluck('nombre_pais', 'id');
-        return view('organizaciones.index',compact('paises'));
+        return view('organizaciones.index',compact('paises','organizaciones'));
     }
 
     /**

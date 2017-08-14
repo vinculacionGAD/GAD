@@ -26,9 +26,12 @@ class ProveedoresController extends Controller
      */
     public function index()
     {
-        //$personas = personas::pluck('nombres', 'id');
+        $proveedores = DB::table('proveedores')
+                        ->join('personas', 'personas.id', '=', 'proveedores.persona_id')
+                        ->select('proveedores.*', 'personas.nombres', 'personas.apellido_paterno', 'personas.apellido_materno')->get();
+
         $personas = DB::select("select id,concat(nombres,' ',apellido_paterno,' ',apellido_materno) as persona from personas");
-        return view('proveedores.index',compact('personas'));
+        return view('proveedores.index',compact('personas','proveedores'));
     }
 
     /**

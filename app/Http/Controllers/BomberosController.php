@@ -31,8 +31,14 @@ class BomberosController extends Controller
      */
     public function index()
     {
+        $bomberos = DB::table('bomberos')
+                        ->join('recursos', 'recursos.id', '=', 'bomberos.recurso_id')
+                        ->select('recursos.*', 'bomberos.id as bombero_id',
+                            'bomberos.n_bomberos', 'bomberos.n_carros',
+                            'bomberos.observacion')->get();
+
         $tipos_instalaciones = tipos_instalaciones::pluck('tipo_instalacion', 'id');
-        return view('bomberos.index',compact('tipos_instalaciones'));
+        return view('bomberos.index',compact('tipos_instalaciones','bomberos'));
     }
 
     /**

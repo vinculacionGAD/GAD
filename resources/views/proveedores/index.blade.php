@@ -20,7 +20,14 @@
 			<th>Nombre</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>	
+		<tbody>
+			@foreach($proveedores as $pro) 
+                <tr>
+                  <td>{{$pro->nombres}} {{$pro->apellido_paterno}} {{$pro->apellido_materno}}</td>
+                  <td><button value="{{$pro->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>                         
+                </tr> 
+            @endforeach
+		</tbody>
 	</table>	
 @endsection
 

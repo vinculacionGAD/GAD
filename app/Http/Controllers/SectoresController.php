@@ -32,8 +32,9 @@ class SectoresController extends Controller
      */
     public function index()
     {
+        $sectores = sectores::all();        
         $comunidades = comunidades::pluck('comunidad', 'id');
-        return view('sectores.index',compact('comunidades'));
+        return view('sectores.index',compact('comunidades','sectores'));
     }
 
     /**

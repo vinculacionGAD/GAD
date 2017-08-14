@@ -15,7 +15,7 @@
 	@include('familias.modal')
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Familias y Miembros</h1>
 	<br/>
-	<table class="table">
+	<table id="tablee" class="table">
 		<thead>
 			<th>Vivienda</th>
 			<th>Persona</th>			
@@ -26,7 +26,20 @@
 			<th>Comunidad</th>
 			<th></th>
 		</thead>
-		<tbody id="datos"></tbody>
+		<tbody>
+			@foreach($familias as $fam) 
+                <tr>
+                  <td>{{$fam->vivienda_id}}</td>
+                  <td>{{$fam->nombres}}</td>
+                  <td>{{$fam->edad}}</td>
+                  <td>{{$fam->parentesco}}</td>
+                  <td>{{$fam->jefe_hogar}}</td>
+                  <td>{{$fam->sector}}</td>
+                  <td>{{$fam->comunidad}}</td>
+                  <td></td>                          
+                </tr> 
+            @endforeach
+		</tbody>
 
 	</table>	
 
