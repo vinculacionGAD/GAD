@@ -25,7 +25,7 @@
 
   <body class="login">
   <div class="figure">
-    <img class="logo-escudo" src="{{asset('img/escudo1.png')}}">
+    <img class="logo-escudo" src="{{asset('img/escudo2.png')}}">
   </div>
     <div>
       <a class="hiddenanchor" id="signup"></a>
