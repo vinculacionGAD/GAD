@@ -28,7 +28,7 @@
                   <td>{{$sec->sector}}</td>
                   <td>{{$sec->ubicacion}}</td>
                   <td>{{$sec->observacion}}</td>
-                  <td><button value="{{$sec->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                  <td><button value="{{$sec->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><a href='/app/crear_reporte_sector/1/{{$sec->id}}' target='blank_' value="{{$sec->id}}" OnClick='Mostrar_reporte(this);' class='btn btn-success'>Generar Reporte</a></td>
                   </tr> 
             @endforeach
 		</tbody>

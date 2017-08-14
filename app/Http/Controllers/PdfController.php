@@ -177,9 +177,57 @@ class PdfController extends Controller
 
      $vistaurl="Pdf.reporte_general_almacenes";
      $perdidas=DB::select("SELECT recursos.*, tipos_instalaciones.tipo_instalacion, almacenes.observacion 
-FROM almacenes INNER JOIN ( recursos INNER JOIN tipos_instalaciones ON recursos.tipo_instalacion_id = tipos_instalaciones.id ) 
-ON recursos.id = almacenes.recurso_id"); 
+        FROM almacenes INNER JOIN ( recursos INNER JOIN tipos_instalaciones ON recursos.tipo_instalacion_id = tipos_instalaciones.id ) 
+        ON recursos.id = almacenes.recurso_id"); 
      return $this->crearPDF($perdidas, $vistaurl,$tipo);
+    }
+    
+     public function crear_reporte_ListarFamilia($tipo){
+
+      $vistaurl="Pdf.reporte_general_ListarFamilias";
+      $ListarFamilias=DB::select("SELECT personas.nombres, personas.apellido_paterno, personas.apellido_materno, personas_hogares.parentesco, 
+            TIMESTAMPDIFF(YEAR,personas.fecha_nacimiento,CURRENT_DATE) as edad, familias.jefe_hogar, familias.vivienda_id, 
+            sectores.sector, comunidades.comunidad FROM personas, personas_hogares, familias, sectores, comunidades 
+            WHERE personas_hogares.persona_id = personas.id AND familias.persona_hogar_id = personas_hogares.id 
+            AND familias.sector_id = sectores.id AND sectores.comunidad_id = comunidades.id ORDER BY familias.vivienda_id ASC"); 
+         return $this->crearPDF($ListarFamilias, $vistaurl,$tipo);
+    }
+
+     public function crear_reporte_ListarFamiliaVivienda($tipo,$id){
+
+      $vistaurl="Pdf.reporte_general_ListarFamiliasVivienda";
+      $ListarFamilias=DB::select("SELECT personas.nombres, personas.apellido_paterno, personas.apellido_materno, personas_hogares.parentesco, 
+            TIMESTAMPDIFF(YEAR,personas.fecha_nacimiento,CURRENT_DATE) as edad, familias.jefe_hogar, familias.vivienda_id, 
+            sectores.sector, comunidades.comunidad FROM personas, personas_hogares, familias, sectores, comunidades 
+            WHERE personas_hogares.persona_id = personas.id AND familias.persona_hogar_id = personas_hogares.id 
+            AND familias.sector_id = sectores.id AND sectores.comunidad_id = comunidades.id 
+            AND familias.vivienda_id = $id ORDER BY familias.vivienda_id ASC"); 
+                     return $this->crearPDF($ListarFamilias, $vistaurl,$tipo);
+    }
+
+    public function crear_reporte_comunidad($tipo,$id){
+
+      $vistaurl="Pdf.reporte_general_comunidad";
+      $comunidad=DB::select("SELECT personas.nombres, personas.apellido_paterno, personas.apellido_materno, personas_hogares.parentesco, 
+            TIMESTAMPDIFF(YEAR,personas.fecha_nacimiento,CURRENT_DATE) as edad, familias.jefe_hogar, familias.vivienda_id, 
+            sectores.sector, comunidades.comunidad FROM personas, personas_hogares, familias, sectores, comunidades 
+            WHERE personas_hogares.persona_id = personas.id AND familias.persona_hogar_id = personas_hogares.id 
+            AND familias.sector_id = sectores.id AND sectores.comunidad_id = comunidades.id 
+            AND sectores.comunidad_id = $id ORDER BY familias.vivienda_id ASC"); 
+                     return $this->crearPDF($comunidad, $vistaurl,$tipo);
+    }
+
+    public function crear_reporte_sector($tipo,$id){
+
+      $vistaurl="Pdf.reporte_general_sector";
+      $sector=DB::select("SELECT personas.nombres, personas.apellido_paterno, personas.apellido_materno, personas_hogares.parentesco, 
+            TIMESTAMPDIFF(YEAR,personas.fecha_nacimiento,CURRENT_DATE) as edad, familias.jefe_hogar, familias.vivienda_id, 
+            sectores.sector, comunidades.comunidad FROM personas, personas_hogares, familias, sectores, comunidades 
+            WHERE personas_hogares.persona_id = personas.id AND familias.persona_hogar_id = personas_hogares.id 
+            AND familias.sector_id = sectores.id AND sectores.comunidad_id = comunidades.id 
+            AND familias.sector_id = $id ORDER BY familias.vivienda_id ASC
+            "); 
+                     return $this->crearPDF($sector, $vistaurl,$tipo);
     }
 
 

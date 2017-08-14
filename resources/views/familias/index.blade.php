@@ -11,6 +11,13 @@
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 		<strong>Familia eliminada correctamente!</strong>
 	</div>
+	<div>
+				<ul class="nav navbar-right panel_toolbox">
+                        <ul class="nav navbar-right panel_toolbox">                    
+                        <a href="/app/crear_reporte_ListarFamilia/1" target="bland_" class="moverImprimirFactura  btn btn-success">Generar Reporte</a>
+                        </ul>
+                    </ul>
+	</div>
 	
 	@include('familias.modal')
 	<h1 style="font-size: 20px; font-weight: bold; color: black;">Lista de Familias y Miembros</h1>
@@ -30,13 +37,13 @@
 			@foreach($familias as $fam) 
                 <tr>
                   <td>{{$fam->vivienda_id}}</td>
-                  <td>{{$fam->nombres}}</td>
+                  <td>{{$fam->nombres}} {{$fam->apellido_paterno}} {{$fam->apellido_materno}}</td>
                   <td>{{$fam->edad}}</td>
                   <td>{{$fam->parentesco}}</td>
                   <td>{{$fam->jefe_hogar}}</td>
                   <td>{{$fam->sector}}</td>
                   <td>{{$fam->comunidad}}</td>
-                  <td></td>                          
+                  <td><a href='/app/crear_reporte_ListarFamiliaVivienda/1/{{$fam->vivienda_id}}' target='blank_' value="{{$fam->vivienda_id}}" OnClick='Mostrar_reporte(this);' class='btn btn-success'>Generar Reporte</a></td>                         
                 </tr> 
             @endforeach
 		</tbody>

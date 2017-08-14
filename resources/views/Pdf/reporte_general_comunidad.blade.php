@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
-  margin-top: -140px;
+  margin-top: -200px;
   background-size: 150px;
 }
 
@@ -112,13 +112,10 @@
     background-color: #dd4b39 !important;
 }
 .mover-titulo{
-  margin-top: 220px;
+  margin-top: 300px;
 }
 
-.mover-foto{
 
-  margin-right: 60px;
-}
 
 
 
@@ -130,9 +127,8 @@
 <div class="col-md-12">
                <div class="box foto mover-foto">
                 <div class="box-header with-border mover-titulo">
-                   <h3 class="box-title mover-titulo" align="center" >GAD MUNICIPAL DEL CANTON SUCRE</h3><br>
-                   <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
-                  <h3 class="box-title" align="center">REPORTE DE ORGANIZACIONES</h3>
+                   <h3 class="box-title mover-titulo" align="center" >GAD MUNICIPAL DEL CANTON SUCRE</h3><br><h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
+                  <h3 class="box-title" align="center">REPORTE GENERAL DE FAMILIAS</h3>
                  
                 </div><!-- /.box-header -->
                 <div class="box-body">
@@ -140,24 +136,23 @@
                   <table align="center" class="" border="1">
                     <thead>
                     <tr>
-                          <th>ORGANIZACION</th>
-                          <th style="width: 70px;">PROYECTO</th>
-                          <th style="width: 80px;">INICIO</th>
-                          <th style="width: 80px;">FIN    </th>
-                          <th style="width: 70px;">MONTO</th>
-                          <th >MONEDA</th>
-                          <th style="border: 1px solid white;"></th>
+                          <th align="center" >PERSONA</th>
+                          <th align="center" >EDAD</th>
+                          <th align="center" >PARENTESCO</th>
+                          <th align="center" >JEFE DE HOGAR</th>
+                          <th >FAMILIA</th>
+                          <th >SECTOR</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($data as $organizacion)
+                      @foreach($data as $familia)
                         <tr>
-                          <td style="width: 25PX;">{{$organizacion->nombre}}</td>
-                          <td>{{$organizacion->proyecto}}</td>
-                          <td>{{$organizacion->fecha_inicio}}</td>
-                          <td>{{$organizacion->fecha_fin}}</td>
-                          <td>{{$organizacion->presupuesto}}</td>
-                          <td>{{$organizacion->moneda}}</td>
+                          <td align="center">{{$familia->nombres}} {{$familia->apellido_paterno}} {{$familia->apellido_materno}} </td>
+                          <td align="center">{{$familia->edad}}</td>
+                          <td align="center">{{$familia->parentesco}}</td>
+                          <td align="center">{{$familia->jefe_hogar}}</td>
+                          <td align="center">{{$familia->vivienda_id}}</td>
+                          <td align="center">{{$familia->sector}}</td>
                         </tr>
                        @endforeach
 

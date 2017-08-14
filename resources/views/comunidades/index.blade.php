@@ -26,7 +26,8 @@
                 <tr>
                   <td>{{$com->comunidad}}</td>
                   <td>{{$com->observacion}}</td>
-                  <td><button value="{{$com->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button></td>
+                  <td><button value="{{$com->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><a href='/app/crear_reporte_comunidad/1/{{$com->id}}' target='blank_' value="{{$com->id}}" OnClick='Mostrar_reporte(this);' class='btn btn-success'>Generar Reporte</a></td>
+
                   </tr> 
             @endforeach
 		</tbody>
