@@ -1,4 +1,9 @@
 @extends('layouts.app')
+@section('css')
+<!-- iCheck -->
+{!!Html::style('plugins/iCheck/skins/flat/green.css')!!}
+
+@endsection
 @section('content')
 
 	{!!Form::open(['class'=>'form-horizontal', 'id'=>'frmPersonas', 'method'=>'POST'])!!}
@@ -20,4 +25,9 @@
 		
 		
 	{!!Form::close()!!}	
+@endsection
+
+@section('js')
+<!-- iCheck -->
+{!!Html::script('plugins/iCheck/icheck.min.js')!!}
 @endsection

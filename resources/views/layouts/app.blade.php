@@ -33,7 +33,7 @@
     <!-- SELECT2JS -->
     {!!Html::style('plugins/select2/dist/css/select2.min.css')!!}
 
-
+ 
     @yield('css')
   </head>
 

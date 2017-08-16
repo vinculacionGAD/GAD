@@ -1,6 +1,6 @@
 <div class="container">
-<div class="col-md-12 registro">
-     <div class="col-md-4 col-xs-12">
+	<div class="col-md-12 registro">
+	    <div class="col-md-4 col-xs-12">
 			<div class="form-group">		
 				<div class="col-lg-12 col-md-12 col-xs-12">
 					{!!Form::label('doc_identificacion','Cédula:')!!}
@@ -39,8 +39,7 @@
 				</div>
 			</div>
 		</div>	
-        
-        <div class="col-md-4 col-sm-6 col-xs-12">
+    	<div class="col-md-4 col-sm-6 col-xs-12">
 			<div class="form-group">
 				<div class="col-lg-12 col-md-12 col-xs-12">
 					{!!Form::label('FechaNacimiento','Fecha Nacimiento:')!!}
@@ -75,7 +74,30 @@
 					{!!Form::select('estado_civil', ['Soltero' => 'Soltero', 'Casado' => 'Casado', 'Viudo' => 'Viudo', 'Divorciado' => 'Divorciado', 'Union Libre' => 'Union Libre' ], null, ['class'=>'form-control', 'id'=>'estado_civil', 'placeholder'=>'Seleccione un estado civil'])!!}
 					<span id="span_estado_civil"></span>
 				</div>
-		    
-		</div>	
-	</div>
+			</div>	
+		</div>
+		<div class="col-md-4 col-sm-6 col-xs-12">
+		<div class="rol_persona">
+			<div class="checkbox">
+                <label>
+                    <input type="checkbox" id="chek1" value="Policia" class="flat"> Policia
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="chek2" value="informatico" class="flat"> Informatico
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="chek3" value="Bombero" class="flat"> Bombero
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="chek4" value="Artesano" class="flat"> Artesano
+                </label>
+            </div>
+		</div>
+		</div>
 </div>
