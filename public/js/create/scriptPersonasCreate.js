@@ -109,12 +109,21 @@ $("#registroPersona").click(function(){
         });
 
     }else{  
+      
 		registrarPersona();
   	}
 });
 
 function registrarPersona(){
+  var detalle = []; // declaramos un array
+       $("input[type=checkbox]:checked").each(function(){
+        var obj = {'id_rol_persona': $(this).val(),} // creamos el obj de los id_rol_persona
+        detalle.push(obj); //añadimos el obj al array
+        });  
+  var detal= JSON.stringify(detalle); // convertimos en json el array
+
 	var datos = new FormData($("#frmPersonas")[0]);
+  datos.append('check',detal);
 	var route = "/personas"
 	var token = $("#token").val();
 

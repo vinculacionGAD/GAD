@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\personas;
+use App\CargosPersonas;
 use Illuminate\Routing\Route;
 use Session;
 use Redirect;
@@ -50,9 +51,38 @@ class PersonasController extends Controller
      */
     public function store(Request $request)
     {
+
+
         if($request->ajax()){
-            personas::create($request->all());
-            return response()->json([
+            //personas::create($request->all());
+
+            personas::create([
+                "doc_identificacion" => $request->input('doc_identificacion'),
+                "nombres" => $request->input('nombres'),
+                "apellido_paterno" => $request->input('apellido_paterno'),
+                "apellido_materno" => $request->input('apellido_materno'),
+                "fecha_nacimiento" => $request->input('fecha_nacimiento'),
+                "sexo" => $request->input('sexo'),
+                "correo_electronico" => $request->input('correo_electronico'),
+                "telefono_movil" => $request->input('telefono_movil'),
+                "estado_civil" => $request->input('estado_civil')
+                            ]);
+            
+            //AKI HAY QUE HACER UN SELEC MAX DEL LAS PERSONAS
+            $persona = DB::select("Select max(id) as id_persona from personas");
+            $id_persona="";
+                foreach ($persona as $key) {
+                    $id_persona = $key->id_persona;
+                }
+            $check = json_decode($request->input("check") );
+                foreach ($check as $key) {
+                    CargosPersonas::create([
+                        "id_persona" => $id_persona,
+                        "rol_persona_id" => $key->id_rol_persona
+                    ]);
+                }
+
+        return response()->json([
                 "mensaje" => "creado"
                 ]);
         }
