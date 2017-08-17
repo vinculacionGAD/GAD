@@ -24,12 +24,12 @@
                      <li><a href="/personales/">Administar Personal</a></li>
                     </ul>
                   </li>
-                   <li><a><i class="fa fa-user"></i>Proveedores<span class="fa fa-chevron-down"></span></a>
+                   <!--li><a><i class="fa fa-user"></i>Proveedores<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                      <li><a href="/proveedores/create">Ingresar Proveedor</a></li>
                      <li><a href="/proveedores/">Administrar Proveedores</a></li>
                     </ul>
-                  </li>
+                  </li-->
                   <li><a><i class="fa fa-user"></i>Voluntarios<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                      <li><a href="/voluntarios/create">Ingresar Voluntario</a></li>

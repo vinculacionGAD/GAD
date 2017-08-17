@@ -94,7 +94,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="{{asset('img/utm.png')}}" alt="">GAD
+                    GAD
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -105,7 +105,7 @@
                         <span>Configuración</span>
                       </a>
                     </li-->
-                    <li><a href="javascript:;">Ayuda</a></li>
+                    <li><a href="/resources/ManualUsuario.pdf" target="blank_">Manual de Usuario</a></li>
                     <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
                   </ul>
                 </li>

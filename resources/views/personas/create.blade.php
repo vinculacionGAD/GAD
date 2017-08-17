@@ -17,7 +17,7 @@
 
 		<div class="form-group">
 			<div class="col-md-6 col-xs-12">
-				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Personas</h1>
+				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Personas / Empresas</h1>
 			</div>
 		</div>
 		@include('personas.forms.personas')			

@@ -12,9 +12,10 @@
 		<div class="form-group">
 			<div class="col-md-6 col-xs-12">
 				<h1 style="font-size: 20px; font-weight: bold; color: black;">Registro de Voluntarios</h1>
+				@include('voluntarios.forms.voluntarios')			
 			</div>
 		</div>
-		@include('voluntarios.forms.voluntarios')			
+		
 
 		<div class="form-group">
 			<div class="col-md-6 col-xs-12">

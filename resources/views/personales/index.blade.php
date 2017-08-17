@@ -4,12 +4,12 @@
 	
 	<div id="msj-update-personal" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<strong>Personal actualizado correctamente!</strong>
+		<strong>Funcionario actualizado correctamente!</strong>
 	</div>
 
 	<div id="msj-delete-personal" class="alert alert-success alert-dismissible" role="alert" style="display: none;">
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<strong>Personal eliminado correctamente!</strong>
+		<strong>Funcionario eliminado correctamente!</strong>
 	</div>
 	<div>
 				<ul class="nav navbar-right panel_toolbox">

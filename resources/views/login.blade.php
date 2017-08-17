@@ -49,22 +49,22 @@
               <div class="margin_top_10px">
                 <button class="btn btn btn-dark form-control" id="Bton_Iniciar" type="button">Iniciar Sessión</button>
 
-                <a class="reset_pass" href="#">Olvido su clave?</a>
+                <!--a class="reset_pass" href="#">Olvido su clave?</a-->
               </div>
 
               <div class="clearfix"></div>
 
               <div class="separator">
-                <p class="change_link">Nuevo usuario?
+                <!--p class="change_link">Nuevo usuario?
                   <a href="#signup" class="to_register"> Crear Cuenta </a>
-                </p>
+                </p-->
 
                 <div class="clearfix"></div>
                 <br />
 
                 <div>
-                  <h4>UNIVERSIDAD TÉCNICA DE MANABÍ FACULTAD DE CIENCIAS INFORMÁTICAS</h4>
-                  <p>©2017. GAD Municipal del Cantón Sucre </p>
+                  <!--h4>UNIVERSIDAD TÉCNICA DE MANABÍ FACULTAD DE CIENCIAS INFORMÁTICAS</h4-->
+                  <h4>©2017. GAD Municipal del Cantón Sucre </h4>
                 </div>
               </div>
           </section>

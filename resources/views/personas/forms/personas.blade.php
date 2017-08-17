@@ -85,7 +85,7 @@
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" id="chek2" value="informatico" class="flat"> Informatico
+                    <input type="checkbox" id="chek2" value="informatico" class="flat"> Funcionario
                 </label>
             </div>
             <div class="checkbox">
@@ -95,9 +95,15 @@
             </div>
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" id="chek4" value="Artesano" class="flat"> Artesano
+                    <input type="checkbox" id="chek4" value="Artesano" class="flat"> Persona Natural
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="chek4" value="Artesano" class="flat"> Otro
                 </label>
             </div>
 		</div>
 		</div>
+	</div>	
 </div>
