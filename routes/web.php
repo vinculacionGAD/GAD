@@ -156,6 +156,7 @@ Route::post('viviendas/{id}','ViviendasController@modificar');
 //Inicio Gestion Usuarios
 Route::resource('usuario','UsuarioControllers');
 Route::get('usuarios','UsuarioControllers@store');
+Route::post('/usuario_contrasena','UsuarioControllers@actualizarContrsenaUsuarios');
 Route::post('viviendas/{id}','ViviendasController@modificar');
 //fin gestion usuarios
 

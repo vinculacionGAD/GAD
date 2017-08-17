@@ -20,6 +20,19 @@ $(document).ready(function(){
 
             }
         }); // fin
+
+        /*Validaci[on del campo usuario*/
+        $('#usuario').blur(function(){
+            var usuario = $("#usuario").val();
+            if (usuario.indexOf('')== -1){
+              $('#usuario').addClass('error');
+              $('#span_mensaje_usuario').html('Ingrese el usuario ');
+            }else{
+            $('#usuario').removeClass('error');
+            $('#span_mensaje_usuario').html('');
+            }
+            
+        }); // fin
         
 
 /*Validaci[on del campo nombre*/
@@ -86,11 +99,11 @@ $("#btn_IngresarUsuarios").click(function(){
                              animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
             }else if($('#usuario').val()==""){
-                      $('#tipoUsuario').addClass('error');
+                      $('#usuario').addClass('error');
                       $('#span_usuario').addClass('error_span');
                       $('#span_mensaje_usuario').html('Ingrese email');
                       var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
-                      new PNotify({title: 'Alerta',text: 'Por favor! ingrese un tipo de usuario',
+                      new PNotify({title: 'Alerta',text: 'Por favor! ingrese un usuario',
                       type: 'error',delay: 2500,
                       animate: {animate: true,in_class: animate_in,out_class: animate_out}
                 });
@@ -116,7 +129,7 @@ function registrar_usuario(){
 	  var token    = new $('#token').val();
     var datos  = new FormData($("#frmIngresarUsuarios")[0]);
     $.ajax({
-    url:"/usuarios",
+    url:"/usuario",
     headers :{'X-CSRF-TOKEN': token},
     type: 'POST',
     dataType: 'json',
@@ -127,8 +140,9 @@ function registrar_usuario(){
       if(res.registro==true){
          //swal("Efood!", "El usuario se ha registro correctamente!", "success");
         swal("Usuario Registrado Correctamente..!!", "", "success");
-        document.getElementById("frmIngresarUsuarios").reset();  
+        $('#frmIngresarUsuarios')[0].reset();  
         $("#myModal_IngresarUsuario").modal("hide");
+        window.location="http://localhost:8000/usuario/";
        }
      }
 	});
@@ -142,12 +156,11 @@ function registrar_usuario(){
             });	
 
     function cargar_datos(id){
-    var route="/app/usuario/" +id+"/edit";	
+    var route="/usuario/" +id+"/edit";	
     $.get(route,function(res){
     //	alert(res.tipoUsuario);
       $("#IdUsuario").val(res.id)
-      $("#tipoUsuario_A").val(res.tipo_usuario);     
-      $("#nombre_A").val(res.nombre);     
+      $("#nombre_A").val(res.name);     
       $("#user_A").val(res.email);
       $("#password_A").val(res.password);
 
@@ -155,7 +168,7 @@ function registrar_usuario(){
     }
 
      function cargar_datosMO(id){
-    var route="/app/usuario/" +id+"/edit";  
+    var route="/usuario/" +id+"/edit";  
     $.get(route,function(res){
     //  alert(res.tipoUsuario);
       $("#id_user_pass").val(res.id)
@@ -167,24 +180,23 @@ function registrar_usuario(){
   function Actualizar_Usuarios(){
 
   var id =$("#IdUsuario").val();
-  var TipoUsuario =$("#tipoUsuario_A").val();
-  var nombre =$("#nombre_A").val();
-  var Usuario =$("#user_A").val();
+  //var TipoUsuario =$("#tipoUsuario_A").val();
+  var name =$("#nombre_A").val();
+  var user =$("#user_A").val();
   var password =$("#password_A").val();
-  var route  ="/app/usuario/"+id+"";
+  var route  ="/usuario/"+id+"";
   var token  =$("#token").val();
   $.ajax({
     url: route,
     headers :{'X-CSRF-TOKEN': token},
     type: 'PUT',
     dataType:'json',
-        data    :{TipoUsuario:TipoUsuario,nombre:nombre,user:Usuario,password:password},
+        data    :{name:name,user:user,password:password},
         success:function(res){
           if(res.sms=='ok'){
             $('#myModal_ModificarUsuarios').modal('hide');
-            alert('Actualizacion correcta');
-           $("#datatable").load('/lista_usuarios');
-            
+            swal("Usuario Modificado Correctamente..!!", "", "success");
+            window.location="http://localhost:8000/usuario/";
           }else{
             alert('no se pudo');
                }
@@ -215,8 +227,8 @@ function actualizarContrseñaUsuarios(){
         success:function(res){
           if(res.sms=='ok'){
             $('#myModal_ModificarContraseñaUsuarios').modal('hide');
-            alert('Actualizacion correcta');
-           $("#datatable").load('/lista_usuarios');
+            swal("Contraseña Modificada Correctamente..!!", "", "success");
+            window.location="http://localhost:8000/usuario/";
             }else{
             alert('no se pudo');
                }
@@ -241,7 +253,7 @@ function EliminarUsuarios(id){
 
 		function(isConfirm){ 
 		if (isConfirm){
-			var route  ="/app/usuario/"+id+"";
+			var route  ="/usuario/"+id+"";
 		    var token  =$("#token").val();
 		    $.ajax({
 			    url: route,
@@ -251,7 +263,7 @@ function EliminarUsuarios(id){
 			        success:function(res){
 			         if(res.sms=='ok'){
 						swal("¡Hecho!","Usuario Eliminado Correctamente","success"); 
-			            $("#datatable").load("/lista_usuarios");
+            window.location="http://localhost:8000/usuario/";
 			          }          
 			        }
 		 	     });
@@ -267,8 +279,22 @@ $("#btn_CambiarContraseñaUsuarios").click(function(){
   clave_confir=$("#password_Nueva").val();
 
   if(clave_nueva==clave_confir){
-    alert("ok");
+     var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                new PNotify({title: 'Alerta',text: 'Contrasenas Iguales',
+                             type: 'error',delay: 2500,
+                             animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
   }else{
-    alert("las contraseñas no se parecen");
+     var animate_in = 'lightSpeedIn', animate_out = 'bounceOut';
+                new PNotify({title: 'Alerta',text: 'Contrasenas Incorrectas',
+                             type: 'error',delay: 2500,
+                             animate: {animate: true,in_class: animate_in,out_class: animate_out}
+                });
   }
+});
+
+$("#modal").click(function(){
+
+   $('#frmIngresarUsuarios')[0].reset();
+
 });

@@ -49,7 +49,7 @@ class UsuarioControllers extends Controller
     {
 
         //return $request->all();
-        User::create(['nombre'          =>$request->input('nombre'),
+        User::create(['name'          =>$request->input('nombre'),
                       'email'         =>$request->input('usuario'),
                       'password'      =>bcrypt($request->input('password')),
                             ]);
@@ -107,7 +107,7 @@ class UsuarioControllers extends Controller
      */
     public function update(Request $request, $id)
     {
-       $Usuarios = User::find($id);
+        $Usuarios = User::find($id);
         $Usuarios->fill($request->all());
         $Usuarios->save();
         return response()->json([
