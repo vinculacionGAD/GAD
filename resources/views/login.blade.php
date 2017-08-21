@@ -25,7 +25,7 @@
 
   <body class="login">
   <div class="figure">
-    <img class="logo-escudo" src="{{asset('img/escudo2.png')}}">
+    <img class="logo-escudo" src="{{asset('img/escudo.png')}}">
   </div>
     <div>
       <a class="hiddenanchor" id="signup"></a>
@@ -39,7 +39,7 @@
       <div class="login_wrapper">
           <div>
           <section class="login_content">
-              <h1>GAD MUNICIPAL SUCRE</h1>
+              <h1>GAD MUNICIPAL 24 DE MAYO</h1>
               <div class="margin_top_10px">
                 <input type="text" id="usuario" class="form-control" placeholder="Usuario" required="" />
               </div>
@@ -64,7 +64,7 @@
 
                 <div>
                   <!--h4>UNIVERSIDAD TÉCNICA DE MANABÍ FACULTAD DE CIENCIAS INFORMÁTICAS</h4-->
-                  <h4>©2017. GAD Municipal del Cantón Sucre </h4>
+                  <h4>©2017. GAD Municipal del Cantón 24 de Mayo </h4>
                 </div>
               </div>
           </section>
