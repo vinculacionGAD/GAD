@@ -14,7 +14,7 @@
 	<div>
 				<ul class="nav navbar-right panel_toolbox">
                         <ul class="nav navbar-right panel_toolbox">                    
-                        <a href="/app/crear_reporte_ListarFamilia/1" target="bland_" class="moverImprimirFactura  btn btn-success">Generar Reporte</a>
+                        <a href="/app/crear_reporte_ListarFamilia/1" target="bland_" class="moverImprimirFactura  btn btn-success">Reporte General</a>
                         </ul>
                     </ul>
 	</div>
@@ -43,7 +43,7 @@
                   <td>{{$fam->jefe_hogar}}</td>
                   <td>{{$fam->sector}}</td>
                   <td>{{$fam->comunidad}}</td>
-                  <td><a href='/app/crear_reporte_ListarFamiliaVivienda/1/{{$fam->vivienda_id}}' target='blank_' value="{{$fam->vivienda_id}}" OnClick='Mostrar_reporte(this);' class='btn btn-success'>Generar Reporte</a></td>                         
+                  <td><a href='/app/crear_reporte_ListarFamiliaVivienda/1/{{$fam->vivienda_id}}' target='blank_' value="{{$fam->vivienda_id}}" OnClick='Mostrar_reporte(this);' class='btn btn-success'>Reporte Por Familia</a></td>                         
                 </tr> 
             @endforeach
 		</tbody>

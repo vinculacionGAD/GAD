@@ -42,12 +42,12 @@
                       <li><a href="/organizaciones/">Administrar Organizaciones</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-cubes"></i>Almacen<span class="fa fa-chevron-down"></span></a>
+                  <!--li><a><i class="fa fa-cubes"></i>Almacen<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/almacenes/create">Ingresar Almacén</a></li>
                       <li><a href="/almacenes/">Administrar Almacenes</a></li>
                     </ul>
-                  </li>
+                  </li-->
                   <li><a><i class="fa fa-cubes"></i>Albergues<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="/refugios/create">Ingresar Albergue</a></li>

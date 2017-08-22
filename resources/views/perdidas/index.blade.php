@@ -14,7 +14,7 @@
 	<div>
 				<ul class="nav navbar-right panel_toolbox">
                         <ul class="nav navbar-right panel_toolbox">                    
-                        <a href="/app/crear_reporte_perdida/1" target="bland_" class="moverImprimirFactura  btn btn-success">Generar Reporte</a>
+                        <a href="/app/crear_reporte_perdida/1" target="bland_" class="moverImprimirFactura  btn btn-success">Reporte General</a>
                         </ul>
                     </ul>
 	</div>
@@ -39,7 +39,7 @@
                   <td>{{$per->descripcion}}</td>
                   <td>{{$per->monto_estimado}}</td>
                   <td>{{$per->fecha_perdida}}</td>
-                  <td><button value="{{$per->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><a href="/app/crear_reporte_perdidas/1/{{$per->id}}" value="{{$per->id}}" target="bland_" class="	  btn btn-success">Reporte</a></td>
+                  <td><button value="{{$per->id}}" OnClick='Mostrar(this);' class='btn btn-primary' data-toggle='modal' data-target='#myModal'>Editar</button><a href="/app/crear_reporte_perdidas/1/{{$per->id}}" value="{{$per->id}}" target="bland_" class="	  btn btn-success">Reporte Por Persona</a></td>
                   </tr> 
             @endforeach
 		</tbody>
