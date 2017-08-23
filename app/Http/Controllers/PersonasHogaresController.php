@@ -90,10 +90,25 @@ class PersonasHogaresController extends Controller
             $idViv=$idVi->idVivi;
         }
 
+        $idSec = "";
+        $idSector = DB::select("SELECT sector_id as idSect FROM familias where familias.id = ?",[$request->input('persona_hogar_id')]);
+
+        foreach ($idSector as $idSe ) {
+            $idSec=$idSe->idSect;
+        }
+
+        $idPer = "";
+        $idPersona = DB::select("SELECT MAX(id) as idPers FROM personas_hogares");
+        foreach ($idPersona as $idPe ) {
+            $idPer=$idPe->idPers;
+        }
+
          familias::create([
-            'persona_hogar_id'=>$request['persona_hogar_id'],
+            //'persona_hogar_id'=>$request['persona_hogar_id'],
+            'persona_hogar_id'=>$idPer,
             'vivienda_id'=>$idViv,
-            'sector_id'=>$request->input('sector_id'),
+            'sector_id'=>$idSec,
+            //'sector_id'=>$request->input('sector_id'),
             //'refugio_id'=>$request->input('refugio_id'),
             'jefe_hogar'=>$idJefe,
             ]);
