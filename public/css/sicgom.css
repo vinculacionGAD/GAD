@@ -7,13 +7,13 @@
   justify-content: center;
 }
 
-.rol_persona{
-    width: 50%;
-    border: 1px solid;
-    height: 300px;
-    box-shadow: 3px 3px 0 0 #1abc9c;
-    overflow-y: scroll;
-}
+    .rol_persona{
+        width: 50%;
+        border: 1px solid;
+        height: 300px;
+        box-shadow: 3px 3px 0 0 #1abc9c;
+        overflow-y: scroll;
+    }
 .margin_top_10px{
     margin-top: 10px;
 }
