@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>GAD MUNICIPAL 24 DE MAYO</title>
+    <title>GAD MUNICIPAL SUCRE</title>
 
     <!-- csss de swal -->
     {!!Html::style('css/sweetalert.css')!!}
@@ -189,7 +189,7 @@
         <!-- footer content -->
         <footer>
           <div class="pull-right">
-            Gestión de Riesgo <a href="http://utm.edu.ec" target="_black">GADM 24 DE MAYO</a> <a href="http://fci.utm.edu.ec" target="_black"></a>
+            Gestión de Riesgo <a href="http://utm.edu.ec" target="_black">GADM SUCRE</a> <a href="http://fci.utm.edu.ec" target="_black"></a>
           </div>
           <div class="clearfix"></div>
         </footer>

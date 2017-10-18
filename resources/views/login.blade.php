@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>GAD MUNICIPAL 24 DE MAYO</title>
+    <title>GAD MUNICIPAL SUCRE</title>
 
     <!-- Bootstrap -->
     {!!Html::style('plugins/bootstrap/dist/css/bootstrap.min.css')!!}
@@ -39,7 +39,7 @@
       <div class="login_wrapper">
           <div>
           <section class="login_content">
-              <h1>GAD MUNICIPAL 24 DE MAYO</h1>
+              <h1>GAD MUNICIPAL SUCRE</h1>
               <div class="margin_top_10px">
                 <input type="text" id="usuario" class="form-control" placeholder="Usuario" required="" />
               </div>
@@ -64,7 +64,7 @@
 
                 <div>
                   <!--h4>UNIVERSIDAD TÉCNICA DE MANABÍ FACULTAD DE CIENCIAS INFORMÁTICAS</h4-->
-                  <h4>©2017. GAD Municipal del Cantón 24 de Mayo </h4>
+                  <h4>©2017. GAD Municipal del Cantón Sucre</h4>
                 </div>
               </div>
           </section>

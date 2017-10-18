@@ -130,7 +130,7 @@
 <div class="col-md-12">
                <div class="box foto mover-foto">
                 <div class="box-header with-border mover-titulo">
-                   <h3 class="box-title mover-titulo" align="center" >GAD MUNICIPAL DEL CANTON 24 DE MAYO</h3><br>
+                   <h3 class="box-title mover-titulo" align="center" >GAD MUNICIPAL DEL CANTON SUCRE</h3><br>
                    <h3 class="box-title" align="center">SISTEMA DE GESTION DE DESASTRES NATURALES</h3><br>
                   <h3 class="box-title" align="center">REPORTE DE ALBERGUES</h3>
                 </div><!-- /.box-header -->
